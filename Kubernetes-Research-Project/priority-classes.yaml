@@ -1,0 +1,7 @@
+apiVersion: scheduling.k8s.io/v1 
+kind: PriorityClass 
+metadata: 
+  name: overprovisioning 
+value: -1 #given lowest priority of any pods so it's always given last priority when scaling
+globalDefault: false 
+description: "Priority class used by overprovisioning." 

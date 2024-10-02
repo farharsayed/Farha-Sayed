@@ -1,0 +1,25 @@
+#cluster v5 (current)
+
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+  name: overprovisioning 
+  namespace: default 
+spec: 
+  replicas: 1 #only one overprovisioning pod
+  selector: 
+    matchLabels: 
+      run: overprovisioning 
+  template: 
+    metadata: 
+      labels: 
+        run: overprovisioning 
+    spec: 
+      priorityClassName: overprovisioning 
+      containers: 
+      - name: pause 
+        image: registry.k8s.io/pause:3.6  #k8s image for a pause pod
+        resources: 
+          requests: 
+            cpu: '3400m' #set to occupy most of the spare node, only allowing system pods to be in the same node
+            memory: '6G' #similar to cpu requests, set high to keep the spare node occupied in the start state
