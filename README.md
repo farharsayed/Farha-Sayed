@@ -1,30 +1,12 @@
-# Cloud Computing Research Project ☁️
-## **Proactive Autoscaling in Kubernetes** ⎈
+# My Projects 
 
-Welcome to my **Kubernetes Research Project**! This project focuses on optimizing resource allocation through combined techniques of Autoscaling in Kubernetes. Some core features of this research project are highlighted below.
-
-
-## Research Focus 🔬
-
-This project addresses the **scalability challenges** of cloud systems by exploring the integration of multiple **autoscaling strategies** to optimize resource allocation and prepare for sudden traffic spikes. Inspired by the **SmartScale Project**, our research focuses on the combination of the following key techniques:
-
--  **Proactive Approach** 🚀
--  **Horizontal Pod Autoscaler (HPA)** 📈
-- **Cluster Autoscaler (CA)** 🖧
-- **Node Overprovisioning** ⚡
+Welcome to my **Tech Projects**! I've made a collection of some of my recent work to easily share with recruiters and friends.
 
 
+## List of Projects
 
-## Tools and Technologies 🛠️
+The following projects are included in this repo:
 
-- **Cloud Platform**: [Microsoft Azure](https://azure.microsoft.com) ☁️🔷
-
-- **Microservice Application**: [TeaStore](https://github.com/DescartesResearch/TeaStore/tree/master) ☕📦
-
-- **Load Testing**: [Apache JMeter](https://jmeter.apache.org/) 🚦⏱️
-
-- **Monitoring**: [Prometheus](https://prometheus.io/) 🔍🕵️‍♂️
-
-- **Visualization**: [Grafana](https://grafana.com/) 👁️📊
-
-- **Observability Tools From**: [Helm](https://helm.sh/) 🛳️🔧
+-  **Kubernetes Research Project ☁️** : This folder contains some of my work from a Kubernetes Research Project titled **'Proactive Autoscaling in Kubernetes'**
+-  **Programming Samples 🖧** : Here lie some sample coding pieces in different languages over the years. A lot of this work was created for school/university and I'd just like to present some of it to you.
+-  ***Carpe Vitae Capital 🟩** : I've shared some of the code written when we created this Platform. It was a group effort.
