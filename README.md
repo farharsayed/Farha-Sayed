@@ -1,4 +1,4 @@
-# My Projects 💻🛠️✨
+# My Projects 💻🛠️
 
 Hi👋 Welcome to my **Tech Projects**! I've made a collection of some of my recent work to easily share with recruiters and friends.
 
