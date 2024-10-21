@@ -10,4 +10,4 @@ Speed, accuracy, and scalability were key considerations during my hands-on expe
   
 - **H2O.ai** 💧: Explored the use of machine learning models in this environment to make data-driven predictions. Includes examples of training, validating, and deploying models.
 
-My work in this folder highlights a commitment to using cutting-edge AI technologies and tools to solve real-world problems. Whether it’s deploying a machine learning model or testing inference on GPUs, I aim to push the boundaries of AI to benefit various communities. 🌍🤖
+My work here highlights a commitment to using cutting-edge AI technologies and tools to solve real-world problems. Whether it’s deploying a machine learning model or testing inference on GPUs, I aim to push the boundaries of AI to benefit various communities. 🌍🤖
