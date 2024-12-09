@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products and Services</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-products.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+</head>
+
+
+
+<body>
+    <nav>
+        <ul  class="sidebar">
+            <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" class="custom-svg1">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="#">Solutions</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <ul>
+            
+            <li class="company-logo" onclick="navigateToHomePage()">
+                <img src="./assets/company-logo.png" alt="Company Logo">
+            </li>
+            <!-- <li><a href="#">G-Haus Corporation</a></li> -->
+            <!-- no hideonmobile class for the above element cause we dont want the logo to disappear -->
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="#">Solutions</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li class = "menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px"  class="custom-svg2">
+                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+        </ul>
+    </nav>
+
+
+
+    <!-- title and description -->
+
+    <section class="prod-heading">
+        <video autoplay muted loop class="video2">
+            <source src="./assets/video-3.mp4" type="video/mp4">
+           </video>
+           
+     <div class="prod-title">Our Products</div>
+    </section>
+
+    <section id="prod-para">
+      <p>  We provide specialty products and engineered solutions to the fire protection and mechanical side of construction industry.
+    </p>
+    <p>Our products meet the requirements of: 
+        <ul>
+            <li>Oil & Gas</li>
+            <li>Power & Distribution</li>
+            <li>Building Construction</li>
+        </ul>
+    </p>
+
+    </section>
+
+
+<section id="prod-buttons">
+    <!-- products listed as buttons -->
+    <div class="product-container">
+        <button class="product" onclick="showText(1)">Fire Protection Valves</button>
+        <button class="product" onclick="showText(2)">Devices</button>
+        <button class="product" onclick="showText(3)">Engineering Service</button>
+        <button class="product" onclick="showText(4)">Specialty Valves</button>
+        <button class="product" onclick="showText(5)">Grooved & Piping Products</button>
+        <button class="product" onclick="showText(6)">Fabrication Services</button>
+    </div>
+
+</section>
+
+<section id="prod-descriptions">
+    <div class="prod-desc" id="pd1">
+        <img src="" alt="">
+        <ul>
+            <li>Gate Valves</li>
+            <li>Butterfly Valves</li>
+            <li>Check Valves</li>
+            <li>Strainers</li>
+        </ul>
+    </div>
+    <div class="prod-desc" id="pd2">
+        <ul>
+            <li>Weather-proof & Explosion-proof</li>
+            <li>Flow Switch</li>
+            <li>Supervisory Switches</li>
+            <li>Pressure Switches</li>
+            <li>Pull Stations</li>
+            <li>Control Station with Pull Ring</li>
+        </ul>
+    </div>
+    <div class="prod-desc" id="pd3">
+        <ul>
+            <li>Design</li>
+            <li>Support & Review</li>
+            <li>Water, Foam, Gas & Detection</li>
+        </ul>
+    </div>
+    <div class="prod-desc" id="pd4">
+        <ul>
+            <li>Deluge & Pre Action-Valves</li>
+            <li>Alarm Valves</li>
+            <li>Cabinet Assemblies</li>
+            <li>Pressure Reducing Valves</li>
+        </ul>
+    </div>
+    <div class="prod-desc" id="pd5">
+        <ul>
+            <li>Piping Tools</li>
+            <li>Grooved Fittings</li>
+            <li>Threaded Fittings</li>
+            <li>Stainless Steel G Press Fittings</li>
+        </ul>
+    </div>
+    <div class="prod-desc" id="pd6">
+        <ul>
+            <li>Skids</li>
+            <li>Pipe Fabrication Services</li>
+            <li>Fabrication of Expansion Joints</li>
+        </ul>
+    </div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>

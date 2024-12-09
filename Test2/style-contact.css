@@ -1,0 +1,60 @@
+body {
+    text-align: center;
+    /* margin: 20px; */
+    background-color: white;
+}
+
+#contact {
+    margin: 0 0;
+    display: flex;
+    
+}
+.main-container {
+    display: grid;                     /* Enables Grid layout */
+    grid-template-columns: 1fr 1fr;   /* Two equal columns */
+    height: 100vh;                    /* Full viewport height */
+}
+
+.left-con {
+    /* flex: 1; */
+    background-color: white;
+    padding: 20px;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.tb3 {
+    color: #FE0202;
+    font-size: 2.5rem;
+    font-weight: 600;
+    padding-bottom: 3rem;
+  text-align: center;
+}
+
+
+.tb1 {
+    
+    padding-bottom: 2rem;
+}
+.tb1 p, .tb2 p{
+    display: flex;
+    font-weight: 500;
+    font-size: 1.25rem;
+    color: #013499;
+    justify-content: center;
+}
+
+
+.right-con {
+    /* flex: 1; */
+    background-color: white;
+    padding: 20px;
+    margin-right: 2rem;
+}
+
+.right-con img {
+    max-width: 130%;                  /* Make image responsive */
+    height: auto;                     /* Maintain aspect ratio */
+    margin-bottom: 20px;              /* Space below the image */
+} 

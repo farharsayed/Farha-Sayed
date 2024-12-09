@@ -1,0 +1,330 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+body,html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+    /* box-sizing: border-box; */
+}
+
+p {
+    color: rgb(85,85,85);
+}
+
+a{
+    transition: all 300ms ease;
+    /* when you open website everything comes in nicely */
+  }
+
+
+  /* header start */
+
+nav {
+    /* justify-content: space-around; */
+    /* align-items: center; */
+    background-color:  rgb(255, 255, 255); 
+    
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1); 
+    /* shadow when you hover ^ */
+}
+
+nav ul {
+    /* width: 100%; */
+    list-style: none;
+    /* ^important to remove bullet points */
+    display: flex;
+    /* ^need for header to be a single line */
+    /* justify-content: flex-end; */
+    /* align-items: center; */
+}
+
+nav li {
+    height: 50px;
+    /* height of navbar */
+}
+
+nav a {
+    height: 100%;
+    /*height of header */
+    padding: 0 30px;
+    /* padding from corners */
+    text-decoration: none;
+    /* avoid hyperlink effect */
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+nav a:hover {
+    background-color: #f0f0f0;
+}
+nav li:first-child  {
+    margin-right: auto;
+}
+
+
+.company-logo img {
+  height: 45px; /* Adjust the height to fit in the header */
+  width: auto;  /* Maintain aspect ratio */
+  max-height: 60px; /* Optional: limit the maximum height */
+  padding-top: 0.15rem;
+  padding-left: 0.15rem;
+  cursor: pointer;
+}
+
+.custom-svg1, .custom-svg2 {
+    fill: black; /* Change to green or any color you want */
+  }
+
+
+
+    /* header end */
+
+  /* hamburger menu start */
+
+.sidebar {
+     position: fixed; 
+     /* keeps it on the right corner */
+     top: 0;
+    right: 0;
+    /* keeps it on the right corner */
+    height: 100vh;
+    /* keeps its length as long as the page */
+    width: 200px; 
+    /* width of sidebar */
+     z-index: 999; 
+     background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    /* columned sidebar elements */
+    align-items: flex-start;
+    justify-content: flex-start; 
+    transition: transform 0.3s ease; /* Smooth slide-in effect */
+}
+.sidebar.active {
+  transform: translateX(0); /* Slide in the sidebar */
+}
+
+.sidebar li {
+    /* width: 100%; */
+}
+
+.sidebar a {
+    /* width: 100%; */
+}
+
+.menu-button {
+    display: none;
+}
+  /* hamburger menu end */
+
+
+
+
+  /* home page */
+
+  #home {
+    display: flex;
+    justify-content: center;
+    /* gap: 5rem; */
+    /* height: 80vh; */
+    /* height: 90%; */
+    width: 100%;
+    /* overflow: hidden; */
+    /* margin: 0;
+    padding: 0; */
+    box-sizing: border-box;
+
+}
+
+
+  .sky-pic {
+    position: relative;
+   width: 100%;
+   /* background-color: white; */
+     }
+.home-text {
+  text-align: center; /* Center text */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Adjust to center */
+  margin: 0 0;
+  font-weight: bold;
+}
+  .home-text-2 {
+    font-size: 1.25rem;
+    color: white;  
+    margin-top: 0.5rem;
+  }
+  .company-name {
+ margin: 0;
+    font-size: 4rem; /* Adjust font size as needed */
+    
+    color:  white; 
+  
+    white-space: nowrap; /* Prevents text from wrapping */
+    /* text-shadow: 0px 10px 10px #ffffff,Horizontal and vertical offset, blur radius, and shadow color */
+    /* 0px 0px 20px #ffffff,  */
+    /* 0px 0px 10px #ffffff; */
+  }
+
+
+
+
+ /* Base styles for the video to cover the whole screen */
+.video1 {
+  /* position: fixed; Makes the video stay in place even when scrolling */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport */
+  object-fit: cover; /* Ensures the video covers the entire area without distortion */
+  z-index: -1; /* Sends the video to the background */
+}
+
+
+
+
+
+  /* .sky-pic:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; */
+    /* background: rgba(0, 0, 0, 0.3); Dark overlay to make text stand out */
+    /* z-index: 1; Place it above the image but below the text */
+/* } */
+
+
+
+.button1 {
+    /* padding: 10px 20px; */
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 300ms ease;
+    padding: 1rem;
+    /* width: 8rem; */
+    border-radius: 2rem;
+    background-color: white;
+    color: rgb(180, 101, 180);
+}
+
+.button1:hover {
+  color: white ;
+  background-color:  rgb(180, 101, 180);
+}
+
+
+
+/* END OF HOMEPAGE TOP */
+
+
+/* INTRO */
+
+#intro {
+  padding-top: 1.5rem;
+  height: 100vh;
+  background-color: white;
+  max-height: 100%;
+}
+.intro-title {
+  font-size: 3.5rem;
+  text-align: center;
+  font-weight: 600;
+  color: #013499;
+  
+  padding-top: 2rem;
+  /* padding-bottom: 2rem; */
+}
+
+.intro-para {
+  text-align: center;
+  color: black; 
+  font-weight: 400;
+  font-size: 1.25rem;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+
+.intro-cons {
+  padding-top: 2rem;
+  display: grid;                     /* Enables Grid layout */
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  /* height: 60vh; */
+  /* grid-template-columns: 1fr 1fr;   Two equal columns */
+  /* height: 10vh;                    Full viewport height */
+  gap: 2rem; 
+  max-width: 80%;
+  margin: 0 auto;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.intro-con-l {
+  background-color: white;
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  text-align: center;
+  padding: 1rem;
+}
+
+.intro-con-r {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.intro-con-r img {
+  
+  /* padding: 20px; */
+  /* max-width: 80%;                  Make image responsive */
+  height: 50vh;                     /* Maintain aspect ratio */
+  /* margin-bottom: 20px;              Space below the image */
+object-fit: contain;
+max-width: 100%;
+}
+
+
+.prod-sect {
+  margin: 10px; 
+  /* Space between buttons */
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 300ms ease;
+  padding: 1rem;
+  border-radius: 1.75rem;
+  background-color: white;
+  
+  color: #013499;
+  /* border: none; Remove any default border */
+  text-align: center; /* Center text within the button */
+  /* display: inline-block; */
+   /* Ensure the button behaves properly */
+   flex: 1;
+   max-width: 200px;
+}
+
+.prod-sect:hover {
+  border-color: black;
+  color: #FE0202;
+  
+  /* border-color: #013499; */
+  text-decoration: underline;
+}

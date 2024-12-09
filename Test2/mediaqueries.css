@@ -1,0 +1,92 @@
+
+
+
+/* hamburger menu part */
+
+
+
+
+/* triggered when the condition is met for sidebar hiding*/
+@media(max-width: 800px)
+{
+    .hideOnMobile{
+        display: none;
+    }
+    .menu-button {
+        display: block;
+    }
+}
+
+@media(max-width: 400px)
+{
+    .sidebar{
+        width: 100%
+    }
+}
+
+
+
+
+
+/* Media query for screens with a max-width of 768px */
+@media (max-width: 768px) {
+    .video1 {
+        width: 100vw; /* Stretches to the full width of the viewport */
+        height: 100vh; /* Stretches to the full height of the viewport */
+        object-fit: cover; /* Ensures no distortion */
+    }
+     .intro-cons {
+        display: block;
+        /* height: auto; */
+        padding: 2rem;
+        /* justify-content: center; */
+        
+    } 
+    .intro-con-l, .intro-con-r {
+        text-align: center;
+        margin-bottom: 2rem; 
+        /* Space between sections */
+      }
+    
+      .intro-con-r img {
+        height: auto; /* Adjust image size */
+        width: 100%; /* Ensure image is responsive */
+      }
+    }
+  
+
+@media (min-width: 768px) {
+  
+   
+    .intro-cons {
+        display: grid;                     /* Enables Grid layout */
+         grid-template-columns: 1fr 1fr; 
+         /* max-width: 80%; */
+         
+                           /* Full viewport height */
+        gap: 2rem; 
+      }
+    
+}
+
+
+
+
+
+
+
+
+/* adjust padding for about section on small screens
+@media (max-width: 768px) {
+    .about-section { */
+        /* padding: 30px 15px; Adjust padding for smaller screens */
+    /* }
+
+    .about-para-1 { */
+        /* font-size: 1.1rem; Reduce font size on smaller screens */
+    /* }
+
+    .about-para-2 { */
+        /* font-size: 0.95rem; Reduce font size on smaller screens */
+    /* }
+} */

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G-Haus Corporation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+</head>
+
+<body>
+    <nav>
+        <ul  class="sidebar">
+            <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" class="custom-svg1">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="#">Solutions</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <ul>
+            
+            <li class="company-logo" onclick="navigateToHomePage()">
+                <img src="./assets/company-logo.png" alt="Company Logo">
+            </li>
+            <!-- <li><a href="#">G-Haus Corporation</a></li> -->
+            <!-- no hideonmobile class for the above element cause we dont want the logo to disappear -->
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="#">Solutions</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li class = "menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px"  class="custom-svg2">
+                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+        </ul>
+    </nav>
+
+
+
+
+
+  
+<section id="home">
+    <div class="sky-pic">
+    
+        <!-- <img src="./assets/picture1.png" alt="Skyline Picture"> -->
+         <video autoplay muted loop class="video1">
+         <source src="./assets/video-2.mp4" type="video/mp4">
+        </video>
+       
+<div class="home-text">
+    <p class="company-name">
+        G-Haus Corporation
+    </p>
+    <p class="home-text-2">
+        Fire Protection Products and Services
+    </p>
+    <button class="button1" onclick="location.href='./#intro'">Learn More</button>
+</div>
+
+
+
+</div>
+</section>
+
+
+
+<section id="intro">
+    <div class="intro-title">
+        Who We Are 
+    </div>
+    <div class="intro-cons">
+        
+        <!--  text container -->
+    <div class="intro-con-l">
+   
+        <div class="intro-para">
+            G-haus stands as your trusted supplier and solution provider for all your fire protection needs. 
+            Specializing in the supply of exotic products for the fire protection and construction industries, we operate seamlessly across the Middle East and North America.
+        </div>
+        <button class="prod-sect" onclick="location.href='about.html'">More About Us</button>
+        <button class="prod-sect" onclick="location.href='products.html'">See Products</button>
+       
+    </div>
+<!-- pic container -->
+    <div class="intro-con-r">
+        <img src="./assets/overview-pic.png" alt="Overview pic">
+    </div>
+
+   </div>
+
+</div>
+
+</section>
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

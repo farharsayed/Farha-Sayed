@@ -1,0 +1,104 @@
+body {
+    text-align: center;
+    /* margin: 20px; */
+    background-color: white;
+}
+
+
+
+
+
+
+/* title and desc */
+
+.prod-title{
+
+
+    text-align: center; /* Center text */
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Adjust to center */
+    margin: 0 0;
+    font-weight: bold;
+    margin: 0;
+    font-size: 4rem; /* Adjust font size as needed */
+    
+    color:  white; 
+  
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
+
+.video2{
+
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full width of the viewport */
+    height: 50vh; /* Full height of the viewport */
+    object-fit: cover; /* Ensures the video covers the entire area without distortion */
+    z-index: -1; /* Sends the video to the background */
+}
+
+
+
+
+
+
+
+
+
+/* title and desc end*/
+
+
+
+
+
+
+
+/* buttons */
+.product-container {
+    /* margin: 20px;
+    border-radius: 5rem; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.product {
+    /* padding: 10px 20px; */
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 300ms ease;
+    padding: 1rem;
+    /* width: 8rem; */
+    border-radius: 2rem;
+}
+
+.product:hover {
+    background-color: rgb(255, 85, 0);
+    color: white;
+    border-color:white ;
+}
+
+.prod-desc {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    display: none;
+    height: 40vh;
+}
+
+.prod-desc ul{
+    list-style: none;
+}
+.prod-desc li {
+height: 50px;
+}
+.prod-desc li:hover {
+    color: orange;
+    }
+
+/* buttons end */
