@@ -296,3 +296,220 @@ a:hover{
     color:#008e32;
     border-color:#008e32 ;
   } */
+
+
+
+/* github and linkedin icons on homepages */
+  #socials-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+  .icon {
+    cursor: pointer;
+    height: 2.5rem;
+  }
+  
+
+  /* end of profile section */
+
+
+
+  /* about section */
+
+  .about-parts {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* or center */
+    gap: 2rem;
+    padding: 2rem;
+    flex-wrap: wrap; /* for mobile responsiveness */
+  }
+
+
+  .about-title {
+    
+    justify-content: center;
+  }
+  .animated-title {
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+
+.about-title1{
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.animated-title span {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+    will-change: transform;
+  }
+  .animated-title:hover span {
+    transform: scale(1.1);
+    color: #A51C30; 
+  }
+
+    /* intro-text2 animation when first loading page */
+    .animated-title.animate span {
+        animation: scaleInTitle 0.6s ease forwards;
+        /* animation-fill-mode: forwards; */
+      }
+      
+      .animated-title.animate span:nth-child(1) { animation-delay: 0s; }
+      .animated-title.animate span:nth-child(2)  { animation-delay: 0.05s; }
+      .animated-title.animate span:nth-child(3)  { animation-delay: 0.1s; }
+      .animated-title.animate span:nth-child(4) { animation-delay: 0.15s; }
+      .animated-title.animate span:nth-child(5) { animation-delay: 0.2s; }
+      .animated-title.animate span:nth-child(6)  { animation-delay: 0.25s; }
+      .animated-title.animate span:nth-child(7)  { animation-delay: 0.3s; }
+      .animated-title.animate span:nth-child(8) { animation-delay: 0.35s; }
+      .animated-title.animate span:nth-child(9)  { animation-delay: 0.4s; }
+      .animated-title.animate span:nth-child(10) { animation-delay: 0.45s; }
+      .animated-title.animate span:nth-child(11) { animation-delay: 0.5s; }
+      .animated-title.animate span:nth-child(12){ animation-delay: 0.55s; }
+      .animated-title.animate span:nth-child(13) { animation-delay: 0.6s; }
+        /* end of animated-title animation when first loading page */
+    
+
+/* staggered animation for cool effect */
+.animated-title span:nth-child(1) { transition-delay: 0s; }
+.animated-title span:nth-child(2) { transition-delay: 0.03s; }
+.animated-title span:nth-child(3) { transition-delay: 0.06s; }
+.animated-title span:nth-child(4) { transition-delay: 0.09s; }
+.animated-title span:nth-child(5) { transition-delay: 0.12s; }
+.animated-title span:nth-child(6) { transition-delay: 0.15s; }
+.animated-title span:nth-child(7) { transition-delay: 0.18s; }
+.animated-title span:nth-child(8) { transition-delay: 0.21s; }
+.animated-title span:nth-child(9) { transition-delay: 0.24s; }
+.animated-title span:nth-child(10) { transition-delay: 0.27s; }
+.animated-title span:nth-child(11) { transition-delay: 0.3s; }
+.animated-title span:nth-child(12) { transition-delay: 0.33s; }
+.animated-title span:nth-child(13) { transition-delay: 0.36s; }
+/* end of  about-title  */
+
+
+.about-left,
+.about-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+
+
+/* about text left side */
+
+.about-left{
+  text-align: left;
+  gap: 1.5rem; /* optional: spacing between text and buttons */
+  margin: 2% 2%;
+
+}
+
+.about-right {
+  text-align: right;
+}
+
+
+
+/* end of left side */
+
+
+
+/* about right side - slideshow */
+
+.slideshow-container {
+  position: relative;
+  max-width: 700px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.slide {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.caption {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 1.2rem;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem;
+  border-radius: 0 0 12px 12px;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 1rem;
+  font-size: 2rem;
+  color: white;
+  user-select: none;
+  background-color: rgba(0,0,0,0.4);
+  transform: translateY(-50%);
+}
+
+.prev {
+  left: 0;
+  border-radius: 0 5px 5px 0;
+}
+
+.next {
+  right: 0;
+  border-radius: 5px 0 0 5px;
+}
+
+.dots-container {
+  text-align: center;
+  margin-top: 12rem;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 4px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #717171;
+}
+
+.fade {
+  animation: fade 1s ease-in-out;
+}
+
+
+
+
+/* end of about right side slideshow */
