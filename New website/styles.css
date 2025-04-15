@@ -1,0 +1,298 @@
+
+/* the star is for whole page */
+* { 
+    /* margin: 0; */
+    /* padding: 1rem; */
+    cursor: default;
+    background-color:  white;;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+
+html {
+    scroll-behavior: smooth;
+    /* when you select a section, it doesnt automatically go there but scrolls down */
+}
+
+
+
+/* HEADER */
+
+/* Header Styling */
+#header {
+    /* position: fixed; */
+    width: 100%;
+    background-color: white;
+    /* opacity: 50%; */
+    color: black;
+    text-align: center;
+    /* margin-bottom: 100rem; */
+    /* padding: -50px 0; */
+    /* height: 100px; */
+    transition: background-color 0.3s ease, opacity 0.3s ease, height 0.3s ease;
+    z-index: 999;
+    opacity: 1;
+  }
+  
+  
+/* DESKTOP NAVIGATION */
+
+nav, .nav-links {
+    display: flex;
+    /* flexes the nav */
+}
+
+nav {
+    justify-content: space-around;
+    align-items: center;
+    height: 10vh;
+    /* position: fixed; */
+    /* vh = view height, 17% of whole screen, decided for any screen you open it on */
+    margin-bottom: 2%;
+}
+
+
+.nav-links{
+    gap: 2rem;
+    list-style: none;
+    font-size: 1.5rem;
+ 
+}
+
+
+a {
+    color: #28003A;
+  /* rgb(238, 238, 214); */
+    text-decoration: none;
+    text-decoration-color: #28003A;
+}
+a:hover{
+    color:#A51C30;
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    /* offset so the underline is a bit spaced away from the word */
+    text-decoration-color: #A51C30;
+}
+
+
+
+
+/* nav-title Farha R Sayed */
+.nav-title {
+    font-size: 2rem;
+    gap: 2px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  cursor: pointer;
+  user-select: none;
+        /* 👇 Prevent growing/pushing other elements */
+        line-height: 1;
+        height: 2.4rem;
+        overflow: hidden;
+}
+.nav-title span{
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+    will-change: transform;
+  }
+  .nav-title:hover span {
+    transform: scale(1.1);
+    color: #A51C30; 
+  }
+
+  /* nav-title animation when first loading page */
+  .nav-title.animate span {
+    animation: scaleInNav 0.6s ease forwards;
+  }
+  
+  .nav-title.animate span:nth-child(1) { animation-delay: 0s; }
+  .nav-title.animate span:nth-child(2)  { animation-delay: 0.05s; }
+  .nav-title.animate span:nth-child(3)  { animation-delay: 0.1s; }
+  .nav-title.animate span:nth-child(4) { animation-delay: 0.15s; }
+  .nav-title.animate span:nth-child(5) { animation-delay: 0.2s; }
+  .nav-title.animate span:nth-child(6)  { animation-delay: 0.25s; }
+  .nav-title.animate span:nth-child(7)  { animation-delay: 0.3s; }
+  .nav-title.animate span:nth-child(8) { animation-delay: 0.35s; }
+  .nav-title.animate span:nth-child(9)  { animation-delay: 0.4s; }
+  .nav-title.animate span:nth-child(10) { animation-delay: 0.45s; }
+  .nav-title.animate span:nth-child(11) { animation-delay: 0.5s; }
+  .nav-title.animate span:nth-child(12){ animation-delay: 0.55s; }
+  .nav-title.animate span:nth-child(13) { animation-delay: 0.6s; }
+    /* end of nav-title animation when first loading page */
+
+/* staggered animation for cool effect */
+.nav-title span:nth-child(1) { transition-delay: 0s; }
+.nav-title span:nth-child(2) { transition-delay: 0.03s; }
+.nav-title span:nth-child(3) { transition-delay: 0.06s; }
+.nav-title span:nth-child(4) { transition-delay: 0.09s; }
+.nav-title span:nth-child(5) { transition-delay: 0.12s; }
+.nav-title span:nth-child(6) { transition-delay: 0.15s; }
+.nav-title span:nth-child(7) { transition-delay: 0.18s; }
+.nav-title span:nth-child(8) { transition-delay: 0.21s; }
+.nav-title span:nth-child(9) { transition-delay: 0.24s; }
+.nav-title span:nth-child(10) { transition-delay: 0.27s; }
+.nav-title span:nth-child(11) { transition-delay: 0.3s; }
+.nav-title span:nth-child(12) { transition-delay: 0.33s; }
+.nav-title span:nth-child(13) { transition-delay: 0.36s; }
+/* end of  nav-title Farha R Sayed */
+
+
+  
+  
+/* home section start */
+
+#home {
+    display: flex;
+    /* justify-content: center; */
+    gap: 5rem;
+    height: 80vh;
+    margin-top: 7%;
+    margin-left: 6%;
+   
+  }
+
+/* profile pic */
+.pfp {
+    border-radius: 0rem;
+    margin: 0 auto;
+    object-fit: cover;
+    display: flex;
+    /* width: 25%;
+    margin: 7% 8%;  */
+    height: 400px;
+    width: 400px;
+    justify-content: flex-end;
+}
+/* end profile pic */
+
+.home-rightside{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* optional: center buttons under the text */
+    gap: 1.5rem; /* optional: spacing between text and buttons */
+}
+
+.intro-text {                                      
+    margin-top: 4%;
+    /* text-align: left; */
+    /* margin-left: 5rem; */
+    
+    /* margin: auto 0;
+    align-self: center; */
+    /* text-align: left; */
+    text-align: center;
+}
+
+.intro-text1 {
+    
+    font-size: 2rem;
+    font-weight: 500;
+    /* text-align: center; */
+    margin-bottom: 2%;
+    
+}
+
+/* intro-text2 title Farha R Sayed */
+.intro-text2 {
+    font-size: 5rem;
+    gap: 2px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+    /* user-select: none; */
+    margin-bottom: 1rem;
+  
+    /* 👇 Locks the layout to prevent movement */
+    /* line-height: 1;
+    height: 2.4rem;
+    overflow: hidden; */
+}
+
+.intro-text2 span {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+    will-change: transform;
+  }
+ .intro-text2:hover span {
+    transform: scale(1.1);
+    color: #FF4F00; 
+  }
+
+    /* intro-text2 animation when first loading page */
+    .intro-text2.animate span {
+        animation: scaleInIntro 0.6s ease forwards;
+        /* animation-fill-mode: forwards; */
+      }
+      
+      .intro-text2.animate span:nth-child(1) { animation-delay: 0s; }
+      .intro-text2.animate span:nth-child(2)  { animation-delay: 0.05s; }
+      .intro-text2.animate span:nth-child(3)  { animation-delay: 0.1s; }
+      .intro-text2.animate span:nth-child(4) { animation-delay: 0.15s; }
+      .intro-text2.animate span:nth-child(5) { animation-delay: 0.2s; }
+      .intro-text2.animate span:nth-child(6)  { animation-delay: 0.25s; }
+      .intro-text2.animate span:nth-child(7)  { animation-delay: 0.3s; }
+      .intro-text2.animate span:nth-child(8) { animation-delay: 0.35s; }
+      .intro-text2.animate span:nth-child(9)  { animation-delay: 0.4s; }
+      .intro-text2.animate span:nth-child(10) { animation-delay: 0.45s; }
+      .intro-text2.animate span:nth-child(11) { animation-delay: 0.5s; }
+      .intro-text2.animate span:nth-child(12){ animation-delay: 0.55s; }
+      .intro-text2.animate span:nth-child(13) { animation-delay: 0.6s; }
+        /* end of intro-text2 animation when first loading page */
+    
+
+/* staggered animation for cool effect */
+.intro-text2 span:nth-child(1) { transition-delay: 0s; }
+.intro-text2 span:nth-child(2) { transition-delay: 0.03s; }
+.intro-text2 span:nth-child(3) { transition-delay: 0.06s; }
+.intro-text2 span:nth-child(4) { transition-delay: 0.09s; }
+.intro-text2 span:nth-child(5) { transition-delay: 0.12s; }
+.intro-text2 span:nth-child(6) { transition-delay: 0.15s; }
+.intro-text2 span:nth-child(7) { transition-delay: 0.18s; }
+.intro-text2 span:nth-child(8) { transition-delay: 0.21s; }
+.intro-text2 span:nth-child(9) { transition-delay: 0.24s; }
+.intro-text2 span:nth-child(10) { transition-delay: 0.27s; }
+.intro-text2 span:nth-child(11) { transition-delay: 0.3s; }
+.intro-text2 span:nth-child(12) { transition-delay: 0.33s; }
+.intro-text2 span:nth-child(13) { transition-delay: 0.36s; }
+/* end of  intro-title Farha R Sayed */
+
+
+
+.intro-text3 {
+   
+    font-size: 1.4rem;
+}
+
+
+/* home-buttons */
+.home-btns {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .home-btn1, .home-btn2 {
+    font-weight: 600;
+    transition: all 300ms ease;
+    padding: 1rem;
+    width: 8rem;
+    border-radius: 2rem;
+  }
+  .home-btn1:hover, 
+  .home-btn2:hover {
+    cursor: pointer;
+  }
+
+  .home-btn1:hover, .home-btn2:hover {
+    color:#FF4F00;
+    border-color:#FF4F00 ;
+  }
+  /* .home-btn2:hover {
+    color:#008e32;
+    border-color:#008e32 ;
+  } */

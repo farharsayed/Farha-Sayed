@@ -1,0 +1,74 @@
+
+
+
+
+/* for animated nav-title on hover Farha R Sayed */
+@media (max-width: 768px) {
+    .nav-title {
+      font-size: 1.5rem;
+    }
+    .nav-title:hover span {
+      transform: scale(1.2);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .nav-title {
+      font-size: 1.2rem;
+    }
+    .nav-title:hover span {
+      transform: scale(1.1);
+    }
+  }
+  
+  /* for the effect on nav-title on first loading the page */
+  @keyframes scaleInNav {
+    0% {
+      transform: scale(1);
+      color: inherit;
+    }
+    50% {
+      transform: scale(1.2);
+      color: #A51C30; /* red shade */
+    }
+    100% {
+      transform: scale(1);
+      color: inherit;
+    }
+  }
+
+  /* for animated intro-text2 on hover title Farha R Sayed */
+@media (max-width: 768px) {
+    .intro-text2 {
+      font-size: 1.5rem;
+    }
+    .intro-text2:hover span {
+      transform: scale(1.2);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .intro-text2 {
+      font-size: 1.2rem;
+    }
+    .intro-text2:hover span {
+      transform: scale(1.1);
+    }
+  }
+
+/* for the effect on intro-text2 on first loading the page */
+  
+  @keyframes scaleInIntro {
+    0% {
+      transform: scale(1);
+      color: inherit;
+    }
+    50% {
+      transform: scale(1.2);
+      color: #FF4F00; /* blue shade (or whatever you want) */
+    }
+    100% {
+      transform: scale(1);
+      color: inherit;
+    }
+  }
