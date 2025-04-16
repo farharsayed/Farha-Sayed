@@ -77,33 +77,34 @@
 
    /* for all animated titles */
 @media (max-width: 768px) {
-  .intro-text2 {
+  .animated-title {
     font-size: 1.5rem;
   }
-  .intro-text2:hover span {
+  .animated-title:hover span {
     transform: scale(1.2);
   }
 }
 
 @media (max-width: 480px) {
-  .intro-text2 {
+  .animated-title {
     font-size: 1.2rem;
   }
-  .intro-text2:hover span {
+  .animated-title:hover span {
     transform: scale(1.1);
   }
 }
 
 /* for all animated titles  on first loading the page */
 
-@keyframes scaleInTitle {
+
+@keyframes scaleInAbout {
   0% {
     transform: scale(1);
     color: inherit;
   }
   50% {
     transform: scale(1.2);
-    color: #FF4F00; /* blue shade (or whatever you want) */
+    color: #04d9ff    ; /* blue shade (or whatever you want) */
   }
   100% {
     transform: scale(1);
@@ -122,3 +123,58 @@
 }
 
 /* end of about right side slideshow */
+
+
+
+
+
+
+  /* animation of small arrow */
+  @keyframes bounceDown {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0) rotate(-45deg);
+    }
+    40% {
+      transform: translateY(6px) rotate(-45deg);  /* was 10px */
+    }
+    60% {
+      transform: translateY(3px) rotate(-45deg);  /* was 5px */
+    }
+  }
+  
+  /* end of small arrow  */ 
+
+
+  /* experience */
+  @keyframes scaleInExperience {
+    0% {
+      transform: scale(1);
+      color: inherit;
+    }
+    50% {
+      transform: scale(1.2);
+      color: #8a00c4    ; /* blue shade (or whatever you want) */
+    }
+    100% {
+      transform: scale(1);
+      color: inherit;
+    }
+  }
+     /* for all animated titles */
+@media (max-width: 768px) {
+  .exp-title2 {
+    font-size: 1.5rem;
+  }
+  .exp-title2:hover span {
+    transform: scale(1.2);
+  }
+}
+
+@media (max-width: 480px) {
+  .exp-title2 {
+    font-size: 1.2rem;
+  }
+  .exp-title2:hover span {
+    transform: scale(1.1);
+  }
+}
