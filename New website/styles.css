@@ -490,7 +490,9 @@ a:hover{
   height: 400px;
   width: 400px;
   /* justify-content: flex-end; */
-  border: 2px solid black; /* change thickness + color */
+  /* border: 2px solid black;  */
+  /* change thickness + color */
+  border-radius: 2px;
   
 }
 .about-pic {
@@ -509,7 +511,14 @@ a:hover{
 
 #experience {
   padding-top: 2rem;
-  min-height: 100vh;
+  min-height: 90vh;
+  /* padding: 2rem; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* min-height: 80vh; */
+  justify-content: space-between;
+  position: relative;
 
 }
 
@@ -569,3 +578,142 @@ a:hover{
 .exp-title2 span:nth-child(12) { transition-delay: 0.33s; }
 .exp-title2 span:nth-child(13) { transition-delay: 0.36s; }
 /* end of exp-title2 transition delay block */
+
+
+
+
+/* exp content */
+
+
+
+.experience-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.experience-display {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.experience-img img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.experience-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.experience-timeline {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  border-top: 1px solid #ccc;
+}
+
+.experience-timeline .year {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+}
+
+.experience-timeline .year:hover {
+  background-color: #ddd;
+}
+/* 
+.experience-display img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.experience-display {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.experience-img img {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.experience-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+
+.experience-content {
+  text-align: center;
+  margin-bottom: 2rem;
+  border: 3px solid #28003A;
+
+}
+
+.exp-description {
+  margin-top: 1rem;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.timeline-scroll {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  overflow-x: auto;
+  width: 100%;
+  padding: 1rem;
+  border-top: 2px solid #ccc;
+  /* position: sticky; 
+  bottom: 0;
+  background-color: #fff;
+  z-index: 10;
+  scrollbar-width: none; /* Firefox 
+}
+
+.timeline-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.timeline-year {
+  flex-shrink: 0;
+  padding: 1rem 2rem;
+  border-radius: 999px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.timeline-year:hover,
+.timeline-year.active {
+  background-color: #A51C30;
+  color: #fff;
+} */
+
+
+
+
+
+

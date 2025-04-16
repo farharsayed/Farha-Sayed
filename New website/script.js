@@ -105,56 +105,58 @@ animElements.forEach((el) => {
 // }
 
 
-  // about right side slideshow
 
-  // let slideIndex = 0;
-  // let slideInterval;
-  // const slides = document.getElementsByClassName("slide");
-  // const dots = document.getElementsByClassName("dot");
-  // const slideshowContainer = document.getElementById("slideshow");
-  
-  // function showSlide(n) {
-  //   for (let i = 0; i < slides.length; i++) {
-  //     slides[i].style.display = "none";
-  //   }
-  
-  //   for (let i = 0; i < dots.length; i++) {
-  //     dots[i].classList.remove("active");
-  //   }
-  
-  //   slides[n].style.display = "block";
-  //   dots[n].classList.add("active");
-  // }
-  
-  // function nextSlide() {
-  //   slideIndex = (slideIndex + 1) % slides.length;
-  //   showSlide(slideIndex);
-  // }
-  
-  // function plusSlides(n) {
-  //   slideIndex = (slideIndex + n + slides.length) % slides.length;
-  //   showSlide(slideIndex);
-  // }
-  
-  // function currentSlide(n) {
-  //   slideIndex = n - 1;
-  //   showSlide(slideIndex);
-  // }
-  
-  // function startSlideShow() {
-  //   slideInterval = setInterval(nextSlide, 4000);
-  // }
-  
-  // function stopSlideShow() {
-  //   clearInterval(slideInterval);
-  // }
-  
-  // slideshowContainer.addEventListener("mouseenter", stopSlideShow);
-  // slideshowContainer.addEventListener("mouseleave", startSlideShow);
-  
-  // // Initialize
-  // showSlide(slideIndex);
-  // startSlideShow();
-  
-// end of about right side slideshow
-  
+// experience content
+const experienceData = {
+  2025: {
+    title: "Gulf Business Machines - Infrastructure and Cyber Security Engineer",
+    dates: "Nov 2024 - Present",
+    description: `● Provided security solutions for endpoint, network, servers and cloud email security to customers including MBZ University of Artificial Intelligence, ICP, ADEK, ADJD etc.
+    ● Collaborated with vendors to implement products such as Trend Micro XDR/EDR and ASM, FortiSASE, BeyondTrust PRA, Cisco User Protection Suite etc.
+    ● Executed the major rollout on several projects, managing up to 15,000 endpoints and servers
+    ● Followed entire project lifecycles from pre-sales to documentation and closure.`,
+    
+    image: "./assets/exp-pic1.jpg",
+  },
+  2024: {
+    title: "Software Developer – ABC Corp",
+    dates: "Jan 2024 – Present",
+    description: "Worked on backend systems and cloud infrastructure at ABC Corp.",
+    image: "./assets/exp-pic2.jpg",
+  },
+  2022: {
+    title: "Intern – XYZ Ltd.",
+    dates: "Jun 2022 – Sep 2022",
+    description: "Assisted in full-stack development and QA testing.",
+    image: "./assets/exp2022.jpg",
+  },
+  2020: {
+    title: "Student Assistant – University of Leeds",
+    dates: "Sep 2020 – May 2021",
+    description: "Supported students in CS labs and tutoring sessions.",
+    image: "./assets/exp2020.jpg",
+  },
+};
+const years = document.querySelectorAll(".year");
+const expTitle = document.getElementById("exp-title");
+const expDates = document.getElementById("exp-dates");
+const expDescription = document.getElementById("exp-description");
+const expImage = document.getElementById("exp-image");
+
+years.forEach((yearDiv) => {
+  yearDiv.addEventListener("click", () => {
+    const selectedYear = yearDiv.dataset.year;
+    const data = experienceData[selectedYear];
+
+    if (data) {
+      expTitle.textContent = data.title;
+      expDates.textContent = data.dates;
+      expDescription.textContent = data.description;
+      expImage.src = data.image;
+      expImage.alt = `${data.title} image`;
+    }
+  });
+});
+
+
+// end of experience content
