@@ -1,0 +1,169 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  annotations:
+    app: loki-simple-scalable
+  labels:
+    app: loki-simple-scalable
+    component: gateway
+    app.kubernetes.io/managed-by: Helm
+  name: nginx
+  namespace: farhatemp
+
+# gateway:
+#   enabled: true
+#   replicas: 2
+#   containerPort: 8080
+#   verboseLogging: true 
+#   autoscaling: 
+#     enabled: false
+    # minReplicas: 
+    # maxReplicas:
+
+
+
+      # proxy_read_timeout    600; ## 10 minutes
+      # proxy_send_timeout    600;
+      # proxy_connect_timeout 600;
+        # listen             80;
+        # listen             3100;
+        # backendHost: loki-ss-backend
+        # readHost: loki-ss-read-05
+        # writeHost: loki-ss-write 
+
+        
+        # writeUrl: <write url>
+        # readUrl: <read url>
+        # backendUrl: <backend url>
+
+data:
+  nginx.conf: |
+    worker_processes  5;  ## Default: 1, came as 5
+    error_log  /dev/stderr;
+    pid        /tmp/nginx.pid;
+    worker_rlimit_nofile 8192;
+    events {
+      worker_connections  4096;  ## Default: 1024, but was 4096
+    }
+
+
+    http {
+      client_body_temp_path /tmp/client_temp;
+      proxy_temp_path       /tmp/proxy_temp_path;
+      fastcgi_temp_path     /tmp/fastcgi_temp;
+      uwsgi_temp_path       /tmp/uwsgi_temp;
+      scgi_temp_path        /tmp/scgi_temp;
+      keepalive_timeout  200;
+      # keepalive_timeout  65;
+      proxy_http_version    1.1;
+
+      default_type application/octet-stream;
+      log_format   main '$remote_addr - $remote_user [$time_local]  $status '
+            '"$request" $body_bytes_sent "$http_referer" '
+            '"$http_user_agent" "$http_x_forwarded_for"';
+      access_log   /dev/stderr  main;
+
+      sendfile     on;
+      tcp_nopush   on;
+      # resolver kubelet.kube-system.svc.cluster.local;
+      resolver <resolver details>;
+
+      server {
+        listen             8080;
+        server_name  localhost;
+
+        location = / {
+          return 200 'OK';
+          auth_basic off;
+          index index.html index.html;   
+        }
+       
+
+        location = /api/prom/push {
+          proxy_pass       <write url>$request_uri;
+        }
+
+        location = /api/prom/tail {
+          proxy_pass       <read url>$request_uri;
+          proxy_set_header Upgrade $http_upgrade;
+          proxy_set_header Connection "upgrade";
+        }
+
+        location ~ /api/prom/.* {
+          proxy_pass       <read url>$request_uri;
+        }
+
+        location ~ /prometheus/api/v1/alerts.* {
+          proxy_pass       <backend url>$request_uri;
+        }
+
+        location ~ /prometheus/api/v1/rules.* {
+          proxy_pass       <backend url>$request_uri;
+        }
+
+        location = /loki/api/v1/push {
+          proxy_pass       <write url>$request_uri;
+        }
+
+        location = /loki/api/v1/tail {
+          proxy_pass       <read headless url>$request_uri;
+          proxy_set_header Upgrade $http_upgrade;
+          proxy_set_header Connection "upgrade";
+        }
+
+        location ~ /loki/api/.* {
+          proxy_pass       <read url>$request_uri;
+        }
+
+        location ~ /compactor/.* {
+          proxy_pass       <backend url>$request_uri;
+        }
+
+        location ~ /distributor/.* {
+          proxy_pass       <write url>$request_uri;
+        }
+
+        location ~ /ring {
+          proxy_pass       <write url>$request_uri;
+        }
+
+        location ~ /ingester/.* {
+          proxy_pass       <write url>$request_uri;
+        }
+
+        location ~ /ruler/.* {
+          proxy_pass       <backend url>$request_uri;
+        }
+
+        location ~ /scheduler/.* {
+          proxy_pass       <backend url>$request_uri;
+        }
+        
+
+        location ~ /store-gateway/.* {
+          proxy_pass       <backend url>$request_uri;
+    }
+
+
+        location ~ /query-scheduler/.* {
+          proxy_pass       <backend url>$request_uri;
+    }
+
+        location ~ /admin/api/.* {
+          proxy_pass       <write url>$request_uri;
+        }
+
+      }
+      server {
+        listen 3105;
+        proxy_set_header     X-Scope-OrgID docker-ha;
+
+        #    location ~ /loki/api/.* {
+        #        proxy_pass       <read url>$request_uri;
+        #    }
+        location ~ /loki/api/.* {
+            proxy_pass       <read url>$request_uri;
+         
+        }
+      }
+    }

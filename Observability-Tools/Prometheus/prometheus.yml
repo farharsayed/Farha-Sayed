@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: prometheus-deployment
+  name: prometheus-deployment
+  namespace: farhatemp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prometheus
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: prometheus
+    spec:
+      containers:
+      - image: prom/prometheus 
+      # image is from the hub
+        name: prometheus
+        resources: {}
+        ports:
+          - containerPort: 9090
+#"the port that the containers will listen on
+#what's happening below this
+        volumeMounts:
+          - name: nfs-prometheus-local
+            mountPath: /data/
+          - name: prometheus-config
+            mountPath: /prometheus/
+#            subpath: prometheus
+
+        command: 
+          - "/bin/prometheus" 
+          - "--storage.tsdb.path=/data"
+#          - "--config.file=/local/prometheus-config.yml"
+          - "--storage.tsdb.retention.time"
+          - "90d"
+      volumes:
+        - name: nfs-prometheus-local
+          persistentVolumeClaim:
+            claimName: grafana-storage
+        - name: prometheus-config
+          configMap:
+            name: prometheus-config
+            defaultMode: 420
+#      serviceAccountName: prometheus

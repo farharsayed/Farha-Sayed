@@ -1,0 +1,105 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: loki-ss-gateway
+  namespace: farhatemp
+  labels:
+    app: loki-simple-scalable
+    service: gateway
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: loki-simple-scalable
+      service: gateway
+  template:
+    metadata:
+      annotations:
+        checksum/config: <xyz>
+      labels:
+        app: loki-simple-scalable
+        service: gateway
+    spec:
+  #     serviceAccountName: loki
+      securityContext:
+        fsGroup: 101
+        runAsGroup: 101
+        runAsNonRoot: true
+        runAsUser: 101
+      terminationGracePeriodSeconds: 30
+      containers:
+        - image: <image for nginxinc/nginx-unprivileged5:1.24-alpine>
+          name: nginx
+          resources: 
+            {}
+          imagePullPolicy: Always
+          # command: 
+          #  - "nginx"
+          #  - "-c"
+          #  - "/etc/nginx/nginx.conf"
+          commands: 
+           - command: "/bin/sh"
+             args: chmod 777 /tmp/nginx.pid
+           - command: "nginx -c /etc/nginx/nginx.conf"
+          #  - command: "-target=backend"
+          #  - "chmod 777 /tmp/nginx.pid"
+          #  - "-c /etc/nginx/nginx.conf"
+          #  - "-target=backend"
+          ports:
+            - name: nginx-port
+              containerPort: 8080
+              protocol: TCP
+          verboseLogging: true 
+          # readinessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: http
+          #   initialDelaySeconds: 15
+          #   timeoutSeconds: 1
+          volumeMounts:
+            - name: loki-storage
+              mountPath: /tmp
+            - name: nginx
+              mountPath: /etc/nginx
+            # - name: docker-entrypoint-d-override
+            #   mountPath: /docker-entrypoint.d
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+              - ALL
+            readOnlyRootFilesystem: false
+            # if you make read only root filesystem false
+      volumes:
+      - name: loki-storage
+        persistentVolumeClaim:
+          claimName: loki-storage
+      - name: nginx
+        configMap:
+          name: nginx
+          defaultMode: 420
+      - emptyDir: {}
+        name: tmp
+      
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: loki-ss-gateway
+  labels:
+    app: loki-simple-scalable
+    service: gateway
+    app.kubernetes.io/managed-by: Helm
+spec:
+  type: ClusterIP
+  ports:
+    - name: nginx-port
+      port: 80
+      targetPort: nginx-port
+      protocol: TCP
+  selector:
+    service: gateway

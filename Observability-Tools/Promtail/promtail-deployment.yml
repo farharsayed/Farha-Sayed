@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: promtail
+  name: promtail
+  namespace: farhatemp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: promtail
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: promtail
+    spec:
+      containers:
+      - image: grafana/promtail
+        name: promtail
+        resources: {}
+
+
+        commands: 
+         - "-config.file" 
+         - "/etc/promtail/config.yml"
+       #   - "/usr/local/bin/promtail" 
+        #  - "-config.file /promtail/promtail-config.yml"
+        ports:
+          - containerPort: 3101
+        volumeMounts:
+          - name: config
+            mountPath: /etc/promtail
+
+      volumes:
+        - name: config
+          configMap:
+            name: config
+            defaultMode: 420
+
+

@@ -1,0 +1,88 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: loki-ss-write
+  labels:
+    app: loki-simple-scalable
+    service: write
+    app.kubernetes.io/managed-by: Helm
+spec:
+  replicas: 3
+  targetModule: "write"
+  podManagementPolicy: Parallel
+  updateStrategy:
+    rollingUpdate:
+      partition: 0
+  serviceName: loki-ss-write
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: loki-simple-scalable
+      service: write
+  template:
+    metadata:
+      labels:
+        app: loki-simple-scalable
+        service: write
+    spec:
+      securityContext:
+        fsGroup: 0
+        runAsGroup: 0
+        runAsNonRoot: false
+        runAsUser: 0
+      terminationGracePeriodSeconds: 300
+      containers:
+        - image: grafana/loki
+          name: loki-ss-write
+          imagePullPolicy: Always
+          args: 
+            - '-config.file' 
+            - '/etc/loki/local-config.yml'
+            - '-target=write'
+          ports:
+            - name: write-port
+              containerPort: 3105
+              protocol: TCP
+            - name: grpc
+              containerPort: 9095
+              protocol: TCP
+            - name: http-memberlist
+              containerPort: 7946
+              protocol: TCP
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+              - ALL
+            readOnlyRootFilesystem: false
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: 3105
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 3
+          volumeMounts:
+            - name: loki-ss-storage
+              mountPath: /var/loki
+            - name: local-config
+              mountPath: /etc/loki
+          resources:
+            {}
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchLabels:
+                  service: write
+                  app: loki-simple-scalable
+              topologyKey: kubernetes.io/hostname
+
+      volumes:
+        - name: loki-ss-storage
+          persistentVolumeClaim:
+            claimName: loki-ss-storage
+        - name: local-config
+          configMap:
+            name: local-config
+            defaultMode: 420

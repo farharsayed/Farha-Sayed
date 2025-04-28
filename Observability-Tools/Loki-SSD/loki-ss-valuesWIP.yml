@@ -1,0 +1,725 @@
+global:
+  image:
+    # -- Overrides the Docker registry globally for all images
+    registry: null
+  # -- Overrides the priorityClassName for all pods
+  priorityClassName: null
+  # -- configures cluster domain ("cluster.local" by default)
+  clusterDomain: "apps.<xyz>.openshift.local"
+  # -- configures DNS service name
+  dnsService: "<dns-service>"
+  # -- configures DNS service namespace
+  dnsNamespace: "<dns-ns>"
+# -- Overrides the chart's name
+nameOverride: null
+# -- Overrides the chart's computed fullname
+fullnameOverride: null
+# -- Overrides the chart's cluster label
+clusterLabelOverride: null
+# -- Image pull secrets for Docker images
+imagePullSecrets: []
+# -- Deployment mode lets you specify how to deploy Loki.
+# There are 3 options:
+# - SingleBinary: Loki is deployed as a single binary, useful for small installs typically without HA, up to a few tens of GB/day.
+# - SimpleScalable: Loki is deployed as 3 targets: read, write, and backend. Useful for medium installs easier to manage than distributed, up to a about 1TB/day.
+# - Distributed: Loki is deployed as individual microservices. The most complicated but most capable, useful for large installs, typically over 1TB/day.
+# There are also 2 additional modes used for migrating between deployment modes:
+# - SingleBinary<->SimpleScalable: Migrate from SingleBinary to SimpleScalable (or vice versa)
+# - SimpleScalable<->Distributed: Migrate from SimpleScalable to Distributed (or vice versa)
+# Note: SimpleScalable and Distributed REQUIRE the use of object storage.
+deploymentMode: SimpleScalable
+######################################################################################################################
+#
+# Loki Configs
+#
+######################################################################################################################
+# -- Configuration for running Loki
+# @default -- See values.yaml
+loki:
+  # Configures the readiness probe for all of the Loki pods
+  readinessProbe:
+    httpGet:
+      path: /ready
+      port: http-metrics
+    initialDelaySeconds: 30
+    timeoutSeconds: 1
+  image:
+    # -- The Docker registry
+    registry: <the-docker-registry (nexus here)>
+    # -- Docker image repository
+    repository: null
+    # -- Overrides the image tag whose default is the chart's appVersion
+    # TODO: needed for 3rd target backend functionality
+    # revert to null or latest once this behavior is relased
+    tag: null
+    # -- Overrides the image tag with an image digest
+    digest: null
+    # -- Docker image pull policy
+    pullPolicy: Always
+  # -- Common annotations for all deployments/StatefulSets
+  annotations: {}
+  # -- Common annotations for all pods
+  podAnnotations: {}
+  # -- Common labels for all pods
+  podLabels: {}
+  # -- Common annotations for all services
+  serviceAnnotations: {}
+  # -- Common labels for all services
+  serviceLabels: {}
+  # -- The number of old ReplicaSets to retain to allow rollback
+  revisionHistoryLimit: 10
+  # -- The SecurityContext for Loki pods
+  podSecurityContext:
+    fsGroup: 10001
+    runAsGroup: 10001
+    runAsNonRoot: true
+    runAsUser: 10001
+  # -- The SecurityContext for Loki containers
+  containerSecurityContext:
+    readOnlyRootFilesystem: true
+    capabilities:
+      drop:
+        - ALL
+    allowPrivilegeEscalation: false
+  # -- Should enableServiceLinks be enabled. Default to enable
+  enableServiceLinks: true
+  
+######################################################################################################################
+#
+# Global memberlist configuration
+#
+######################################################################################################################
+
+# Configuration for the memberlist service
+memberlist:
+  service:
+    publishNotReadyAddresses: false
+
+######################################################################################################################
+#
+# Gateway and Ingress
+#
+# default:nginx as gateway
+# alternative: disable and use k8s ingress
+#
+######################################################################################################################
+
+# Configuration for the gateway
+gateway:
+  # -- Specifies whether the gateway should be enabled
+  enabled: true
+  # -- Number of replicas for the gateway
+  replicas: 1
+  # -- Default container port
+  containerPort: 8080
+  # -- Enable logging of 2xx and 3xx HTTP requests
+  verboseLogging: true
+  autoscaling:
+    # -- Enable autoscaling for the gateway
+    enabled: false
+    # -- Minimum autoscaling replicas for the gateway
+    minReplicas: 1
+    # -- Maximum autoscaling replicas for the gateway
+    maxReplicas: 3
+    # -- Target CPU utilisation percentage for the gateway
+    targetCPUUtilizationPercentage: 60
+    # -- Target memory utilisation percentage for the gateway
+    targetMemoryUtilizationPercentage:
+    # -- See `kubectl explain deployment.spec.strategy` for more
+    # -- ref: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#strategy
+    # -- Behavior policies while scaling.
+    behavior: {}
+  deploymentStrategy:
+    type: RollingUpdate
+  image:
+    # -- The Docker registry for the gateway image
+    registry: <docker-registry, add nexus>
+    # -- The gateway image repository
+    repository: <repo>
+    # -- The gateway image tag
+    tag: <tag>
+    # -- Overrides the gateway image tag with an image digest
+    digest: null
+    # -- The gateway image pull policy
+    pullPolicy: Always
+  # -- The name of the PriorityClass for gateway pods
+  priorityClassName: null
+  # -- Annotations for gateway deployment
+  annotations: {}
+  # -- Annotations for gateway pods
+  podAnnotations: {}
+  # -- Additional labels for gateway pods
+  podLabels: {}
+  # -- Additional CLI args for the gateway
+  extraArgs: []
+  # -- Environment variables to add to the gateway pods
+  extraEnv: []
+  # -- Environment variables from secrets or configmaps to add to the gateway pods
+  extraEnvFrom: []
+  # -- Lifecycle for the gateway container
+  lifecycle: {}
+  # -- Volumes to add to the gateway pods
+  extraVolumes: []
+  # -- Volume mounts to add to the gateway pods
+  extraVolumeMounts: []
+  # -- The SecurityContext for gateway containers
+  podSecurityContext:
+    fsGroup: 101
+    runAsGroup: 101
+    runAsNonRoot: true
+    runAsUser: 101
+  # -- The SecurityContext for gateway containers
+  containerSecurityContext:
+    readOnlyRootFilesystem: true
+    capabilities:
+      drop:
+        - ALL
+    allowPrivilegeEscalation: false
+  # -- Resource requests and limits for the gateway
+  resources: {}
+  # -- Containers to add to the gateway pods
+  extraContainers: []
+  # -- Grace period to allow the gateway to shutdown before it is killed
+  terminationGracePeriodSeconds: 30
+  # -- Affinity for gateway pods.
+  # @default -- Hard node anti-affinity
+  affinity:
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchLabels:
+              app.kubernetes.io/component: gateway
+          # topologyKey: kubernetes.io/hostname
+  # -- DNS config for gateway pods
+  dnsConfig: {}
+  # -- Node selector for gateway pods
+  nodeSelector: {}
+  # -- Topology Spread Constraints for gateway pods
+  topologySpreadConstraints: []
+  # -- Tolerations for gateway pods
+  tolerations: []
+  # Gateway service configuration
+  service:
+    # -- Port of the gateway service
+    port: 80
+    # -- Type of the gateway service
+    type: ClusterIP
+    # -- ClusterIP of the gateway service
+    clusterIP: null
+    # -- (int) Node port if service type is NodePort
+    nodePort: null
+    # -- Load balancer IPO address if service type is LoadBalancer
+    loadBalancerIP: null
+    # -- Annotations for the gateway service
+    annotations: {}
+    # -- Labels for gateway service
+    labels: {}
+  # Gateway ingress configuration
+  ingress:
+    # -- Specifies whether an ingress for the gateway should be created
+    enabled: false
+    # -- Ingress Class Name. MAY be required for Kubernetes versions >= 1.18
+    ingressClassName: ""
+    # -- Annotations for the gateway ingress
+    annotations: {}
+    # -- Labels for the gateway ingress
+    labels: {}
+    # -- Hosts configuration for the gateway ingress, passed through the `tpl` function to allow templating
+    hosts:
+      - host: gateway.loki.example.com
+        paths:
+          - path: /
+            # -- pathType (e.g. ImplementationSpecific, Prefix, .. etc.) might also be required by some Ingress Controllers
+            # pathType: Prefix
+    # -- TLS configuration for the gateway ingress. Hosts passed through the `tpl` function to allow templating
+    tls:
+      - secretName: loki-gateway-tls
+        hosts:
+          - gateway.loki.example.com
+  # Basic auth configuration
+  basicAuth:
+    # -- Enables basic authentication for the gateway
+    enabled: false
+    # -- The basic auth username for the gateway
+    username: null
+    # -- The basic auth password for the gateway
+    password: null
+    # -- Uses the specified users from the `loki.tenants` list to create the htpasswd file.
+    # if `loki.tenants` is not set, the `gateway.basicAuth.username` and `gateway.basicAuth.password` are used.
+    # The value is templated using `tpl`. Override this to use a custom htpasswd, e.g. in case the default causes
+    # high CPU load.
+    # @default -- Either `loki.tenants` or `gateway.basicAuth.username` and `gateway.basicAuth.password`.
+    htpasswd: >-
+      {{ if .Values.loki.tenants }}
+
+        {{- range $t := .Values.loki.tenants }}
+      {{ htpasswd (required "All tenants must have a 'name' set" $t.name) (required "All tenants must have a 'password' set" $t.password) }}
+
+        {{- end }}
+      {{ else }} {{ htpasswd (required "'gateway.basicAuth.username' is required" .Values.gateway.basicAuth.username) (required "'gateway.basicAuth.password' is required" .Values.gateway.basicAuth.password) }} {{ end }}
+    # -- Existing basic auth secret to use. Must contain '.htpasswd'
+    existingSecret: null
+  # Configures the readiness probe for the gateway
+  readinessProbe:
+    httpGet:
+      path: /
+      port: http-metrics
+    initialDelaySeconds: 15
+    timeoutSeconds: 1
+  nginxConfig:
+    # -- Which schema to be used when building URLs. Can be 'http' or 'https'.
+    schema: http
+    # -- Enable listener for IPv6, disable on IPv4-only systems
+    enableIPv6: true
+    # -- NGINX log format
+    logFormat: |-
+      main '$remote_addr - $remote_user [$time_local]  $status '
+              '"$request" $body_bytes_sent "$http_referer" '
+              '"$http_user_agent" "$http_x_forwarded_for"';
+    # -- Allows appending custom configuration to the server block
+    serverSnippet: ""
+    # -- Allows appending custom configuration to the http block, passed through the `tpl` function to allow templating
+    httpSnippet: >-
+      {{ if .Values.loki.tenants }}proxy_set_header X-Scope-OrgID $remote_user;{{ end }}
+    # -- Whether ssl should be appended to the listen directive of the server block or not.
+    ssl: false
+    # -- Override Read URL
+    customReadUrl: null
+    # -- Override Write URL
+    customWriteUrl: null
+    # -- Override Backend URL
+    customBackendUrl: null
+    # -- Allows overriding the DNS resolver address nginx will use.
+    resolver: ""
+    # -- Config file contents for Nginx. Passed through the `tpl` function to allow templating
+    # @default -- See values.yaml
+    file: |
+      {{- include "loki.nginxFile" . | indent 2 -}}
+
+# -- Ingress configuration Use either this ingress or the gateway, but not both at once.
+# If you enable this, make sure to disable the gateway.
+# You'll need to supply authn configuration for your ingress controller.
+ingress:
+  enabled: false
+  ingressClassName: ""
+  annotations: {}
+  #    nginx.ingress.kubernetes.io/auth-type: basic
+  #    nginx.ingress.kubernetes.io/auth-secret: loki-distributed-basic-auth
+  #    nginx.ingress.kubernetes.io/auth-secret-type: auth-map
+  #    nginx.ingress.kubernetes.io/configuration-snippet: |
+  #      proxy_set_header X-Scope-OrgID $remote_user;
+  labels: {}
+  #    blackbox.monitoring.exclude: "true"
+  paths:
+    # -- Paths that are exposed by Loki Distributor.
+    # If deployment mode is Distributed, the requests are forwarded to the service: `{{"loki.distributorFullname"}}`.
+    # If deployment mode is SimpleScalable, the requests are forwarded to write k8s service: `{{"loki.writeFullname"}}`.
+    # If deployment mode is SingleBinary, the requests are forwarded to the central/single k8s service: `{{"loki.singleBinaryFullname"}}`
+    distributor:
+      - /api/prom/push
+      - /loki/api/v1/push
+      - /otlp/v1/logs
+    # -- Paths that are exposed by Loki Query Frontend.
+    # If deployment mode is Distributed, the requests are forwarded to the service: `{{"loki.queryFrontendFullname"}}`.
+    # If deployment mode is SimpleScalable, the requests are forwarded to write k8s service: `{{"loki.readFullname"}}`.
+    # If deployment mode is SingleBinary, the requests are forwarded to the central/single k8s service: `{{"loki.singleBinaryFullname"}}`
+    queryFrontend:
+      - /api/prom/query
+      # this path covers labels and labelValues endpoints
+      - /api/prom/label
+      - /api/prom/series
+      - /api/prom/tail
+      - /loki/api/v1/query
+      - /loki/api/v1/query_range
+      - /loki/api/v1/tail
+      # this path covers labels and labelValues endpoints
+      - /loki/api/v1/label
+      - /loki/api/v1/labels
+      - /loki/api/v1/series
+      - /loki/api/v1/index/stats
+      - /loki/api/v1/index/volume
+      - /loki/api/v1/index/volume_range
+      - /loki/api/v1/format_query
+      - /loki/api/v1/detected_fields
+      - /loki/api/v1/detected_labels
+      - /loki/api/v1/patterns
+    # -- Paths that are exposed by Loki Ruler.
+    # If deployment mode is Distributed, the requests are forwarded to the service: `{{"loki.rulerFullname"}}`.
+    # If deployment mode is SimpleScalable, the requests are forwarded to k8s service: `{{"loki.backendFullname"}}`.
+    # If deployment mode is SimpleScalable but `read.legacyReadTarget` is `true`, the requests are forwarded to k8s service: `{{"loki.readFullname"}}`.
+    # If deployment mode is SingleBinary, the requests are forwarded to the central/single k8s service: `{{"loki.singleBinaryFullname"}}`
+    ruler:
+      - /api/prom/rules
+      - /api/prom/api/v1/rules
+      - /api/prom/api/v1/alerts
+      - /loki/api/v1/rules
+      - /prometheus/api/v1/rules
+      - /prometheus/api/v1/alerts
+  # -- Hosts configuration for the ingress, passed through the `tpl` function to allow templating
+  hosts:
+    - loki.example.com
+  # -- TLS configuration for the ingress. Hosts passed through the `tpl` function to allow templating
+  tls: []
+#    - hosts:
+#       - loki.example.com
+#      secretName: loki-distributed-tls
+
+
+######################################################################################################################
+#
+# Simple Scalable Deployment (SSD) Mode
+#
+# For small-medium size Loki deployments, up to around 1 TB/day - this is the default mode for this helm chart
+#
+######################################################################################################################
+
+# Configuration for the write pod(s)
+write:
+  # -- Number of replicas for the write
+  replicas: 3
+  autoscaling:
+    # -- Enable autoscaling for the write.
+    enabled: false
+    # -- Minimum autoscaling replicas for the write.
+    minReplicas: 2
+    # -- Maximum autoscaling replicas for the write.
+    maxReplicas: 6
+    # -- Target CPU utilisation percentage for the write.
+    targetCPUUtilizationPercentage: 60
+    # -- Target memory utilization percentage for the write.
+    targetMemoryUtilizationPercentage:
+    # -- Behavior policies while scaling.
+    behavior:
+      # -- see https://github.com/grafana/loki/blob/main/docs/sources/operations/storage/wal.md#how-to-scale-updown for scaledown details
+      scaleUp:
+        policies:
+          - type: Pods
+            value: 1
+            periodSeconds: 900
+      scaleDown:
+        policies:
+          - type: Pods
+            value: 1
+            periodSeconds: 1800
+        stabilizationWindowSeconds: 3600
+  image:
+    # -- The Docker registry for the write image. Overrides `loki.image.registry`
+    registry: null
+    # -- Docker image repository for the write image. Overrides `loki.image.repository`
+    repository: null
+    # -- Docker image tag for the write image. Overrides `loki.image.tag`
+    tag: null
+  # -- The name of the PriorityClass for write pods
+  priorityClassName: null
+  # -- Annotations for write StatefulSet
+  annotations: {}
+  # -- Annotations for write pods
+  podAnnotations: {}
+  # -- Additional labels for each `write` pod
+  podLabels: {}
+  # -- Additional selector labels for each `write` pod
+  selectorLabels: {}
+  service:
+    # -- Annotations for write Service
+    annotations: {}
+    # -- Additional labels for write Service
+    labels: {}
+  # -- Comma-separated list of Loki modules to load for the write
+  targetModule: "write"
+  # -- Additional CLI args for the write
+  extraArgs: []
+  # -- Environment variables to add to the write pods
+  extraEnv: []
+  # -- Environment variables from secrets or configmaps to add to the write pods
+  extraEnvFrom: []
+  # -- Lifecycle for the write container
+  lifecycle: {}
+  # -- The default /flush_shutdown preStop hook is recommended as part of the ingester
+  # scaledown process so it's added to the template by default when autoscaling is enabled,
+  # but it's disabled to optimize rolling restarts in instances that will never be scaled
+  # down or when using chunks storage with WAL disabled.
+  # https://github.com/grafana/loki/blob/main/docs/sources/operations/storage/wal.md#how-to-scale-updown
+  # -- Init containers to add to the write pods
+  initContainers: []
+  # -- Containers to add to the write pods
+  extraContainers: []
+  # -- Volume mounts to add to the write pods
+  extraVolumeMounts: []
+  # -- Volumes to add to the write pods
+  extraVolumes: []
+  # -- volumeClaimTemplates to add to StatefulSet
+  extraVolumeClaimTemplates: []
+  # -- Resource requests and limits for the write
+  resources: {}
+  # -- Grace period to allow the write to shutdown before it is killed. Especially for the ingester,
+  # this must be increased. It must be long enough so writes can be gracefully shutdown flushing/transferring
+  # all data and to successfully leave the member ring on shutdown.
+  terminationGracePeriodSeconds: 300
+  # -- Affinity for write pods.
+  # @default -- Hard node anti-affinity
+  affinity:
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchLabels:
+              app.kubernetes.io/component: write
+          topologyKey: kubernetes.io/hostname
+  # -- DNS config for write pods
+  dnsConfig: {}
+  # -- Node selector for write pods
+  nodeSelector: {}
+  # -- Topology Spread Constraints for write pods
+  topologySpreadConstraints: []
+  # -- Tolerations for write pods
+  tolerations: []
+  # -- The default is to deploy all pods in parallel.
+  podManagementPolicy: "Parallel"
+  persistence:
+    # -- Enable volume claims in pod spec
+    volumeClaimsEnabled: true
+    # -- Parameters used for the `data` volume when volumeClaimEnabled if false
+    dataVolumeParameters:
+      emptyDir: {}
+    # -- Enable StatefulSetAutoDeletePVC feature
+    enableStatefulSetAutoDeletePVC: false
+    # -- Size of persistent disk
+    size: 10Gi
+    # -- Storage class to be used.
+    # If defined, storageClassName: <storageClass>.
+    # If set to "-", storageClassName: "", which disables dynamic provisioning.
+    # If empty or set to null, no storageClassName spec is
+    # set, choosing the default provisioner (gp2 on AWS, standard on GKE, AWS, and OpenStack).
+    storageClass: null
+    # -- Selector for persistent disk
+    selector: null
+    # -- Annotations for volume claim
+    annotations: {}
+# --  Configuration for the read pod(s)
+read:
+  # -- Number of replicas for the read
+  replicas: 3
+  autoscaling:
+    # -- Enable autoscaling for the read, this is only used if `queryIndex.enabled: true`
+    enabled: false
+    # -- Minimum autoscaling replicas for the read
+    minReplicas: 2
+    # -- Maximum autoscaling replicas for the read
+    maxReplicas: 6
+    # -- Target CPU utilisation percentage for the read
+    targetCPUUtilizationPercentage: 60
+    # -- Target memory utilisation percentage for the read
+    targetMemoryUtilizationPercentage:
+    # -- Behavior policies while scaling.
+    behavior: {}
+    #  scaleUp:
+    #   stabilizationWindowSeconds: 300
+    #   policies:
+    #   - type: Pods
+    #     value: 1
+    #     periodSeconds: 60
+    #  scaleDown:
+    #   stabilizationWindowSeconds: 300
+    #   policies:
+    #   - type: Pods
+    #     value: 1
+    #     periodSeconds: 180
+  image:
+    # -- The Docker registry for the read image. Overrides `loki.image.registry`
+    registry: null
+    # -- Docker image repository for the read image. Overrides `loki.image.repository`
+    repository: null
+    # -- Docker image tag for the read image. Overrides `loki.image.tag`
+    tag: null
+  # -- The name of the PriorityClass for read pods
+  priorityClassName: null
+  # -- Annotations for read deployment
+  annotations: {}
+  # -- Annotations for read pods
+  podAnnotations: {}
+  # -- Additional labels for each `read` pod
+  podLabels: {}
+  # -- Additional selector labels for each `read` pod
+  selectorLabels: {}
+  service:
+    # -- Annotations for read Service
+    annotations: {}
+    # -- Additional labels for read Service
+    labels: {}
+  # -- Comma-separated list of Loki modules to load for the read
+  targetModule: "read"
+  # -- Whether or not to use the 2 target type simple scalable mode (read, write) or the
+  # 3 target type (read, write, backend). Legacy refers to the 2 target type, so true will
+  # run two targets, false will run 3 targets.
+  legacyReadTarget: false
+  # -- Additional CLI args for the read
+  extraArgs: []
+  # -- Containers to add to the read pods
+  extraContainers: []
+  # -- Environment variables to add to the read pods
+  extraEnv: []
+  # -- Environment variables from secrets or configmaps to add to the read pods
+  extraEnvFrom: []
+  # -- Lifecycle for the read container
+  lifecycle: {}
+  # -- Volume mounts to add to the read pods
+  extraVolumeMounts: []
+  # -- Volumes to add to the read pods
+  extraVolumes: []
+  # -- Resource requests and limits for the read
+  resources: {}
+  # -- Grace period to allow the read to shutdown before it is killed
+  terminationGracePeriodSeconds: 30
+  # -- Affinity for read pods.
+  # @default -- Hard node anti-affinity
+  affinity:
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchLabels:
+              app.kubernetes.io/component: read
+          topologyKey: kubernetes.io/hostname
+  # -- DNS config for read pods
+  dnsConfig: {}
+  # -- Node selector for read pods
+  nodeSelector: {}
+  # -- Topology Spread Constraints for read pods
+  topologySpreadConstraints: []
+  # -- Tolerations for read pods
+  tolerations: []
+  # -- The default is to deploy all pods in parallel.
+  podManagementPolicy: "Parallel"
+  persistence:
+    # -- Enable StatefulSetAutoDeletePVC feature
+    enableStatefulSetAutoDeletePVC: true
+    # -- Size of persistent disk
+    size: 10Gi
+    # -- Storage class to be used.
+    # If defined, storageClassName: <storageClass>.
+    # If set to "-", storageClassName: "", which disables dynamic provisioning.
+    # If empty or set to null, no storageClassName spec is
+    # set, choosing the default provisioner (gp2 on AWS, standard on GKE, AWS, and OpenStack).
+    storageClass: null
+    # -- Selector for persistent disk
+    selector: null
+    # -- Annotations for volume claim
+    annotations: {}
+# --  Configuration for the backend pod(s)
+backend:
+  # -- Number of replicas for the backend
+  replicas: 3
+  autoscaling:
+    # -- Enable autoscaling for the backend.
+    enabled: false
+    # -- Minimum autoscaling replicas for the backend.
+    minReplicas: 3
+    # -- Maximum autoscaling replicas for the backend.
+    maxReplicas: 6
+    # -- Target CPU utilization percentage for the backend.
+    targetCPUUtilizationPercentage: 60
+    # -- Target memory utilization percentage for the backend.
+    targetMemoryUtilizationPercentage:
+    # -- Behavior policies while scaling.
+    behavior: {}
+  image:
+    # -- The Docker registry for the backend image. Overrides `loki.image.registry`
+    registry: null
+    # -- Docker image repository for the backend image. Overrides `loki.image.repository`
+    repository: null
+    # -- Docker image tag for the backend image. Overrides `loki.image.tag`
+    tag: null
+  # -- The name of the PriorityClass for backend pods
+  priorityClassName: null
+  # -- Annotations for backend StatefulSet
+  annotations: {}
+  # -- Annotations for backend pods
+  podAnnotations: {}
+  # -- Additional labels for each `backend` pod
+  podLabels: {}
+  # -- Additional selector labels for each `backend` pod
+  selectorLabels: {}
+  service:
+    # -- Annotations for backend Service
+    annotations: {}
+    # -- Additional labels for backend Service
+    labels: {}
+  # -- Comma-separated list of Loki modules to load for the read
+  targetModule: "backend"
+  # -- Additional CLI args for the backend
+  extraArgs: []
+  # -- Environment variables to add to the backend pods
+  extraEnv: []
+  # -- Environment variables from secrets or configmaps to add to the backend pods
+  extraEnvFrom: []
+  # -- Init containers to add to the backend pods
+  initContainers: []
+  # -- Volume mounts to add to the backend pods
+  extraVolumeMounts: []
+  # -- Volumes to add to the backend pods
+  extraVolumes: []
+  # -- Resource requests and limits for the backend
+  resources: {}
+  # -- Grace period to allow the backend to shutdown before it is killed. Especially for the ingester,
+  # this must be increased. It must be long enough so backends can be gracefully shutdown flushing/transferring
+  # all data and to successfully leave the member ring on shutdown.
+  terminationGracePeriodSeconds: 300
+  # -- Affinity for backend pods.
+  # @default -- Hard node anti-affinity
+  affinity:
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchLabels:
+              app.kubernetes.io/component: backend
+          topologyKey: kubernetes.io/hostname
+  # -- DNS config for backend pods
+  dnsConfig: {}
+  # -- Node selector for backend pods
+  nodeSelector: {}
+  # -- Topology Spread Constraints for backend pods
+  topologySpreadConstraints: []
+  # -- Tolerations for backend pods
+  tolerations: []
+  # -- The default is to deploy all pods in parallel.
+  podManagementPolicy: "Parallel"
+  persistence:
+    # -- Enable volume claims in pod spec
+    volumeClaimsEnabled: true
+    # -- Parameters used for the `data` volume when volumeClaimEnabled if false
+    dataVolumeParameters:
+      emptyDir: {}
+    # -- Enable StatefulSetAutoDeletePVC feature
+    enableStatefulSetAutoDeletePVC: true
+    # -- Size of persistent disk
+    size: 10Gi
+    # -- Storage class to be used.
+    # If defined, storageClassName: <storageClass>.
+    # If set to "-", storageClassName: "", which disables dynamic provisioning.
+    # If empty or set to null, no storageClassName spec is
+    # set, choosing the default provisioner (gp2 on AWS, standard on GKE, AWS, and OpenStack).
+    storageClass: null
+    # -- Selector for persistent disk
+    selector: null
+    # -- Annotations for volume claim
+    annotations: {}
+# Zero out replica counts of other deployment modes
+singleBinary:
+  replicas: 0
+
+ingester:
+  replicas: 0
+querier:
+  replicas: 0
+queryFrontend:
+  replicas: 0
+queryScheduler:
+  replicas: 0
+distributor:
+  replicas: 0
+compactor:
+  replicas: 0
+indexGateway:
+  replicas: 0
+bloomCompactor:
+  replicas: 0
+bloomGateway:
+  replicas: 0

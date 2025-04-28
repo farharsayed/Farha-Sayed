@@ -1,0 +1,115 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: loki-ss-backend
+  labels:
+    app: loki-simple-scalable
+    service: backend
+spec:
+  replicas: 3
+  autoscaling:
+    enabled: false
+  targetModule: "backend"
+  podManagementPolicy: Parallel
+  updateStrategy:
+    rollingUpdate:
+      partition: 0
+  serviceName: loki-ss-backend
+  revisionHistoryLimit: 10
+  persistentVolumeClaimRetentionPolicy:
+    whenDeleted: Delete
+    whenScaled: Delete
+  selector:
+    matchLabels:
+      app: loki-simple-scalable
+      service: backend
+  template:
+    metadata:
+      labels:
+        app: loki-simple-scalable
+        service: backend
+    spec:
+      securityContext:
+        fsGroup: 0
+        runAsGroup: 0
+        runAsNonRoot: false
+        runAsUser: 0
+      terminationGracePeriodSeconds: 30
+      containers:
+        - name: loki-ss-backend
+          image:  grafana/loki
+          imagePullPolicy: Always
+          args: 
+           - '-config.file'
+           - '/etc/loki/local-config.yml'
+           - '-target=backend'
+           - '-legacy-read-mode=false'
+          ports:
+            - name: backend-port
+              containerPort: 3105
+              protocol: TCP
+            - name: grpc
+              containerPort: 9095
+              protocol: TCP
+            - name: http-memberlist
+              containerPort: 7946
+              protocol: TCP
+          resources: {}
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+              - ALL
+            readOnlyRootFilesystem: false 
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: 3105
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 3
+          volumeMounts:
+            - name: loki-ss-storage
+              mountPath: /tmp
+            - name: local-config
+              mountPath: /etc/loki
+      volumes:
+        - name: loki-ss-storage
+          persistentVolumeClaim:
+            claimName: loki-ss-storage
+        - name: tmp
+          emptyDir: {}
+        - name: local-config
+          configMap:
+            name: local-config
+            defaultMode: 420
+
+
+---
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: loki-ss-backend
+spec:
+  type: ClusterIP
+  ports:
+    - name: backend-port
+      port: 3105
+      targetPort: backend-port
+      protocol: TCP
+    - name: grpc
+      port: 9095
+      targetPort: grpc 
+      protocol: TCP
+    - name: http-memberlist
+      port: 7946
+      targetPort: http-memberlist 
+      protocol: TCP
+  selector:
+    service: backend
+
+---
+
+# # headless service - not in use 

@@ -1,0 +1,3 @@
+FROM <Nexus-Location>/grafana/loki:latest-july24
+RUN mkdir /loki/compactor
+RUN chmod 777 /loki/compactor

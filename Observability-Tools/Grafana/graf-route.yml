@@ -1,0 +1,25 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: grafana-route
+spec:
+  host: <insert>.openshift.local
+  port:
+    targetPort: grafana
+  wildcardPolicy: None
+  to:
+    kind: Service
+    name: grafana-service
+    weight: 100
+  tls:
+    termination: edge
+    key: |
+      -----BEGIN PRIVATE KEY-----
+      <insert>
+      -----END PRIVATE KEY-----
+
+    certificate: |-
+      -----BEGIN CERTIFICATE-----
+      <insert>
+      -----END CERTIFICATE-----
+

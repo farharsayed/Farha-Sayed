@@ -1,0 +1,59 @@
+# route for loki read component
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: loki-ss-read
+spec:
+  port:
+    targetPort: read-port
+  to: 
+    kind: Service 
+    name: loki-ss-read
+
+
+--- 
+
+# route for loki backend component
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: loki-ss-backend
+spec:
+  port:
+    targetPort: backend-port
+  to: 
+    kind: Service 
+    name: loki-ss-backend
+
+
+--- 
+
+
+# route for loki write component
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: loki-ss-write
+spec:
+  port:
+    targetPort: write-port
+  to: 
+    kind: Service 
+    name: loki-ss-write
+
+
+
+--- 
+
+
+# route for loki gateway component
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: loki-ss-gateway
+spec:
+  port:
+    targetPort: nginx-port
+  to: 
+    kind: Service 
+    name: loki-ss-gateway

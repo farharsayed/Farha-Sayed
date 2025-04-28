@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: promtail
+  namespace: farhatemp
+  labels:
+    name: promtail
+spec:
+  selector:
+    matchLabels:
+      name: promtail
+  template:
+    metadata:
+      labels:
+        name: promtail
+    spec:
+      containers:
+      - image: grafana/promtail
+        name: promtail
+        args: 
+          - '-config.file' 
+          - '/etc/promtail/config.yml'
+        ports:
+            - name: http
+              containerPort: 3101
+              protocol: TCP
+        volumeMounts:
+          - name: config
+            mountPath: /etc/promtail
+          - name: loki-storage
+            mountPath: /var/log
+      volumes:
+        - name: config
+          configMap:
+            name: config
+            defaultMode: 420
+        - name: loki-storage
+          persistentVolumeClaim:
+            claimName: loki-storage

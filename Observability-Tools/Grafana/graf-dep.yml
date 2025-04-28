@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: grafana
+  name: grafana
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: grafana
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: grafana
+    spec:
+      containers:
+        - image: grafana/grafana
+          name: grafana
+          resources: {}
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+          - name: grafana-config
+            mountPath: /etc/grafana/
+      volumes:
+        - name: grafana-config
+          configMap:
+            name: grafana-config
+            defaultMode: 420
+

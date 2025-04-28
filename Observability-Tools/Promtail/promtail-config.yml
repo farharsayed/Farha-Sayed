@@ -1,0 +1,57 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config
+  namespace: farhatemp
+data:
+  config.yml: |
+    # specifying the port on which Promtail will listen for HTTP traffic
+    server:
+      http_listen_port: 3101
+      grpc_listen_port: 0
+    
+    # where Promtail will store its positions file, used to keep track of where Promtail is in each log file to ensure logs are not sent more than once
+    # especially useful after restarts or crashes
+    positions:
+      filename: /tmp/positions.yaml
+
+    # the URL to which Promtail will send log batches, configured to push logs to the Loki Gateway.
+    clients:
+      # - url: <read url>/loki/api/v1/push
+      - url: <gatewayurl>/loki/api/v1/push
+        # - url: http://localhost:3100/loki/api/v1/push
+    scrape_configs:
+      - job_name: system
+        static_configs:
+          - targets:
+              - localhost
+            labels:
+              job: varlogs
+              __path__: /var/log/*log
+      # - job_name: dkpg
+      #   static_configs:
+      #     - targets:
+      #         - localhost
+      #       labels:
+      #         job: dkpglogs
+      #         __path__: /var/log/dkpg.log
+      # - job_name: system
+      #   entry_parser: raw
+      #   static_configs:
+      #     - targets:
+      #         - localhost
+      #       labels:
+      #         job: varlogs
+      #         __path__: /var/log/*log
+      # - job_name: kubernetes-pods
+            #   kubernetes_sd_configs:
+            #     - role: pod
+            #   relabel_configs:
+            #     - source_labels:
+            #         - __meta_kubernetes_pod_label_app_kubernetes_io_name
+            #         - __meta_kubernetes_pod_label_app
+            #         - __tmp_controller_name
+            #         - __meta_kubernetes_pod_name
+            #       action: replace
+            #       target_label: app
+
