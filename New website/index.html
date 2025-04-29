@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 
@@ -9,132 +10,123 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="mediaqueries.css">
 </head>
+
 <body>
 
 
-      <!-- <header id="header"> -->
-        <header id="header">
-            <nav id="navbar"> 
-                <div class="nav-title">
-                    <span>F</span><span>a</span><span>r</span><span>h</span><span>a</span>
-                    <span> </span> <!-- non-breaking space -->
-                    <span>R</span>
-                    <span> </span> <!-- non-breaking space -->
-                    <span>S</span><span>a</span><span>y</span><span>e</span><span>d</span>
-                  </div>
-                  
-                <div>
-                    <ul class="nav-links"> 
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#experience">Experience</a></li>
-                        <li><a href="#skills">Skills</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-            </nav>
-          </header>
-        <!-- </header> -->
-
-
-        <section id="home">
-            <div class="homepage-pic">
-                <img src="./assets/pfp.jpg" alt="Profile Picture"
-            class="pfp"/>
+    <!-- <header id="header"> -->
+    <header id="header">
+        <nav id="navbar">
+            <div class="nav-title">
+                <span>F</span><span>a</span><span>r</span><span>h</span><span>a</span>
+                <span> </span>
+                <!-- non-breaking space -->
+                <span>R</span>
+                <span> </span>
+                <!-- non-breaking space -->
+                <span>S</span><span>a</span><span>y</span><span>e</span><span>d</span>
             </div>
-<div class="home-rightside">
+
+            <div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- </header> -->
+
+
+    <section id="home">
+        <div class="homepage-pic">
+            <img src="./assets/pfp.jpg" alt="Profile Picture" class="pfp" />
+        </div>
+        <div class="home-rightside">
             <div class="intro-text">
                 <p class="intro-text1">
                     Hello, I'm
                 </p>
                 <div class="intro-text2">
                     <span>F</span><span>a</span><span>r</span><span>h</span><span>a</span>
-                    <span> </span> <!-- non-breaking space -->
+                    <span> </span>
+                    <!-- non-breaking space -->
                     <span>R</span>
-                    <span> </span> <!-- non-breaking space -->
+                    <span> </span>
+                    <!-- non-breaking space -->
                     <span>S</span><span>a</span><span>y</span><span>e</span><span>d</span>
-                  </div>
+                </div>
                 <!-- <p class="section__text__p2">Recent Graduate</p> -->
                 <!-- <div class="about-details-container"> -->
-              <div class="intro-text3">
+                <div class="intro-text3">
                     <!-- <p>I have recently graduated with a BSc in Computer Science and Mathematics from the University of Leeds. </p> -->
-                     <p>I'm interested in cloud computing, software development, and cybersecurity.</p>
-                <!-- </div> -->
-              </div>
+                    <p>I'm interested in cloud computing, software development, and cybersecurity.</p>
+                    <!-- </div> -->
+                </div>
             </div>
- <div class="home-btns">
-  <button class="home-btn1"
-      onclick="window.open('./assets/Farha-CV.pdf')">
-  Download CV
-  </button>
-  <button class="home-btn2"
-      onclick="location.href='./#contact'">
-  Contact Me!
-  </button>
-</div>
+            <div class="home-btns">
+                <button class="home-btn1" onclick="window.open('./assets/Farha-CV.pdf')">
+                Download CV
+              </button>
+                <button class="home-btn2" onclick="location.href='./#contact'">
+                Contact Me!
+              </button>
+            </div>
 
+            <div id="socials-icons">
+                <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon" onclick="location.href='https://www.linkedin.com/in/farha-sayed/'">
+                <img src="./assets/github.png" alt="My Github profile" class="icon" onclick="location.href='https://github.com/farharsayed'">
+            </div>
 
-<div id="socials-icons">
-  <img src="./assets/linkedin.png" 
-  alt="My LinkedIn profile"
-  class="icon" 
-  onclick="location.href='https://www.linkedin.com/in/farha-sayed/'">
-  <img src="./assets/github.png" 
-  alt="My Github profile"
-  class="icon" 
-  onclick="location.href='https://github.com/farharsayed'">
-</div>
+        </div>
 
-</div>
+        <!-- scrolling arrow -->
+        <div class="scroll-indicator" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' })">
+            <span class="arrow"></span>
+        </div>
 
-<!-- scrolling arrow -->
-<div class="scroll-indicator" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' })">
-  <span class="arrow"></span>
-</div>
-
-        </section>
+    </section>
 
 
 
-        <section id="about">
-          <div class="about-title"> 
+    <section id="about">
+        <div class="about-title">
             <p class="about-title1">
-              Get to Know More
-          </p>
-          <div class="animated-title">
-            <span>A</span><span>b</span><span>o</span><span>u</span><span>t</span>
-            <span> </span>
-            <span>M</span><span>e</span>
-          </div>
-          </div>
-          <div class="about-parts">
-          <div class="about-left">
-            <p class="about-text1">
-              Hey there! I'm Farha, a recent CS grad with an insatiable curiosity about the logic and layers behind it all.
-              Since graduating last year, I've had the opportunity to work in two different roles that challenged me, taught me a lot, and fueled my drive to keep pushing forward in this ever-evolving field.
+                Get to Know More
             </p>
-            <p class="about-text2">
-              Off git?
-              I'm all about balance. 
-              You'll find me chasing that next PR at the gym, cheering on Ferrari as it loses yet another F1 Grand Prix, or trying to stop my goofy cat from rampaging around the house.
-            </p>
-            <p class="about-text3">
-              My journey in tech isn't limited to just one path. 
-              I'm passionate about cloud computing, software development, cybersecurity, and everything in between.
-              I genuinely want to absorb as much knowledge as possible -- like a sponge, and I'm only just getting started.
-            </p>
-          </div>
+            <div class="animated-title">
+                <span>A</span><span>b</span><span>o</span><span>u</span><span>t</span>
+                <span> </span>
+                <span>M</span><span>e</span>
+            </div>
+        </div>
+        <div class="about-parts">
+            <div class="about-left">
+                <p class="about-text1">
+                    Hey there! I'm Farha, a recent CS grad with an insatiable curiosity about the logic and layers behind it all. Since graduating last year, I've had the opportunity to work in two different roles that challenged me, taught me a lot, and fueled my drive
+                    to keep pushing forward in this ever-evolving field.
+                </p>
+                <p class="about-text2">
+                    Off git? I'm all about balance. You'll find me chasing that next PR at the gym, cheering on Ferrari as it loses yet another F1 Grand Prix, or trying to stop my goofy cat from rampaging around the house.
+                </p>
+                <p class="about-text3">
+                    My journey in tech isn't limited to just one path. I'm passionate about cloud computing, software development, cybersecurity, and everything in between. I genuinely want to absorb as much knowledge as possible -- like a sponge, and I'm only just getting
+                    started.
+                </p>
+            </div>
 
-          <div class="about-right">
-          
-            <div class="about-pic">
-              <img src="./assets/about-image1.jpg" alt="About Picture"
-          class="about-pic1"/>
-          </div>
+            <div class="about-right">
+
+                <div class="about-pic">
+                    <img src="./assets/about-image1.jpg" alt="About Picture" class="about-pic1" />
+                </div>
 
 
 
-<!--           
+                <!--           
           
             <div class="slideshow-container" id="slideshow">
               <div class="slide fade">
@@ -162,71 +154,19 @@
               </div>
             </div> -->
 
-            
-
-          </div>
-
-          </div>
 
 
-<!-- scrolling arrow -->
-<div class="scroll-indicator" onclick="document.getElementById('experience').scrollIntoView({ behavior: 'smooth' })">
-  <span class="arrow"></span>
-</div>
-
-        </section>
-
-
-        
-
-
-
-
-        
-        <section id="experience">
-          <div class="exp-title"> 
-            <p class="exp-title1">
-              Discover My
-          </p>
-          <div class="exp-title2">
-            <span>W</span><span>o</span><span>r</span><span>k</span>
-            <span> </span>
-            <span>E</span><span>x</span><span>p</span><span>e</span><span>r</span><span>i</span><span>e</span><span>n</span><span>c</span><span>e</span>
-          </div>
-          </div>
-          <!-- end of exp title -->
-
-          <!-- exp content -->
-       
-            <div id="experience-content">
-          
-        
-              <!-- Dynamic Experience Content -->
-              <!-- <div id="experience-content"> -->
-                <div class="exp-left">
-                <img id="exp-image" class="experience-image" src="./assets/exp-pic1.jpg" alt="Experience Image"> 
-              </div>
-              
-              <div class="exp-right">
-                <div id="exp-title-jobs" class="exp-title-jobs">Infrastructure and Cyber Security Engineer - Gulf Business Machines</div>
-                 <div id="exp-dates" class="exp-dates">Nov 2024 - Present</div>
-                 <div id="exp-description" class="experience-description"><ul class="exp-desc1"><li>Provided security solutions for endpoint, network, servers and cloud email security to customers including MBZ University of Artificial Intelligence, ICP, ADEK, ADJD etc.</li><li>Collaborated with vendors to implement products such as Trend Micro XDR/EDR and ASM, FortiSASE, BeyondTrust PRA, Cisco User Protection Suite etc.</li><li>Executed the major rollout on several projects, managing up to 15,000 endpoints and servers</li><li>Followed entire project lifecycles from pre-sales to documentation and closure.</li>
-                  </ul>
-                </div>
-              </div>
-              </div>
-          
-              <div class="year-selector">
-                <div class="year" data-year="2025">2025</div>
-                <div class="year" data-year="2024">2024</div>
-                <div class="year" data-year="2022">2022</div>
-                <div class="year" data-year="2020">2020</div>
-              </div>
-            
             </div>
-          </section>
-          
-          <!--  -->
+
+        </div>
+
+
+        <!-- scrolling arrow -->
+        <div class="scroll-indicator" onclick="document.getElementById('experience').scrollIntoView({ behavior: 'smooth' })">
+            <span class="arrow"></span>
+        </div>
+
+    </section>
 
 
 
@@ -234,7 +174,64 @@
 
 
 
-          <!-- work experience container -->
+
+    <section id="experience">
+        <div class="exp-title">
+            <p class="exp-title1">
+                Discover My
+            </p>
+            <div class="exp-title2">
+                <span>W</span><span>o</span><span>r</span><span>k</span>
+                <span> </span>
+                <span>E</span><span>x</span><span>p</span><span>e</span><span>r</span><span>i</span><span>e</span><span>n</span><span>c</span><span>e</span>
+            </div>
+        </div>
+        <!-- end of exp title -->
+
+        <!-- exp content -->
+
+        <div id="experience-content">
+
+
+            <!-- Dynamic Experience Content -->
+            <!-- <div id="experience-content"> -->
+            <div class="exp-left">
+                <img id="exp-image" class="experience-image" src="./assets/exp-pic1.jpg" alt="Experience Image">
+            </div>
+
+            <div class="exp-right">
+                <div id="exp-title-jobs" class="exp-title-jobs">Infrastructure and Cyber Security Engineer - Gulf Business Machines</div>
+                <div id="exp-dates" class="exp-dates">Nov 2024 - Present</div>
+                <div id="exp-description" class="experience-description">
+                    <ul class="exp-desc1">
+                        <li>Provided security solutions for endpoint, network, servers and cloud email security to customers including MBZ University of Artificial Intelligence, ICP, ADEK, ADJD etc.</li>
+                        <li>Collaborated with vendors to implement products such as Trend Micro XDR/EDR and ASM, FortiSASE, BeyondTrust PRA, Cisco User Protection Suite etc.</li>
+                        <li>Executed the major rollout on several projects, managing up to 15,000 endpoints and servers</li>
+                        <li>Followed entire project lifecycles from pre-sales to documentation and closure.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="year-selector">
+            <div class="year" data-year="2025">2025</div>
+            <div class="year" data-year="2024">2024</div>
+            <div class="year" data-year="2022">2022</div>
+            <div class="year" data-year="2020">2020</div>
+        </div>
+
+        </div>
+    </section>
+
+    <!--  -->
+
+
+
+
+
+
+
+    <!-- work experience container -->
     <!-- <div class="work-exp-cont">
       <div class="work-exp-left">
         <ul class="work-exp-list">
@@ -314,6 +311,7 @@
 
 
 
-        <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>

@@ -1,16 +1,16 @@
-
 /* the star is for whole page */
-* { 
+
+* {
     /* margin: 0; */
     /* padding: 1rem; */
     cursor: default;
-    background-color:  white;;
+    background-color: white;
+    ;
 }
 
 body {
     font-family: "Poppins", sans-serif;
 }
-
 
 html {
     scroll-behavior: smooth;
@@ -18,10 +18,11 @@ html {
 }
 
 
-
 /* HEADER */
 
+
 /* Header Styling */
+
 #header {
     /* position: fixed; */
     width: 100%;
@@ -35,12 +36,13 @@ html {
     transition: background-color 0.3s ease, opacity 0.3s ease, height 0.3s ease;
     z-index: 999;
     opacity: 1;
-  }
-  
-  
+}
+
+
 /* DESKTOP NAVIGATION */
 
-nav, .nav-links {
+nav,
+.nav-links {
     display: flex;
     /* flexes the nav */
 }
@@ -54,23 +56,21 @@ nav {
     margin-bottom: 2%;
 }
 
-
-.nav-links{
+.nav-links {
     gap: 2rem;
     list-style: none;
     font-size: 1.5rem;
- 
 }
-
 
 a {
     color: #28003A;
-  /* rgb(238, 238, 214); */
+    /* rgb(238, 238, 214); */
     text-decoration: none;
     text-decoration-color: #28003A;
 }
-a:hover{
-    color:#A51C30;
+
+a:hover {
+    color: #A51C30;
     text-decoration: underline;
     text-underline-offset: 1rem;
     /* offset so the underline is a bit spaced away from the word */
@@ -78,84 +78,171 @@ a:hover{
 }
 
 
-
-
 /* nav-title Farha R Sayed */
+
 .nav-title {
     font-size: 2rem;
     gap: 2px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  cursor: pointer;
-  user-select: none;
-        /* 👇 Prevent growing/pushing other elements */
-        line-height: 1;
-        height: 2.4rem;
-        overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+    user-select: none;
+    /* 👇 Prevent growing/pushing other elements */
+    line-height: 1;
+    height: 2.4rem;
+    overflow: hidden;
 }
-.nav-title span{
+
+.nav-title span {
     display: inline-block;
     transition: transform 0.3s ease, color 0.3s ease;
     will-change: transform;
-  }
-  .nav-title:hover span {
-    transform: scale(1.1);
-    color: #A51C30; 
-  }
+}
 
-  /* nav-title animation when first loading page */
-  .nav-title.animate span {
+.nav-title:hover span {
+    transform: scale(1.1);
+    color: #A51C30;
+}
+
+
+/* nav-title animation when first loading page */
+
+.nav-title.animate span {
     animation: scaleInNav 0.6s ease forwards;
-  }
-  
-  .nav-title.animate span:nth-child(1) { animation-delay: 0s; }
-  .nav-title.animate span:nth-child(2)  { animation-delay: 0.05s; }
-  .nav-title.animate span:nth-child(3)  { animation-delay: 0.1s; }
-  .nav-title.animate span:nth-child(4) { animation-delay: 0.15s; }
-  .nav-title.animate span:nth-child(5) { animation-delay: 0.2s; }
-  .nav-title.animate span:nth-child(6)  { animation-delay: 0.25s; }
-  .nav-title.animate span:nth-child(7)  { animation-delay: 0.3s; }
-  .nav-title.animate span:nth-child(8) { animation-delay: 0.35s; }
-  .nav-title.animate span:nth-child(9)  { animation-delay: 0.4s; }
-  .nav-title.animate span:nth-child(10) { animation-delay: 0.45s; }
-  .nav-title.animate span:nth-child(11) { animation-delay: 0.5s; }
-  .nav-title.animate span:nth-child(12){ animation-delay: 0.55s; }
-  .nav-title.animate span:nth-child(13) { animation-delay: 0.6s; }
-    /* end of nav-title animation when first loading page */
+}
+
+.nav-title.animate span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.nav-title.animate span:nth-child(2) {
+    animation-delay: 0.05s;
+}
+
+.nav-title.animate span:nth-child(3) {
+    animation-delay: 0.1s;
+}
+
+.nav-title.animate span:nth-child(4) {
+    animation-delay: 0.15s;
+}
+
+.nav-title.animate span:nth-child(5) {
+    animation-delay: 0.2s;
+}
+
+.nav-title.animate span:nth-child(6) {
+    animation-delay: 0.25s;
+}
+
+.nav-title.animate span:nth-child(7) {
+    animation-delay: 0.3s;
+}
+
+.nav-title.animate span:nth-child(8) {
+    animation-delay: 0.35s;
+}
+
+.nav-title.animate span:nth-child(9) {
+    animation-delay: 0.4s;
+}
+
+.nav-title.animate span:nth-child(10) {
+    animation-delay: 0.45s;
+}
+
+.nav-title.animate span:nth-child(11) {
+    animation-delay: 0.5s;
+}
+
+.nav-title.animate span:nth-child(12) {
+    animation-delay: 0.55s;
+}
+
+.nav-title.animate span:nth-child(13) {
+    animation-delay: 0.6s;
+}
+
+
+/* end of nav-title animation when first loading page */
+
 
 /* staggered animation for cool effect */
-.nav-title span:nth-child(1) { transition-delay: 0s; }
-.nav-title span:nth-child(2) { transition-delay: 0.03s; }
-.nav-title span:nth-child(3) { transition-delay: 0.06s; }
-.nav-title span:nth-child(4) { transition-delay: 0.09s; }
-.nav-title span:nth-child(5) { transition-delay: 0.12s; }
-.nav-title span:nth-child(6) { transition-delay: 0.15s; }
-.nav-title span:nth-child(7) { transition-delay: 0.18s; }
-.nav-title span:nth-child(8) { transition-delay: 0.21s; }
-.nav-title span:nth-child(9) { transition-delay: 0.24s; }
-.nav-title span:nth-child(10) { transition-delay: 0.27s; }
-.nav-title span:nth-child(11) { transition-delay: 0.3s; }
-.nav-title span:nth-child(12) { transition-delay: 0.33s; }
-.nav-title span:nth-child(13) { transition-delay: 0.36s; }
+
+.nav-title span:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.nav-title span:nth-child(2) {
+    transition-delay: 0.03s;
+}
+
+.nav-title span:nth-child(3) {
+    transition-delay: 0.06s;
+}
+
+.nav-title span:nth-child(4) {
+    transition-delay: 0.09s;
+}
+
+.nav-title span:nth-child(5) {
+    transition-delay: 0.12s;
+}
+
+.nav-title span:nth-child(6) {
+    transition-delay: 0.15s;
+}
+
+.nav-title span:nth-child(7) {
+    transition-delay: 0.18s;
+}
+
+.nav-title span:nth-child(8) {
+    transition-delay: 0.21s;
+}
+
+.nav-title span:nth-child(9) {
+    transition-delay: 0.24s;
+}
+
+.nav-title span:nth-child(10) {
+    transition-delay: 0.27s;
+}
+
+.nav-title span:nth-child(11) {
+    transition-delay: 0.3s;
+}
+
+.nav-title span:nth-child(12) {
+    transition-delay: 0.33s;
+}
+
+.nav-title span:nth-child(13) {
+    transition-delay: 0.36s;
+}
+
+
 /* end of  nav-title Farha R Sayed */
 
 
-  
-  
 /* home section start */
 
 #home {
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
+    /* Centers horizontally */
+    align-items: center;
+    /* Centers vertically */
     gap: 5rem;
-    height: 80vh;
-    margin-top: 7%;
-    margin-left: 6%;
-   
-  }
+    height: 85vh;
+    /* margin-top: -2%; */
+    /* margin-left: 6%; */
+}
+
 
 /* profile pic */
+
 .pfp {
     border-radius: 0rem;
     margin: 0 auto;
@@ -166,21 +253,28 @@ a:hover{
     height: 400px;
     width: 400px;
     justify-content: flex-end;
+    transform: translateY(-20%);
 }
+
+
 /* end profile pic */
 
-.home-rightside{
+.home-rightside {
+    transform: translateY(-30%);
     display: flex;
     flex-direction: column;
-    align-items: center; /* optional: center buttons under the text */
-    gap: 1.5rem; /* optional: spacing between text and buttons */
+    align-items: center;
+    /* optional: center buttons under the text */
+    gap: 1.5rem;
+    /* optional: spacing between text and buttons */
+    /* justify-content: center; */
+    /* justify-content: space-between; */
 }
 
-.intro-text {                                      
+.intro-text {
     margin-top: 4%;
     /* text-align: left; */
     /* margin-left: 5rem; */
-    
     /* margin: auto 0;
     align-self: center; */
     /* text-align: left; */
@@ -188,15 +282,15 @@ a:hover{
 }
 
 .intro-text1 {
-    
     font-size: 2rem;
     font-weight: 500;
     /* text-align: center; */
     margin-bottom: 2%;
-    
 }
 
+
 /* intro-text2 title Farha R Sayed */
+
 .intro-text2 {
     font-size: 5rem;
     gap: 2px;
@@ -206,7 +300,6 @@ a:hover{
     cursor: pointer;
     /* user-select: none; */
     margin-bottom: 1rem;
-  
     /* 👇 Locks the layout to prevent movement */
     /* line-height: 1;
     height: 2.4rem;
@@ -217,116 +310,202 @@ a:hover{
     display: inline-block;
     transition: transform 0.3s ease, color 0.3s ease;
     will-change: transform;
-  }
- .intro-text2:hover span {
-    transform: scale(1.1);
-    color: #FF4F00; 
-  }
+}
 
-    /* intro-text2 animation when first loading page */
-    .intro-text2.animate span {
-        animation: scaleInIntro 0.6s ease forwards;
-        /* animation-fill-mode: forwards; */
-      }
-      
-      .intro-text2.animate span:nth-child(1) { animation-delay: 0s; }
-      .intro-text2.animate span:nth-child(2)  { animation-delay: 0.05s; }
-      .intro-text2.animate span:nth-child(3)  { animation-delay: 0.1s; }
-      .intro-text2.animate span:nth-child(4) { animation-delay: 0.15s; }
-      .intro-text2.animate span:nth-child(5) { animation-delay: 0.2s; }
-      .intro-text2.animate span:nth-child(6)  { animation-delay: 0.25s; }
-      .intro-text2.animate span:nth-child(7)  { animation-delay: 0.3s; }
-      .intro-text2.animate span:nth-child(8) { animation-delay: 0.35s; }
-      .intro-text2.animate span:nth-child(9)  { animation-delay: 0.4s; }
-      .intro-text2.animate span:nth-child(10) { animation-delay: 0.45s; }
-      .intro-text2.animate span:nth-child(11) { animation-delay: 0.5s; }
-      .intro-text2.animate span:nth-child(12){ animation-delay: 0.55s; }
-      .intro-text2.animate span:nth-child(13) { animation-delay: 0.6s; }
-        /* end of intro-text2 animation when first loading page */
-    
+.intro-text2:hover span {
+    transform: scale(1.1);
+    color: #FF4F00;
+}
+
+
+/* intro-text2 animation when first loading page */
+
+.intro-text2.animate span {
+    animation: scaleInIntro 0.6s ease forwards;
+    /* animation-fill-mode: forwards; */
+}
+
+.intro-text2.animate span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.intro-text2.animate span:nth-child(2) {
+    animation-delay: 0.05s;
+}
+
+.intro-text2.animate span:nth-child(3) {
+    animation-delay: 0.1s;
+}
+
+.intro-text2.animate span:nth-child(4) {
+    animation-delay: 0.15s;
+}
+
+.intro-text2.animate span:nth-child(5) {
+    animation-delay: 0.2s;
+}
+
+.intro-text2.animate span:nth-child(6) {
+    animation-delay: 0.25s;
+}
+
+.intro-text2.animate span:nth-child(7) {
+    animation-delay: 0.3s;
+}
+
+.intro-text2.animate span:nth-child(8) {
+    animation-delay: 0.35s;
+}
+
+.intro-text2.animate span:nth-child(9) {
+    animation-delay: 0.4s;
+}
+
+.intro-text2.animate span:nth-child(10) {
+    animation-delay: 0.45s;
+}
+
+.intro-text2.animate span:nth-child(11) {
+    animation-delay: 0.5s;
+}
+
+.intro-text2.animate span:nth-child(12) {
+    animation-delay: 0.55s;
+}
+
+.intro-text2.animate span:nth-child(13) {
+    animation-delay: 0.6s;
+}
+
+
+/* end of intro-text2 animation when first loading page */
+
 
 /* staggered animation for cool effect */
-.intro-text2 span:nth-child(1) { transition-delay: 0s; }
-.intro-text2 span:nth-child(2) { transition-delay: 0.03s; }
-.intro-text2 span:nth-child(3) { transition-delay: 0.06s; }
-.intro-text2 span:nth-child(4) { transition-delay: 0.09s; }
-.intro-text2 span:nth-child(5) { transition-delay: 0.12s; }
-.intro-text2 span:nth-child(6) { transition-delay: 0.15s; }
-.intro-text2 span:nth-child(7) { transition-delay: 0.18s; }
-.intro-text2 span:nth-child(8) { transition-delay: 0.21s; }
-.intro-text2 span:nth-child(9) { transition-delay: 0.24s; }
-.intro-text2 span:nth-child(10) { transition-delay: 0.27s; }
-.intro-text2 span:nth-child(11) { transition-delay: 0.3s; }
-.intro-text2 span:nth-child(12) { transition-delay: 0.33s; }
-.intro-text2 span:nth-child(13) { transition-delay: 0.36s; }
+
+.intro-text2 span:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.intro-text2 span:nth-child(2) {
+    transition-delay: 0.03s;
+}
+
+.intro-text2 span:nth-child(3) {
+    transition-delay: 0.06s;
+}
+
+.intro-text2 span:nth-child(4) {
+    transition-delay: 0.09s;
+}
+
+.intro-text2 span:nth-child(5) {
+    transition-delay: 0.12s;
+}
+
+.intro-text2 span:nth-child(6) {
+    transition-delay: 0.15s;
+}
+
+.intro-text2 span:nth-child(7) {
+    transition-delay: 0.18s;
+}
+
+.intro-text2 span:nth-child(8) {
+    transition-delay: 0.21s;
+}
+
+.intro-text2 span:nth-child(9) {
+    transition-delay: 0.24s;
+}
+
+.intro-text2 span:nth-child(10) {
+    transition-delay: 0.27s;
+}
+
+.intro-text2 span:nth-child(11) {
+    transition-delay: 0.3s;
+}
+
+.intro-text2 span:nth-child(12) {
+    transition-delay: 0.33s;
+}
+
+.intro-text2 span:nth-child(13) {
+    transition-delay: 0.36s;
+}
+
+
 /* end of  intro-title Farha R Sayed */
 
-
-
 .intro-text3 {
-   
     font-size: 1.4rem;
 }
 
 
 /* home-buttons */
+
 .home-btns {
     display: flex;
     justify-content: center;
     gap: 1rem;
-  }
+}
 
-  .home-btn1, .home-btn2 {
+.home-btn1,
+.home-btn2 {
     font-weight: 600;
     transition: all 300ms ease;
     padding: 1rem;
     width: 8rem;
     border-radius: 2rem;
-  }
-  .home-btn1:hover, 
-  .home-btn2:hover {
-    cursor: pointer;
-  }
+}
 
-  .home-btn1:hover, .home-btn2:hover {
-    color:#FF4F00;
-    border-color:#FF4F00 ;
+.home-btn1:hover,
+.home-btn2:hover {
+    cursor: pointer;
+}
+
+.home-btn1:hover,
+.home-btn2:hover {
+    color: #FF4F00;
+    border-color: #FF4F00;
     background-color: hsl(18, 100%, 97%);
-  }
-  /* .home-btn2:hover {
+}
+
+
+/* .home-btn2:hover {
     color:#008e32;
     border-color:#008e32 ;
   } */
 
 
-
 /* github and linkedin icons on homepages */
-  #socials-icons {
+
+#socials-icons {
     display: flex;
     justify-content: center;
     margin-top: 1rem;
     gap: 1rem;
-  }
-  .icon {
+}
+
+.icon {
     cursor: pointer;
     height: 2.5rem;
-  }
+}
 
 
+/* small arrow */
 
-
-
-  /* small arrow */
-  .scroll-indicator {
+.scroll-indicator {
     position: absolute;
     bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
     cursor: pointer;
-  }
-  
-  .arrow {
+}
+
+.arrow {
     display: block;
     width: 24px;
     height: 24px;
@@ -335,49 +514,59 @@ a:hover{
     transform: rotate(-45deg);
     animation: bounceDown 2s infinite;
     opacity: 0.8;
-  }
-  
-  /* optional hover effect */
-  .arrow:hover {
+}
+
+
+/* optional hover effect */
+
+.arrow:hover {
     opacity: 1;
     border-color: #0898db;
-  }
-  /* end of small arrow  */
-
-  /* end of profile section */
+}
 
 
+/* end of small arrow  */
 
-  /* about section */
-  #about {
-    min-height: 80vh; /* or more if needed */
-    padding: 4rem 2rem; /* adjust as needed */
-    position: relative; /* for absolute-positioned children like the scroll arrow */
+
+/* end of profile section */
+
+
+/* about section */
+
+#about {
+    height: 85vh;
+    /* min-height: 80vh; */
+    /* or more if needed */
+    padding: 4rem 2rem;
+    /* adjust as needed */
+    position: relative;
+    /* for absolute-positioned children like the scroll arrow */
     /* box-sizing: border-box; */
-        /* display: flex; */
+    /* display: flex; */
     /* justify-content: center; */
     /* gap: 5rem; */
     /* height: 80vh; */
     /* margin-top: 7%; */
     /* margin-left: 6%; */
-  }
-  
+}
 
-  .about-parts {
+.about-parts {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* or center */
-    flex-wrap: wrap; /* for mobile responsiveness */
-  }
+    align-items: flex-start;
+    /* or center */
+    flex-wrap: wrap;
+    /* for mobile responsiveness */
+}
 
-
-  .about-title, .exp-title {
-    
+.about-title,
+.exp-title {
     justify-content: center;
     margin-bottom: 2rem;
     margin-top: -2%;
-  }
-  .animated-title {
+}
+
+.animated-title {
     display: flex;
     gap: 2px;
     justify-content: center;
@@ -385,392 +574,553 @@ a:hover{
     cursor: pointer;
     font-size: 4rem;
     margin-bottom: 1rem;
-  }
+}
 
-.about-title1, .exp-title1{
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  display: flex;
+.about-title1,
+.exp-title1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
-
 
 .animated-title span {
     display: inline-block;
     transition: transform 0.3s ease, color 0.3s ease;
     will-change: transform;
-  }
-  .animated-title:hover span {
-    transform: scale(1.1);
-    color: #04d9ff; 
-  }
+}
 
-    /* intro-text2 animation when first loading page */
-    .animated-title.animate span {
-        animation: scaleInAbout 0.6s ease forwards;
-        /* animation: scaleInTitle 1s ease-in-out; */
-        /* animation-fill-mode: forwards; */
-      }
-      
-      .animated-title.animate span:nth-child(1) { animation-delay: 0s; }
-      .animated-title.animate span:nth-child(2)  { animation-delay: 0.05s; }
-      .animated-title.animate span:nth-child(3)  { animation-delay: 0.1s; }
-      .animated-title.animate span:nth-child(4) { animation-delay: 0.15s; }
-      .animated-title.animate span:nth-child(5) { animation-delay: 0.2s; }
-      .animated-title.animate span:nth-child(6)  { animation-delay: 0.25s; }
-      .animated-title.animate span:nth-child(7)  { animation-delay: 0.3s; }
-      .animated-title.animate span:nth-child(8) { animation-delay: 0.35s; }
-      .animated-title.animate span:nth-child(9)  { animation-delay: 0.4s; }
-      .animated-title.animate span:nth-child(10) { animation-delay: 0.45s; }
-      .animated-title.animate span:nth-child(11) { animation-delay: 0.5s; }
-      .animated-title.animate span:nth-child(12){ animation-delay: 0.55s; }
-      .animated-title.animate span:nth-child(13) { animation-delay: 0.6s; }
-        /* end of animated-title animation when first loading page */
-    
+.animated-title:hover span {
+    transform: scale(1.1);
+    color: #04d9ff;
+}
+
+
+/* intro-text2 animation when first loading page */
+
+.animated-title.animate span {
+    animation: scaleInAbout 0.6s ease forwards;
+    /* animation: scaleInTitle 1s ease-in-out; */
+    /* animation-fill-mode: forwards; */
+}
+
+.animated-title.animate span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.animated-title.animate span:nth-child(2) {
+    animation-delay: 0.05s;
+}
+
+.animated-title.animate span:nth-child(3) {
+    animation-delay: 0.1s;
+}
+
+.animated-title.animate span:nth-child(4) {
+    animation-delay: 0.15s;
+}
+
+.animated-title.animate span:nth-child(5) {
+    animation-delay: 0.2s;
+}
+
+.animated-title.animate span:nth-child(6) {
+    animation-delay: 0.25s;
+}
+
+.animated-title.animate span:nth-child(7) {
+    animation-delay: 0.3s;
+}
+
+.animated-title.animate span:nth-child(8) {
+    animation-delay: 0.35s;
+}
+
+.animated-title.animate span:nth-child(9) {
+    animation-delay: 0.4s;
+}
+
+.animated-title.animate span:nth-child(10) {
+    animation-delay: 0.45s;
+}
+
+.animated-title.animate span:nth-child(11) {
+    animation-delay: 0.5s;
+}
+
+.animated-title.animate span:nth-child(12) {
+    animation-delay: 0.55s;
+}
+
+.animated-title.animate span:nth-child(13) {
+    animation-delay: 0.6s;
+}
+
+
+/* end of animated-title animation when first loading page */
+
 
 /* staggered animation for cool effect */
-.animated-title span:nth-child(1) { transition-delay: 0s; }
-.animated-title span:nth-child(2) { transition-delay: 0.03s; }
-.animated-title span:nth-child(3) { transition-delay: 0.06s; }
-.animated-title span:nth-child(4) { transition-delay: 0.09s; }
-.animated-title span:nth-child(5) { transition-delay: 0.12s; }
-.animated-title span:nth-child(6) { transition-delay: 0.15s; }
-.animated-title span:nth-child(7) { transition-delay: 0.18s; }
-.animated-title span:nth-child(8) { transition-delay: 0.21s; }
-.animated-title span:nth-child(9) { transition-delay: 0.24s; }
-.animated-title span:nth-child(10) { transition-delay: 0.27s; }
-.animated-title span:nth-child(11) { transition-delay: 0.3s; }
-.animated-title span:nth-child(12) { transition-delay: 0.33s; }
-.animated-title span:nth-child(13) { transition-delay: 0.36s; }
+
+.animated-title span:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.animated-title span:nth-child(2) {
+    transition-delay: 0.03s;
+}
+
+.animated-title span:nth-child(3) {
+    transition-delay: 0.06s;
+}
+
+.animated-title span:nth-child(4) {
+    transition-delay: 0.09s;
+}
+
+.animated-title span:nth-child(5) {
+    transition-delay: 0.12s;
+}
+
+.animated-title span:nth-child(6) {
+    transition-delay: 0.15s;
+}
+
+.animated-title span:nth-child(7) {
+    transition-delay: 0.18s;
+}
+
+.animated-title span:nth-child(8) {
+    transition-delay: 0.21s;
+}
+
+.animated-title span:nth-child(9) {
+    transition-delay: 0.24s;
+}
+
+.animated-title span:nth-child(10) {
+    transition-delay: 0.27s;
+}
+
+.animated-title span:nth-child(11) {
+    transition-delay: 0.3s;
+}
+
+.animated-title span:nth-child(12) {
+    transition-delay: 0.33s;
+}
+
+.animated-title span:nth-child(13) {
+    transition-delay: 0.36s;
+}
+
+
 /* end of  about-title  */
 
 
 /* about parts */
 
 .about-parts {
-  margin-bottom: 4rem;
+    margin-bottom: 4rem;
 }
 
 .about-left,
 .about-right {
-  flex: 1;
-  min-width: 300px;
-  
+    flex: 1;
+    min-width: 300px;
 }
+
 
 /* end of about parts */
 
+
 /* about text left side */
 
-.about-left{
-  /* text-align: left; */
-  margin: auto 10%;
-  
-  /* text-align: center; */
+.about-left {
+    /* text-align: left; */
+    margin: auto 10%;
+    /* text-align: center; */
+}
+
+.about-text1,
+.about-text2,
+.about-text3 {
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.25rem;
+}
 
 
-}
-.about-text1, .about-text2, .about-text3 {
-  font-family:  Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 1.25rem;
-}
 /* end of left side */
 
+
 /* about right side - single pic */
+
+
 /* .about-right {
   text-align: right;
 } */
+
 .about-pic1 {
-  /* border-radius: 0rem; */
-  /* margin: 0 auto; */
-  /* object-fit: cover; */
-  /* display: flex;  */
-  /* sizes it properly */
-  
-  height: 400px;
-  width: 400px;
-  /* justify-content: flex-end; */
-  /* border: 2px solid black;  */
-  /* change thickness + color */
-  border-radius: 2px;
-  
+    /* border-radius: 0rem; */
+    /* margin: 0 auto; */
+    /* object-fit: cover; */
+    /* display: flex;  */
+    /* sizes it properly */
+    height: 400px;
+    width: 400px;
+    /* justify-content: flex-end; */
+    /* border: 2px solid black;  */
+    /* change thickness + color */
+    border-radius: 2px;
 }
+
 .about-pic {
-   margin: 0 auto; 
-   object-fit: cover; 
-   display: flex;  
+    margin: 0 auto;
+    object-fit: cover;
+    display: flex;
 }
+
 
 /* end of about */
-
-
-
 
 
 /* experience section */
 
 #experience {
-  padding-top: 2rem;
-  height: 100vh;
-  /* padding: 2rem; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* min-height: 80vh; */
-  justify-content: space-between;
-  position: relative;
-
+    padding-top: 2rem;
+    height: 100vh;
+    /* padding: 2rem; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* min-height: 80vh; */
+    justify-content: space-between;
+    position: relative;
 }
 
-
 .exp-title2 {
-  display: flex;
-  gap: 2px;
-  justify-content: center;
-  flex-wrap: wrap;
-  cursor: pointer;
-  font-size: 4rem;
-  margin-bottom: 1rem;
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+    font-size: 4rem;
+    margin-bottom: 1rem;
 }
 
 .exp-title2:hover span {
-  transform: scale(1.1);
-  color: #5e1fc5; 
+    transform: scale(1.1);
+    color: #5e1fc5;
 }
+
 .exp-title2.animate span {
-  animation: scaleInExperience 0.6s ease forwards;
-  /* animation: scaleInTitle 1s ease-in-out; */
-  /* animation-fill-mode: forwards; */
+    animation: scaleInExperience 0.6s ease forwards;
+    /* animation: scaleInTitle 1s ease-in-out; */
+    /* animation-fill-mode: forwards; */
 }
+
 .exp-title2 span {
-  display: inline-block;
-  transition: transform 0.3s ease, color 0.3s ease;
-  will-change: transform;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+    will-change: transform;
 }
+
+
 /* exp-title2 animation when first loading page */
-.exp-title2.animate span:nth-child(1) { animation-delay: 0s; }
-.exp-title2.animate span:nth-child(2) { animation-delay: 0.05s; }
-.exp-title2.animate span:nth-child(3) { animation-delay: 0.1s; }
-.exp-title2.animate span:nth-child(4) { animation-delay: 0.15s; }
-.exp-title2.animate span:nth-child(5) { animation-delay: 0.2s; }
-.exp-title2.animate span:nth-child(6) { animation-delay: 0.25s; }
-.exp-title2.animate span:nth-child(7) { animation-delay: 0.3s; }
-.exp-title2.animate span:nth-child(8) { animation-delay: 0.35s; }
-.exp-title2.animate span:nth-child(9) { animation-delay: 0.4s; }
-.exp-title2.animate span:nth-child(10) { animation-delay: 0.45s; }
-.exp-title2.animate span:nth-child(11) { animation-delay: 0.5s; }
-.exp-title2.animate span:nth-child(12) { animation-delay: 0.55s; }
-.exp-title2.animate span:nth-child(13) { animation-delay: 0.6s; }
+
+.exp-title2.animate span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.exp-title2.animate span:nth-child(2) {
+    animation-delay: 0.05s;
+}
+
+.exp-title2.animate span:nth-child(3) {
+    animation-delay: 0.1s;
+}
+
+.exp-title2.animate span:nth-child(4) {
+    animation-delay: 0.15s;
+}
+
+.exp-title2.animate span:nth-child(5) {
+    animation-delay: 0.2s;
+}
+
+.exp-title2.animate span:nth-child(6) {
+    animation-delay: 0.25s;
+}
+
+.exp-title2.animate span:nth-child(7) {
+    animation-delay: 0.3s;
+}
+
+.exp-title2.animate span:nth-child(8) {
+    animation-delay: 0.35s;
+}
+
+.exp-title2.animate span:nth-child(9) {
+    animation-delay: 0.4s;
+}
+
+.exp-title2.animate span:nth-child(10) {
+    animation-delay: 0.45s;
+}
+
+.exp-title2.animate span:nth-child(11) {
+    animation-delay: 0.5s;
+}
+
+.exp-title2.animate span:nth-child(12) {
+    animation-delay: 0.55s;
+}
+
+.exp-title2.animate span:nth-child(13) {
+    animation-delay: 0.6s;
+}
+
+
 /* end of exp-title2 animate block */
 
+
 /* staggered transition delays for hover effect */
-.exp-title2 span:nth-child(1) { transition-delay: 0s; }
-.exp-title2 span:nth-child(2) { transition-delay: 0.03s; }
-.exp-title2 span:nth-child(3) { transition-delay: 0.06s; }
-.exp-title2 span:nth-child(4) { transition-delay: 0.09s; }
-.exp-title2 span:nth-child(5) { transition-delay: 0.12s; }
-.exp-title2 span:nth-child(6) { transition-delay: 0.15s; }
-.exp-title2 span:nth-child(7) { transition-delay: 0.18s; }
-.exp-title2 span:nth-child(8) { transition-delay: 0.21s; }
-.exp-title2 span:nth-child(9) { transition-delay: 0.24s; }
-.exp-title2 span:nth-child(10) { transition-delay: 0.27s; }
-.exp-title2 span:nth-child(11) { transition-delay: 0.3s; }
-.exp-title2 span:nth-child(12) { transition-delay: 0.33s; }
-.exp-title2 span:nth-child(13) { transition-delay: 0.36s; }
+
+.exp-title2 span:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.exp-title2 span:nth-child(2) {
+    transition-delay: 0.03s;
+}
+
+.exp-title2 span:nth-child(3) {
+    transition-delay: 0.06s;
+}
+
+.exp-title2 span:nth-child(4) {
+    transition-delay: 0.09s;
+}
+
+.exp-title2 span:nth-child(5) {
+    transition-delay: 0.12s;
+}
+
+.exp-title2 span:nth-child(6) {
+    transition-delay: 0.15s;
+}
+
+.exp-title2 span:nth-child(7) {
+    transition-delay: 0.18s;
+}
+
+.exp-title2 span:nth-child(8) {
+    transition-delay: 0.21s;
+}
+
+.exp-title2 span:nth-child(9) {
+    transition-delay: 0.24s;
+}
+
+.exp-title2 span:nth-child(10) {
+    transition-delay: 0.27s;
+}
+
+.exp-title2 span:nth-child(11) {
+    transition-delay: 0.3s;
+}
+
+.exp-title2 span:nth-child(12) {
+    transition-delay: 0.33s;
+}
+
+.exp-title2 span:nth-child(13) {
+    transition-delay: 0.36s;
+}
+
+
 /* end of exp-title2 transition delay block */
-
-
 
 
 /* exp content */
 
-
-
-
-
 #exp-image {
-  width: 300px;        /* control size */
-  /* max-width: 100%; */
-  height: 300px;       /* keep it equal for perfect circle */
-  /* border-radius: 50%; */
-  border-radius: 5px;
+    width: 300px;
+    /* control size */
+    /* max-width: 100%; */
+    height: 300px;
+    /* keep it equal for perfect circle */
+    /* border-radius: 50%; */
+    border-radius: 5px;
     /* makes it circular */
-  object-fit: cover;   /* keeps image from stretching */
-  margin: 5%;
+    object-fit: cover;
+    /* keeps image from stretching */
+    margin: 5%;
 }
-
 
 
 /* year menu */
+
 .year-selector {
-  display: flex;
-  gap: 4rem;
-  margin-bottom: 2rem;
-  justify-content: center;
-  margin: 4rem;
+    display: flex;
+    gap: 4rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    margin: 4rem;
 }
 
 .year {
-  background-color: #ffffff;
-  color: #000000;
-  cursor: pointer;
-  font-weight: 600;
-  transition: all 300ms ease;
-  padding: 0.5rem;
-  width: 5rem;
-  /* width: 3rem; */
-  text-align: center;
-  /* border-radius: 10rem; */
-  border-radius: 2rem;
-  border: 2px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 300ms ease;
+    padding: 0.5rem;
+    width: 5rem;
+    /* width: 3rem; */
+    text-align: center;
+    /* border-radius: 10rem; */
+    border-radius: 2rem;
+    border: 2px solid #000000;
 }
 
 .year:hover {
-  color: #8a00c4;
-  border-color: #8a00c4;
-  background-color: #e0cdeb;
+    color: #8a00c4;
+    border-color: #8a00c4;
+    background-color: #e0cdeb;
 }
+
 
 /* year menu end */
 
 
-
 /* exp texts */
+
+
 /* .experience-content {
   width: 1200px;
   margin: 0 auto;
   
 } */
 
-
 #experience-content {
-  background-color: #fff;
-  padding: 0.5rem;
-  border-radius: 12px;
-  
-  display: flex;
-  /* flex-direction: row; */
-  /* align-items: center; */
-  width: 80%;
-  height: 70%;
-  gap: 2rem;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  
-
+    background-color: #fff;
+    padding: 0.5rem;
+    border-radius: 12px;
+    display: flex;
+    /* flex-direction: row; */
+    /* align-items: center; */
+    width: 80vw;
+    height: 40vh;
+    gap: 2rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
+
 /* when there's no image */
+
 #experience-content.no-image {
-  justify-content: center;
+    justify-content: center;
 }
 
 #experience-content.no-image .exp-right {
-  flex: none;
-  width: 100%;
-  text-align: center;
+    flex: none;
+    width: 100%;
+    text-align: center;
 }
 
 #experience-content.no-image .exp-left {
-  display: none;
+    display: none;
 }
 
 #experience-content.no-image .experience-description {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
 }
 
 #experience-content.no-image .experience-description ul {
-  list-style-position: inside;
-  text-align: left;
-  padding: 0;
-  margin: 0;
+    list-style-position: inside;
+    text-align: left;
+    padding: 0;
+    margin: 0;
 }
+
 
 /* end of when there's no image */
 
+.exp-left {
+    flex: 1;
+    /* min-width: 200px; */
+}
 
-
-.exp-left
-{
-  flex: 1;
-  /* min-width: 200px; */
-} 
 .exp-right {
-  flex: 1.75;
-  /* min-width: 250px; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-} 
-
+    flex: 1.75;
+    /* min-width: 250px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 .experience-description {
-  margin-top: 1rem;
-  font-size: 0.95rem;
-  line-height: 1.6;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 .experience-description ul {
-  list-style-type: disc;
-  padding-left: 1.5rem;
+    list-style-type: disc;
+    padding-left: 1.5rem;
 }
 
 .experience-description li {
-  margin-bottom: 0.4rem;
-
+    margin-bottom: 0.4rem;
 }
 
 .exp-desc1 {
-  margin-top: 1rem;
-  font-size: 0.95rem;
-  line-height: 1.6;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
+
 .exp-desc1 ul {
-  list-style-type: disc;
-  padding-left: 1.5rem;
+    list-style-type: disc;
+    padding-left: 1.5rem;
 }
+
 .exp-desc1 li {
-  margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
-
-
-#exp-description
-{
-  justify-content: center;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  white-space: pre-line;
-  margin-bottom: 1rem;
-  
-  list-style-type: disc;
-  
+#exp-description {
+    justify-content: center;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    white-space: pre-line;
+    margin-bottom: 1rem;
+    list-style-type: disc;
 }
+
 #exp-description li {
-  font-family:  Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 1rem;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1rem;
 }
 
-.exp-title-jobs
- {
-  color: #5e1fc5;
-  font-weight: bold;
-  font-size: 1.4rem;
-  padding-bottom: 1rem;
-  padding-top: 2rem;
+.exp-title-jobs {
+    color: #5e1fc5;
+    font-weight: bold;
+    font-size: 1.4rem;
+    padding-bottom: 1rem;
+    padding-top: 2rem;
 }
 
-.exp-dates{
-  font-size: 1.1rem;
-  font-weight: 600;
-  /* margin-top: 0.5rem; */
-  /* margin-bottom: 0.5rem; */
+.exp-dates {
+    font-size: 1.1rem;
+    font-weight: 600;
+    /* margin-top: 0.5rem; */
+    /* margin-bottom: 0.5rem; */
 }
-
-
-
