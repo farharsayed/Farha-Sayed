@@ -9,6 +9,9 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="mediaqueries.css">
+
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
 </head>
 
 <body>
@@ -110,7 +113,7 @@
                     to keep pushing forward in this ever-evolving field.
                 </p>
                 <p class="about-text2">
-                    Off git? I'm all about balance. You'll find me chasing that next PR at the gym, cheering on Ferrari as it loses yet another F1 Grand Prix, or trying to stop my goofy cat from rampaging around the house.
+                    Off my PC? I'm all about balance. You'll find me chasing that next PR at the gym, cheering on Ferrari as it DNF's yet another F1 Grand Prix, or trying to stop my goofy cat from rampaging around the house.
                 </p>
                 <p class="about-text3">
                     My journey in tech isn't limited to just one path. I'm passionate about cloud computing, software development, cybersecurity, and everything in between. I genuinely want to absorb as much knowledge as possible -- like a sponge, and I'm only just getting
@@ -203,7 +206,7 @@
                 <div id="exp-title-jobs" class="exp-title-jobs">Infrastructure and Cyber Security Engineer - Gulf Business Machines</div>
                 <div id="exp-dates" class="exp-dates">Nov 2024 - Present</div>
                 <div id="exp-description" class="experience-description">
-                    <ul class="exp-desc1">
+                    <ul>
                         <li>Provided security solutions for endpoint, network, servers and cloud email security to customers including MBZ University of Artificial Intelligence, ICP, ADEK, ADJD etc.</li>
                         <li>Collaborated with vendors to implement products such as Trend Micro XDR/EDR and ASM, FortiSASE, BeyondTrust PRA, Cisco User Protection Suite etc.</li>
                         <li>Executed the major rollout on several projects, managing up to 15,000 endpoints and servers</li>
@@ -226,74 +229,83 @@
     <!--  -->
 
 
+    <!-- skills -->
 
 
 
 
 
-    <!-- work experience container -->
-    <!-- <div class="work-exp-cont">
-      <div class="work-exp-left">
-        <ul class="work-exp-list">
-          <li class="work-exp-item active" data-company="company1">Gulf Business Machines</li>
-          <li class="work-exp-item" data-company="company2">BGC Group | Cantor Fitzgerald</li>
-          <li class="work-exp-item" data-company="company3">Quantum Ventura</li>
-          <li class="work-exp-item" data-company="company4">Protiviti Global Business Consulting</li>
-        </ul>
-      </div>
-      <div class="work-exp-right">
-        <div id="company1" class="work-exp-details active">
-          <h3 class="work-exp-title">Gulf Business Machines</h3>
-          <p class="work-exp-location">Abu Dhabi, UAE | Present</p>
-          <p class="work-exp-desc">I am currently working here as a Junior Engineer, focusing on Security and Networks.</p>
+
+
+
+    <section id="skills">
+
+        <div class="mindmap-container">
+            <!-- <div class="center-node">My Skills</div> -->
+
+            <div class="skill-card" data-desc="Red Hat Certified Engineer">
+                <img src="./assets/redhat.svg" alt="Red Hat" />
+            </div>
+
+            <div class="skill-card" data-desc="Algorithmic thinker, competitive coding">
+                <span class="text-skill">Problem Solving</span>
+            </div>
+
+            <div class="skill-card" data-desc="Built enterprise apps using Java">
+                <img src="./assets/java.png" alt="Java" />
+            </div>
+
+            <div class="skill-card" data-desc="Systems programming fundamentals">
+                <img src="./assets/c.svg" alt="C" />
+            </div>
+
+            <div class="skill-card" data-desc="Styled dynamic web apps">
+                <img src="./assets/css.svg" alt="CSS" />
+            </div>
+
+            <div class="skill-card" data-desc="Dockerized deployments & CI pipelines">
+                <img src="./assets/docker.svg" alt="Docker" />
+            </div>
+
+            <div class="skill-card" data-desc="Semantic HTML for accessibility">
+                <img src="./assets/html5.svg" alt="HTML5" />
+            </div>
+
+            <div class="skill-card" data-desc="Modern JS + async logic">
+                <img src="./assets/javascript.svg" alt="JavaScript" />
+            </div>
+
+            <div class="skill-card" data-desc="Used in hybrid cloud infra">
+                <img src="./assets/kubernetes.svg" alt="Kubernetes" />
+            </div>
+
+            <div class="skill-card" data-desc="Built AI tools and dashboards">
+                <img src="./assets/python.svg" alt="Python" />
+            </div>
+
+            <div class="skill-card" data-desc="Cloud-native deployments with OpenShift">
+                <img src="./assets/redhatopenshift.svg" alt="OpenShift" />
+            </div>
+
+            <div id="skill-popup" class="skill-popup"></div>
+
+
+            <!-- <div class="skill-card" data-skill="js">
+            <img src="./assets/javascript.svg" alt="JS" />
         </div>
-        <div id="company2" class="work-exp-details">
-          <h3 class="work-exp-title">BGC Group | Cantor Fitzgerald</h3>
-          <p class="work-exp-location">London, UK | JULY - SEPT 2024</p>
-          <p class="work-exp-desc">As a Technology (Infrastructure) Intern in the UNIX team, I contributed to the development, deployment, and enhancement of critical systems supporting observability and infrastructure management.</p>
-          <p class="title-of-work-list">Some of my main achievements here were:</p>
-          <ul class="work-list"> 
-            <li>Designed the migration of the observability stack from a monolithic architecture to a cloud-agnostic microservices-based solution deployed on Red Hat OpenShift.</li> 
-            <li>Implemented and deployed key infrastructure and log management tools, including Prometheus, Promtail, Grafana, Loki, Mimir, and OpenTelemetry.</li> 
-            <li>Customized Docker images to comply with enterprise security policies and platform-specific configurations.</li> 
-            <li>Conducted knowledge-sharing sessions introducing Kubernetes, Helm charts, and OpenShift, educating 15–20 team members through practical demos.</li> 
-            <li>Collaborated with the team to maintain and optimize CentOS and Rocky Linux servers to ensure system stability and performance.</li> 
-            <li>Researched and evaluated the Java JMX Exporter to monitor and expose application metrics for observability improvements.</li> 
-            <li>Utilized Nexus and Vault for effective artifact storage and secure secret management.</li> 
-            <li>Gained hands-on experience with PostgreSQL architecture, GitLab CI/CD pipelines, and automation workflows using Ansible AWX.</li> 
-          </ul>
+        <div class="skill-card" data-skill="js">
+            <img src="./assets/javascript.svg" alt="JS" />
         </div>
-        <div id="company3" class="work-exp-details">
-          <h3 class="work-exp-title">Quantum Ventura</h3>
-          <p class="work-exp-location">Dubai, UAE | JUNE - AUG 2022</p>
-          <p class="work-exp-desc">At Quantum Ventura, I collaborated with a team of five to launch an NDR/EDR product designed to monitor, detect, and visualize security threats.</p>
-          <p class="title-of-work-list">Some of my main achievements here were:</p>
-          <ul class="work-list"> 
-            <li>Developed and implemented a strategy for the launch of a cutting-edge Network Detection and Response (NDR) and Endpoint Detection and Response (EDR) product, enhancing threat monitoring and visualization capabilities.</li> 
-            <li>Evaluated and tested key technologies, including Apache Flink, Kafka, Zeek, and Elasticsearch, to determine the most effective solutions for product functionality and scalability.</li> 
-            <li>Conducted in-depth market analysis to identify target segments and position the product strategically within a competitive cybersecurity landscape.</li> 
-            <li>Conceptualized 10–15 innovative dashboard features tailored to diverse user roles, such as IT administrators and senior leadership, optimizing usability and decision-making processes.</li> 
-          </ul>
-        </div>
-        <div id="company4" class="work-exp-details">
-          <h3 class="work-exp-title">Protiviti Global Business Consulting</h3>
-          <p class="work-exp-location">Dubai, UAE | JULY - OCT 2020</p>
-          <p class="work-exp-desc">Here, I built a strong foundation in cybersecurity and networking fundamentals through hands-on learning and research.</p>
-          <p class="title-of-work-list">Some of my main achievements here were:</p>
-          <ul class="work-list"> 
-            <li>Acquired in-depth knowledge of cybersecurity principles and network architecture, focusing on the foundational elements of secure systems.</li> 
-            <li>Explored the functionality of network layers, gaining a clear understanding of data transmission processes between machines and their role in communication protocols.</li> 
-            <li>Conducted research on diverse cyber threats, including DDoS attacks, injection vulnerabilities, password breaches, XSS attacks, backdoors, and ransomware, enhancing awareness of threat vectors and mitigation strategies.</li> 
-          </ul>
-        </div>
-      </div>
-    </div> -->
+ -->
 
 
 
 
 
 
+
+
+    </section>
 
 
 

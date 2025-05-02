@@ -811,7 +811,7 @@ a:hover {
 
 .exp-title2:hover span {
     transform: scale(1.1);
-    color: #5e1fc5;
+    color: #a73ad9;
 }
 
 .exp-title2.animate span {
@@ -965,9 +965,10 @@ a:hover {
 .year-selector {
     display: flex;
     gap: 4rem;
-    margin-bottom: 2rem;
+    margin: 2rem;
+    /* padding: 2rem; */
     justify-content: center;
-    margin: 4rem;
+    /* margin: 4rem; */
 }
 
 .year {
@@ -986,8 +987,8 @@ a:hover {
 }
 
 .year:hover {
-    color: #8a00c4;
-    border-color: #8a00c4;
+    color: #a73ad9;
+    border-color: #a73ad9;
     background-color: #e0cdeb;
 }
 
@@ -1011,8 +1012,10 @@ a:hover {
     display: flex;
     /* flex-direction: row; */
     /* align-items: center; */
+    height: 55vh;
+    /* overflow-y: auto; */
     width: 80vw;
-    height: 40vh;
+    /* height: 40vh; */
     gap: 2rem;
     align-items: flex-start;
     flex-wrap: wrap;
@@ -1066,6 +1069,8 @@ a:hover {
     justify-content: center;
 }
 
+
+/* 
 .experience-description {
     margin-top: 1rem;
     font-size: 0.95rem;
@@ -1082,9 +1087,12 @@ a:hover {
 }
 
 .exp-desc1 {
+    white-space: pre-line;
     margin-top: 1rem;
     font-size: 0.95rem;
     line-height: 1.6;
+    margin-bottom: 1rem;
+    list-style-type: disc;
 }
 
 .exp-desc1 ul {
@@ -1093,7 +1101,9 @@ a:hover {
 }
 
 .exp-desc1 li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1rem;
 }
 
 #exp-description {
@@ -1108,10 +1118,29 @@ a:hover {
 #exp-description li {
     font-family: Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1rem;
+} */
+
+.experience-description {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    justify-content: center;
+}
+
+.experience-description ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+
+.experience-description li {
+    margin-bottom: 0.4rem;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1rem;
 }
 
 .exp-title-jobs {
-    color: #5e1fc5;
+    color: #a73ad9;
     font-weight: bold;
     font-size: 1.4rem;
     padding-bottom: 1rem;
@@ -1123,4 +1152,100 @@ a:hover {
     font-weight: 600;
     /* margin-top: 0.5rem; */
     /* margin-bottom: 0.5rem; */
+}
+
+
+/* end of experience */
+
+
+/* start of skills */
+
+
+/* 
+.skill-card .text-skill {
+    background: linear-gradient(to right, #ff8a00, #e52e71);
+    color: white;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+}
+
+.skill-card img {
+    max-width: 80px;
+    max-height: 80px;
+    transition: transform 0.2s ease;
+}
+
+.skill-card:hover img {
+    transform: scale(1.1);
+} */
+
+.mindmap-container {
+    position: relative;
+    width: 100vw;
+    /* Full width */
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* Optional: prevent scrollbars */
+}
+
+.center-node {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background-color: #222;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.skill-card {
+    position: absolute;
+    /* This is important for absolute positioning */
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.skill-card img,
+.skill-card .text-skill {
+    max-width: 60px;
+    max-height: 60px;
+}
+
+.skill-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.text-skill {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.skill-popup {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 5;
+    max-width: 200px;
+    font-size: 0.85rem;
 }
