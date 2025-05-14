@@ -1,4 +1,4 @@
-NOTE: All work here was a part of my university courswork and is not intended for replication.
+NOTE: All work here was a part of my university coursework and is not intended for replication.
 
 
 Assignment 1: 8-Puzzle Search Investigation
