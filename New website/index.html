@@ -116,8 +116,7 @@
                     Off my PC? I'm all about balance. You'll find me chasing that next PR at the gym, cheering on Ferrari as it DNF's yet another F1 Grand Prix, or trying to stop my goofy cat from rampaging around the house.
                 </p>
                 <p class="about-text3">
-                    My journey in tech isn't limited to just one path. I'm passionate about cloud computing, software development, cybersecurity, and everything in between. I genuinely want to absorb as much knowledge as possible -- like a sponge, and I'm only just getting
-                    started.
+                    My journey in tech isn't limited to just one path. I'm passionate about cloud computing, software development, cybersecurity, and everything in between. I genuinely want to absorb as much knowledge as possible, and find creative applications for my skills.
                 </p>
             </div>
 
@@ -126,36 +125,6 @@
                 <div class="about-pic">
                     <img src="./assets/about-image1.jpg" alt="About Picture" class="about-pic1" />
                 </div>
-
-
-
-                <!--           
-          
-            <div class="slideshow-container" id="slideshow">
-              <div class="slide fade">
-                <img src="./assets/about-image1.jpg" alt="Slide 1" />
-                <div class="caption">Caption for Image 1</div>
-              </div>
-            
-              <div class="slide fade">
-                <img src="image2.jpg" alt="Slide 2" />
-                <div class="caption">Caption for Image 2</div>
-              </div>
-            
-              <div class="slide fade">
-                <img src="image3.jpg" alt="Slide 3" />
-                <div class="caption">Caption for Image 3</div>
-              </div>
-            
-              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-              <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            
-              <div class="dots-container">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-              </div>
-            </div> -->
 
 
 
@@ -195,15 +164,12 @@
 
         <div id="experience-content">
 
-
-            <!-- Dynamic Experience Content -->
-            <!-- <div id="experience-content"> -->
             <div class="exp-left">
                 <img id="exp-image" class="experience-image" src="./assets/exp-pic1.jpg" alt="Experience Image">
             </div>
 
             <div class="exp-right">
-                <div id="exp-title-jobs" class="exp-title-jobs">Infrastructure and Cyber Security Engineer - Gulf Business Machines</div>
+                <div id="exp-title-jobs" class="exp-title-jobs">Cybersecurity and Infrastructure Engineer - Gulf Business Machines</div>
                 <div id="exp-dates" class="exp-dates">Nov 2024 - Present</div>
                 <div id="exp-description" class="experience-description">
                     <ul>
@@ -211,6 +177,7 @@
                         <li>Collaborated with vendors to implement products such as Trend Micro XDR/EDR and ASM, FortiSASE, BeyondTrust PRA, Cisco User Protection Suite etc.</li>
                         <li>Executed the major rollout on several projects, managing up to 15,000 endpoints and servers</li>
                         <li>Followed entire project lifecycles from pre-sales to documentation and closure.</li>
+                        <li>Managed Nutanix Kubernetes Platform (NKP) infrastructure including 15 nodes across 3 environments.</li>
                     </ul>
                 </div>
             </div>
@@ -224,81 +191,99 @@
         </div>
 
         </div>
+
+        <!-- scrolling arrow -->
+        <div class="scroll-indicator" onclick="document.getElementById('skills').scrollIntoView({ behavior: 'smooth' })">
+            <span class="arrow"></span>
+        </div>
+
+
+
+
+
     </section>
 
-    <!--  -->
+
+
+
+
 
 
     <!-- skills -->
-
-
-
-
-
-
-
-
     <section id="skills">
+        <div class="skills-title">
+            <p class="skills-title1">
+                Check Out My
+            </p>
+            <div class="skills-title2">
+                <span>S</span><span>k</span><span>i</span><span>l</span><span>l</span><span>s</span>
+            </div>
+        </div>
+        <!-- end of exp title -->
+
+
 
         <div class="mindmap-container">
-            <!-- <div class="center-node">My Skills</div> -->
-
-            <div class="skill-card" data-desc="Red Hat Certified Engineer">
+            <div class="skill-card" data-skill="redhat" data-index="0">
                 <img src="./assets/redhat.svg" alt="Red Hat" />
             </div>
-
-            <div class="skill-card" data-desc="Algorithmic thinker, competitive coding">
-                <span class="text-skill">Problem Solving</span>
+            <div class="skill-card" data-skill="java" data-index="1">
+                <img src="./assets/java.svg" alt="Java" />
             </div>
-
-            <div class="skill-card" data-desc="Built enterprise apps using Java">
-                <img src="./assets/java.png" alt="Java" />
+            <div class="skill-card" data-skill="azure" data-index="2">
+                <img src="./assets/azure.svg" alt="Azure" />
             </div>
-
-            <div class="skill-card" data-desc="Systems programming fundamentals">
+            <div class="skill-card" data-skill="gitlab" data-index="3">
+                <img src="./assets/gitlab.svg" alt="GitLab" />
+            </div>
+            <div class="skill-card" data-skill="C" data-index="4">
                 <img src="./assets/c.svg" alt="C" />
             </div>
-
-            <div class="skill-card" data-desc="Styled dynamic web apps">
+            <div class="skill-card" data-skill="aws" data-index="5">
+                <img src="./assets/aws.svg" alt="AWS" />
+            </div>
+            <div class="skill-card" data-skill="css" data-index="6">
                 <img src="./assets/css.svg" alt="CSS" />
             </div>
-
-            <div class="skill-card" data-desc="Dockerized deployments & CI pipelines">
+            <div class="skill-card" data-skill="docker" data-index="7">
                 <img src="./assets/docker.svg" alt="Docker" />
             </div>
-
-            <div class="skill-card" data-desc="Semantic HTML for accessibility">
-                <img src="./assets/html5.svg" alt="HTML5" />
+            <div class="skill-card" data-skill="html" data-index="8">
+                <img src="./assets/html.svg" alt="HTML" />
             </div>
-
-            <div class="skill-card" data-desc="Modern JS + async logic">
+            <div class="skill-card" data-skill="javascript" data-index="9">
                 <img src="./assets/javascript.svg" alt="JavaScript" />
             </div>
-
-            <div class="skill-card" data-desc="Used in hybrid cloud infra">
+            <div class="skill-card" data-skill="openshift" data-index="10">
+                <img src="./assets/openshift.svg" alt="OpenShift" />
+            </div>
+            <div class="skill-card" data-skill="kubernetes" data-index="11">
                 <img src="./assets/kubernetes.svg" alt="Kubernetes" />
             </div>
-
-            <div class="skill-card" data-desc="Built AI tools and dashboards">
+            <div class="skill-card" data-skill="python" data-index="12">
                 <img src="./assets/python.svg" alt="Python" />
             </div>
-
-            <div class="skill-card" data-desc="Cloud-native deployments with OpenShift">
-                <img src="./assets/redhatopenshift.svg" alt="OpenShift" />
+            <div class="skill-card" data-skill="grafana" data-index="13">
+                <img src="./assets/grafana.svg" alt="Grafana" />
             </div>
-
-            <div id="skill-popup" class="skill-popup"></div>
-
-
-            <!-- <div class="skill-card" data-skill="js">
-            <img src="./assets/javascript.svg" alt="JS" />
+            <div class="skill-card" data-skill="prometheus" data-index="14">
+                <img src="./assets/prometheus.svg" alt="Prometheus" />
+            </div>
         </div>
-        <div class="skill-card" data-skill="js">
-            <img src="./assets/javascript.svg" alt="JS" />
+
+
+        <div class="skill-details" id="skillDetails">
+            <button id="closeBtn">×</button>
+            <h2 id="skillTitle"></h2>
+            <div id="skillText"></div>
         </div>
- -->
 
 
+
+        <!-- scrolling arrow -->
+        <div class="scroll-indicator" onclick="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })">
+            <span class="arrow"></span>
+        </div>
 
 
 
@@ -310,6 +295,44 @@
 
 
 
+    <section id="projects">
+        <div class="project-title">
+            <p class="project-title1">
+                Some of My
+            </p>
+            <div class="project-title2">
+                <span>P</span><span>e</span><span>r</span><span>s</span><span>o</span><span>n</span><span>a</span><span>l</span>
+                <span> </span>
+                <span>P</span><span>r</span><span>o</span><span>j</span><span>e</span><span>c</span><span>t</span><span>s</span>
+            </div>
+        </div>
+
+
+        <!-- 3 project containers -->
+
+        <div class="project-containers">
+            <div class="project-cont1">
+
+                <!-- project1 image -->
+                <img src="./assets/proj-img1.png" alt="Project 1" class="project-img" />
+
+            </div>
+            <div class="project-cont2">
+
+                <!-- project1 image -->
+                <img src="./assets/proj-img2.png" alt="Project 2" class="project-img" />
+
+            </div>
+            <div class="project-cont3">
+
+                <!-- project1 image -->
+                <img src="./assets/proj-img3.png" alt="Project 3" class="project-img" />
+
+            </div>
+
+
+
+        </div>
 
 
 
@@ -317,6 +340,75 @@
 
 
 
+
+
+        <!-- scrolling arrow -->
+        <div class="scroll-indicator" onclick="document.getElementById('contact-me').scrollIntoView({ behavior: 'smooth' })">
+            <span class="arrow"></span>
+        </div>
+
+    </section>
+
+
+    <section id="contact-me">
+
+        <div class="contact-title">
+            <p class="contact-title1">
+                Get in Touch
+            </p>
+            <div class="contact-title2">
+                <span>C</span><span>o</span><span>n</span><span>t</span><span>a</span><span>c</span><span>t</span>
+                <span> </span>
+                <span>M</span><span>e</span>
+            </div>
+        </div>
+
+
+        <div class="contact-buttons">
+
+
+
+            <div class="contact-button1">
+
+                <img src="./assets/email.png" alt="Email icon" class="email-icon" onclick="location.href='mailto:farhasayed29@gmail.com'" />
+                <p class="email-text"></p><a href="mailto:farhasayed29@gmail.com">Email Me</a></p>
+            </div>
+
+            <!-- linkedin -->
+            <div class="contact-button2">
+
+                <img src="./assets/linkedin.png" alt="LinkedIn icon" class="linkedin-icon" onclick="location.href='https://www.linkedin.com/in/farha-sayed/'" />
+                <p class="linkedin-text"></p><a href="https://www.linkedin.com/in/farha-sayed/">Connect on Linkedin</a></p>
+            </div>
+
+        </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+    </section>
+
+
+    <footer>
+        <nav>
+            <div class="nav-links-container">
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </footer>
 
 
 
