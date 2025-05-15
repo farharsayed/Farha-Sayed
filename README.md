@@ -7,7 +7,7 @@ Welcome to my **Tech Projects**! I've made a collection of some of my recent wor
 
 The following projects are included in this repo:
 
-  -  **Kubernetes Research Project ** : This folder contains some of my work from a research project I completed in 2024, titled **'Proactive Autoscaling in Kubernetes**. It shows use of concepts such as **Virtualization** and **Containerization**.
+  -  **Kubernetes Research Project ** : This folder contains some of my work from a research project I completed in 2024, titled **'Proactive Autoscaling in Kubernetes'**. It shows use of concepts such as **Virtualization** and **Containerization**.
   -  **Carpe Vitae Capital** : I've shared some of the code written by our group of 3 when we created this Platform.
   -  **Artificial Intelligence **: Explored how AI can benefit communities with tools like IBM Visual Insights (computer vision) and H2O.ai (machine learning).
 
