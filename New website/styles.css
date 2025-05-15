@@ -309,7 +309,7 @@ a:hover {
 
 .intro-text1,
 .intro-text2 {
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
 .intro-text2 {
@@ -450,6 +450,7 @@ a:hover {
     height: 85vh;
     padding: 4rem 2rem;
     position: relative;
+    padding-top: 4rem;
 }
 
 .about-parts {
@@ -459,6 +460,7 @@ a:hover {
     /* or center */
     flex-wrap: wrap;
     /* for mobile responsiveness */
+    padding-top: 5rem;
 }
 
 .about-title,
@@ -679,8 +681,8 @@ a:hover {
 /* experience section */
 
 #experience {
-    padding-top: 2rem;
-    height: 95vh;
+    padding-top: 4rem;
+    height: 90vh;
     /* padding: 2rem; */
     display: flex;
     flex-direction: column;
@@ -1329,8 +1331,8 @@ a:hover {
 /* start of projects */
 
 #projects {
-    height: 95vh;
-    padding-top: 2rem;
+    height: 90vh;
+    padding-top: 4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1685,9 +1687,9 @@ a:hover {
 
 /* start of contact-me */
 
-#contact-me {
-    padding-top: 2rem;
-    height: 80vh;
+#contact {
+    padding-top: 4rem;
+    height: 60vh;
     /* padding: 2rem; */
     display: flex;
     flex-direction: column;
@@ -1844,6 +1846,7 @@ a:hover {
 }
 
 .contact-buttons p {
+    padding-top: 8rem;
     font-size: larger;
 }
 
