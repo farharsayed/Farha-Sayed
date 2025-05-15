@@ -7,89 +7,81 @@
     .nav-title:hover span {
         transform: scale(1.2);
     }
-}
-
-
-/* for animated intro-text2 on hover title Farha R Sayed */
-
-@media (max-width: 768px) {
+    /* for animated intro-text2 on hover title Farha R Sayed */
     .intro-text2 {
         font-size: 1.5rem;
     }
     .intro-text2:hover span {
         transform: scale(1.2);
     }
-}
-
-
-/* for all animated titles */
-
-@media (max-width: 768px) {
+    /* for all animated titles */
     .animated-title {
         font-size: 1.5rem;
     }
     .animated-title:hover span {
         transform: scale(1.2);
     }
-}
-
-
-/* experience */
-
-@media (max-width: 768px) {
+    /* experience */
     .exp-title2 {
         font-size: 1.5rem;
     }
     .exp-title2:hover span {
         transform: scale(1.2);
     }
-}
-
-
-/* skills */
-
-@media (max-width: 768px) {
+    /* skills */
     .mindmap-container {
         grid-template-columns: repeat(2, 1fr);
     }
     .skill-card {
         transform: none !important;
     }
-}
-
-
-/* skills title */
-
-@media (max-width: 768px) {
+    /* skills title */
     .skills-title2 {
         font-size: 1.5rem;
     }
     .skills-title2:hover span {
         transform: scale(1.2);
     }
-}
-
-
-/* projects title */
-
-@media (max-width: 768px) {
+    /* projects title */
     .project-title2 {
         font-size: 1.5rem;
     }
     .project-title2:hover span {
         transform: scale(1.2);
     }
-}
-
-
-/* contact title */
-
-@media (max-width: 768px) {
+    /* contact title */
     .contact-title2 {
         font-size: 1.5rem;
     }
     .contact-title2:hover span {
         transform: scale(1.2);
+    }
+    /* Show hamburger under 768px */
+    .nav-links {
+        position: absolute;
+        right: 6rem;
+        /* top: 10vh; */
+        height: calc(100vh - 50vh);
+        flex-direction: column;
+        /* align-items: center; */
+        justify-content: center;
+        width: 100%;
+        gap: 3rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+        background-color: white !important;
+        z-index: 9999;
+        position: fixed !important;
+    }
+    .nav-links.active {
+        transform: translateX(0);
+    }
+    .hamburger {
+        display: flex;
+    }
+    nav {
+        justify-content: space-between;
+        padding: 0 2rem;
     }
 }
 
@@ -156,72 +148,42 @@
     .nav-title:hover span {
         transform: scale(1.1);
     }
-}
-
-
-/* for animated intro-text2 on hover title Farha R Sayed (max-width: 480px) */
-
-@media (max-width: 480px) {
+    /* for animated intro-text2 on hover title Farha R Sayed (max-width: 480px) */
     .intro-text2 {
         font-size: 1.2rem;
     }
     .intro-text2:hover span {
         transform: scale(1.1);
     }
-}
-
-
-/* for all animated titles (max-width: 480px) */
-
-@media (max-width: 480px) {
+    /* for all animated titles (max-width: 480px) */
     .animated-title {
         font-size: 1.2rem;
     }
     .animated-title:hover span {
         transform: scale(1.1);
     }
-}
-
-
-/* experience (max-width: 480px) */
-
-@media (max-width: 480px) {
+    /* experience (max-width: 480px) */
     .exp-title2 {
         font-size: 1.2rem;
     }
     .exp-title2:hover span {
         transform: scale(1.1);
     }
-}
-
-
-/* skills title (max-width: 480px) */
-
-@media (max-width: 480px) {
+    /* skills title (max-width: 480px) */
     .skills-title2 {
         font-size: 1.2rem;
     }
     .skills-title2:hover span {
         transform: scale(1.1);
     }
-}
-
-
-/* projects title (max-width: 480px) */
-
-@media (max-width: 480px) {
+    /* projects title (max-width: 480px) */
     .project-title2 {
         font-size: 1.2rem;
     }
     .project-title2:hover span {
         transform: scale(1.1);
     }
-}
-
-
-/* contact title (max-width: 480px) */
-
-@media (max-width: 480px) {
+    /* contact title (max-width: 480px) */
     .contact-title2 {
         font-size: 1.2rem;
     }

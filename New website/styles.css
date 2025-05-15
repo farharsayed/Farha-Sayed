@@ -251,6 +251,41 @@ a:hover {
 /* end of  nav-title Farha R Sayed */
 
 
+/* HAMBURGER MENU */
+
+
+/* Hamburger Icon */
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 2px;
+    background-color: #000000;
+    transition: all 0.3s ease;
+}
+
+
+/* Hamburger Animation when active */
+
+.hamburger.toggle div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.toggle div:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.toggle div:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
 /* home section start */
 
 #home {
