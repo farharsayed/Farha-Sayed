@@ -77,11 +77,11 @@ const experienceData = {
         title: "Cybersecurity and Infrastructure Engineer - Gulf Business Machines",
         dates: "Nov 2024 - Present",
         description: [
-            "Provided security solutions for endpoint, network, servers and cloud email security to customers including MBZ University of Artificial Intelligence, ICP, ADEK, ADJD etc.",
-            "Collaborated with vendors to implement products such as Trend Micro XDR/EDR and ASM, FortiSASE, BeyondTrust PRA, Cisco User Protection Suite etc.",
-            "Executed the major rollout on several projects, managing up to 15,000 endpoints and servers",
-            "Followed entire project lifecycles from pre-sales to documentation and closure.",
-            "Managed Nutanix Kubernetes Platform (NKP) infrastructure including 15 nodes across 3 environments."
+            "Provided solutions for endpoint, network and server security to customers across the city.",
+            "Collaborated with vendors to implement products such as Trend Micro XDR/EDR and ASM, FortiSASE, BeyondTrust PRA and Cisco User Protection Suite.",
+            "Worked on agent installation over 15,000 endpoints and servers across multiple environments via Ansible.",
+            "Managed Nutanix Kubernetes Platform (NKP) infrastructure in an airgapped environment, troubleshooting 15 nodes across multiple clusters.",
+            "Coordinated with customers and project managers over the full project life cycle, following best practices for project planning, automated implementation, risk mitigation and thorough documentation."
         ],
         image: "./assets/exp-pic1.jpg",
     },
@@ -89,10 +89,9 @@ const experienceData = {
         title: "Infrastructure Technology Intern, UNIX - BGC Group",
         dates: "July 2024 – Sept 2024",
         description: [
-            "Migrated observability stack (Prometheus, Promtail, Grafana, Loki, Mimir and OTel) to scalable cloud-agnostic microservices on Red Hat OpenShift",
-            "Introduced Kubernetes, Helm charts and OpenShift via introductory demos to 15-20 team members",
-            "Worked alongside team to learn about maintaining CentOS/Rocky Linux servers",
-            "Used Nexus and Vault for artifact and secret management",
+            "Led migration of observability stack (Prometheus, Promtail, Grafana, Loki, Mimir and OTel) to scalable cloud-agnostic microservices on Red Hat OpenShift",
+            "Introduced Kubernetes, Helm charts and OpenShift via introductory demos to 20 team members",
+            "Worked alongside team to maintain CentOS/Rocky Linux servers, using Nexus and Vault for artifact and secret management",
             "Learnt about PostgreSQL architecture, GitLab CI/CD, automation using Ansible AWX and Java JMX Exporter to instrument Java apps"
         ],
         image: "./assets/exp-pic2.jpg",
@@ -101,11 +100,10 @@ const experienceData = {
         title: "Cybersecurity Intern – Quantum Ventura",
         dates: "Jun 2022 – Sep 2022",
         description: [
-            "Worked with a team of 5 on the launch of an NDR/EDR product to monitor, detect and visualize threats",
-            "Explored the intricacies of network layers and investigated a range of cyber threats",
-            "Evaluated softwares such as Apache Flink, Kafka, Zeek and ElasticSearch",
+            "Worked on the development of an NDR/EDR product using artificial intelligence to monitor logs, detect and visualize threats",
+            "Evaluated tools such as Apache Flink, Kafka, Zeek and ElasticSearch to find the best fit for the product",
             "Analyzed market segments to effectively position product within the competitive landscape",
-            "Conceptualized 10-15 dashboard features such as different dashboards for IT admins and senior leadership"
+            "Conceptualized dashboard features such as automatically generating low-level reports for IT admins and high-level summaries for senior leadership"
         ],
         image: "./assets/exp-pic3.png",
     },

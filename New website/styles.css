@@ -4,10 +4,13 @@
     /* margin: 0; */
     /* padding: 1rem; */
     cursor: default;
+    /* background-color: white; */
+    ;
 }
 
 body {
     font-family: "Poppins", sans-serif;
+    /* min-height: 100vh; */
 }
 
 html {
@@ -258,7 +261,7 @@ a:hover {
     /* Centers vertically */
     /* gap: -5rem; */
     height: 85vh;
-    padding-left: 4reM;
+    padding-left: 4rem;
     padding-right: 5rem;
 }
 
@@ -306,7 +309,7 @@ a:hover {
 
 .intro-text1,
 .intro-text2 {
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
 .intro-text2 {
@@ -386,12 +389,6 @@ a:hover {
 }
 
 
-/* .home-btn2:hover {
-    color:#008e32;
-    border-color:#008e32 ;
-  } */
-
-
 /* github and linkedin icons on homepages */
 
 #socials-icons {
@@ -444,12 +441,14 @@ a:hover {
 /* end of profile section */
 
 
+/* //////////////////////////////////////////////////////// */
+
+
 /* about section */
 
 #about {
     height: 85vh;
-    padding-top: 6rem;
-    /* 2rem; */
+    padding: 4rem 2rem;
     position: relative;
 }
 
@@ -503,7 +502,7 @@ a:hover {
 /* intro-text2 animation when first loading page */
 
 .animated-title.animate span {
-    animation: scaleInAbout 1s ease forwards;
+    animation: scaleInAbout 0.6s ease forwards;
     /* animation: scaleInTitle 1s ease-in-out; */
     /* animation-fill-mode: forwards; */
 }
@@ -602,7 +601,6 @@ a:hover {
 
 .about-parts {
     margin-bottom: 4rem;
-    padding-top: 3rem;
 }
 
 .about-left,
@@ -866,6 +864,7 @@ a:hover {
     object-fit: cover;
     /* keeps image from stretching */
     margin: 5%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -888,7 +887,7 @@ a:hover {
     font-weight: 600;
     transition: all 300ms ease;
     padding: 0.5rem;
-    width: 5rem;
+    width: 9rem;
     /* width: 3rem; */
     text-align: center;
     /* border-radius: 10rem; */
@@ -899,8 +898,8 @@ a:hover {
 }
 
 .year:hover {
-    color: #FF4F00;
-    border-color: #FF4F00;
+    /* color: #FF4F00; */
+    /* border-color: #FF4F00; */
     background-color: #ffc9ae;
     /* year menu end */
     /* exp texts */
@@ -1049,9 +1048,9 @@ a:hover {
 .exp-title-jobs {
     color: #FF4F00;
     font-weight: bold;
-    font-size: 1.4rem;
-    padding-bottom: 1rem;
-    padding-top: 2rem;
+    font-size: 1.2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 0.5rem;
 }
 
 .exp-dates {
