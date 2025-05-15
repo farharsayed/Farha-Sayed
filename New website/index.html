@@ -19,6 +19,61 @@
 
     <!-- <header id="header"> -->
     <header id="header">
+        <div class="header-svg">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
+        <defs>
+            <linearGradient id="bg">
+                <stop offset="0%" style="stop-color:#fe8b55"></stop>
+                <stop offset="50%" style="stop-color: #eee5cf"></stop>
+                <stop offset="100%" style="stop-color: #f981cd"></stop>
+            </linearGradient>
+            <path id="wave" fill="url(#bg)" d="M-363.852,502.589c0,0,236.988-15,505.475,0
+                s371.981,15,575.971,0
+                s293.985-15,505.474,5
+                s493.475,18,716.963-4.995v560.106H-363.852V502.589z" />
+        </defs>
+        <g>
+            <use xlink:href='#wave' opacity=".3">
+                <animateTransform
+                    attributeName="transform"
+                    attributeType="XML"
+                    type="translate"
+                    dur="10s"
+                    calcMode="spline"
+                    values="270 230; -334 180; 270 230"
+                    keyTimes="0; .5; 1"
+                    keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
+                    repeatCount="indefinite" />
+            </use>
+            <use xlink:href='#wave' opacity=".6">
+                <animateTransform
+                    attributeName="transform"
+                    attributeType="XML"
+                    type="translate"
+                    dur="8s"
+                    calcMode="spline"
+                    values="-270 230;243 220;-270 230"
+                    keyTimes="0; .6; 1"
+                    keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
+                    repeatCount="indefinite" />
+            </use>
+            <use xlink:href='#wave' opacity=".9">
+                <animateTransform
+                    attributeName="transform"
+                    attributeType="XML"
+                    type="translate"
+                    dur="6s"
+                    calcMode="spline"
+                    values="0 230;-140 200;0 230"
+                    keyTimes="0; .4; 1"
+                    keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
+                    repeatCount="indefinite" />
+            </use>
+        </g>
+    </svg>
+        </div>
+
+        </div>
         <nav id="navbar">
             <div class="nav-title">
                 <span>F</span><span>a</span><span>r</span><span>h</span><span>a</span>
@@ -42,46 +97,59 @@
         </nav>
     </header>
     <!-- </header> -->
-
-
     <section id="home">
-        <div class="homepage-pic">
+        <div class="home-leftside">
             <img src="./assets/pfp.jpg" alt="Profile Picture" class="pfp" />
         </div>
         <div class="home-rightside">
             <div class="intro-text">
+
                 <p class="intro-text1">
-                    Hello, I'm
+                    Hey there! I'm
                 </p>
                 <div class="intro-text2">
-                    <span>F</span><span>a</span><span>r</span><span>h</span><span>a</span>
-                    <span> </span>
-                    <!-- non-breaking space -->
-                    <span>R</span>
-                    <span> </span>
-                    <!-- non-breaking space -->
-                    <span>S</span><span>a</span><span>y</span><span>e</span><span>d</span>
+
+                    <div class="intro-text2">
+                        <span style="--index: 1;">F</span>
+                        <span style="--index: 2;">a</span>
+                        <span style="--index: 3;">r</span>
+                        <span style="--index: 4;">h</span>
+                        <span style="--index: 5;">a</span>
+                        <span style="--index: 6;"> </span>
+                        <!-- <span style="--index: 7;">R</span>
+                        <span style="--index: 8;"> </span> -->
+                        <span style="--index: 9;">S</span>
+                        <span style="--index: 10;">a</span>
+                        <span style="--index: 11;">y</span>
+                        <span style="--index: 12;">e</span>
+                        <span style="--index: 13;">d</span>
+                    </div>
+
                 </div>
                 <!-- <p class="section__text__p2">Recent Graduate</p> -->
                 <!-- <div class="about-details-container"> -->
                 <div class="intro-text3">
                     <!-- <p>I have recently graduated with a BSc in Computer Science and Mathematics from the University of Leeds. </p> -->
-                    <p>I'm interested in cloud computing, software development, and cybersecurity.</p>
+                    <p>a recent grad curious about the logic and layers behind it all</p>
                     <!-- </div> -->
                 </div>
             </div>
             <div class="home-btns">
-                <button class="home-btn1" onclick="window.open('./assets/Farha-CV.pdf')">
+                <!-- <button class="home-btn1" onclick="window.open('./assets/Farha-CV.pdf')">
                 Download CV
-              </button>
+              </button> -->
                 <button class="home-btn2" onclick="location.href='./#contact'">
-                Contact Me!
+                Say hi!
               </button>
             </div>
 
             <div id="socials-icons">
-                <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon" onclick="location.href='https://www.linkedin.com/in/farha-sayed/'">
-                <img src="./assets/github.png" alt="My Github profile" class="icon" onclick="location.href='https://github.com/farharsayed'">
+                <a href="https://www.linkedin.com/in/farha-sayed/" target="_blank">
+                    <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon">
+                </a>
+                <a href="https://github.com/farharsayed/" target="_blank">
+                    <img src="./assets/github.png" alt="My Github profile" class="icon">
+                </a>
             </div>
 
         </div>
@@ -97,9 +165,6 @@
 
     <section id="about">
         <div class="about-title">
-            <p class="about-title1">
-                Get to Know More
-            </p>
             <div class="animated-title">
                 <span>A</span><span>b</span><span>o</span><span>u</span><span>t</span>
                 <span> </span>
@@ -109,15 +174,18 @@
         <div class="about-parts">
             <div class="about-left">
                 <p class="about-text1">
-                    Hey there! I'm Farha, a recent CS grad with an insatiable curiosity about the logic and layers behind it all. Since graduating last year, I've had the opportunity to work in two different roles that challenged me, taught me a lot, and fueled my drive
-                    to keep pushing forward in this ever-evolving field.
+                    I am currently working as a Cybersecurity and Infrastructure Engineer at <a href="https://www.gbmme.com/" target="_blank" class="gbm-button">Gulf Business Machines</a>. Last year, I graduated from the
+                    <a href="https://www.leeds.ac.uk/about#main" target="_blank" class="leeds-button">University of Leeds
+                    </a> with a BSc in Computer Science and Mathematics.
+                </p>
+                <p class="about-text3">
+                    My journey in tech isn't limited to just one path. I'm passionate about cloud computing, software development, cybersecurity, and everything in between. I'm fascinated by how each of these fields intersect with one another to facilitate large impactful
+                    projects.
                 </p>
                 <p class="about-text2">
                     Off my PC? I'm all about balance. You'll find me chasing that next PR at the gym, cheering on Ferrari as it DNF's yet another F1 Grand Prix, or trying to stop my goofy cat from rampaging around the house.
                 </p>
-                <p class="about-text3">
-                    My journey in tech isn't limited to just one path. I'm passionate about cloud computing, software development, cybersecurity, and everything in between. I genuinely want to absorb as much knowledge as possible, and find creative applications for my skills.
-                </p>
+
             </div>
 
             <div class="about-right">
@@ -125,8 +193,6 @@
                 <div class="about-pic">
                     <img src="./assets/about-image1.jpg" alt="About Picture" class="about-pic1" />
                 </div>
-
-
 
             </div>
 
@@ -139,6 +205,7 @@
         </div>
 
     </section>
+
 
 
 
@@ -316,17 +383,47 @@
                 <!-- project1 image -->
                 <img src="./assets/proj-img1.png" alt="Project 1" class="project-img" />
 
+                <!-- project1 title -->
+                <h2 class="project1-title">Proactive Autoscaling in Kubernetes</h2>
+                <p class="project1-subtitle">Research Project</p>
+
+                <!-- project1 buttons -->
+                <div class="project-buttons">
+                    <a href="https://github.com/farharsayed/Farha-Sayed/tree/main/Kubernetes-Research-Project" target="_blank">GitHub</a>
+                    <a href="./assets/Farha-FYP-cover.pdf" target="_blank">Summary</a>
+                </div>
+
             </div>
             <div class="project-cont2">
 
-                <!-- project1 image -->
+                <!-- project2 image -->
                 <img src="./assets/proj-img2.png" alt="Project 2" class="project-img" />
+
+                <!-- project2 title -->
+                <h2 class="project2-title">Microservices Migration Project</h2>
+                <p class="project2-subtitle">Observability Stack</p>
+
+                <!-- project2 buttons -->
+                <div class="project-buttons">
+                    <a href="https://github.com/your-project" target="_blank">GitHub</a>
+                    <a href="https://your-demo-link.com" target="_blank">Demo</a>
+                </div>
 
             </div>
             <div class="project-cont3">
 
-                <!-- project1 image -->
+                <!-- project3 image -->
                 <img src="./assets/proj-img3.png" alt="Project 3" class="project-img" />
+
+                <!-- project3 title -->
+                <h2 class="project3-title">AI & ML</h2>
+                <p class="project3-subtitle">Exploring the Field</p>
+
+                <!-- project3 buttons -->
+                <div class="project-buttons">
+                    <a href="https://github.com/your-project" target="_blank">GitHub</a>
+                    <a href="https://your-demo-link.com" target="_blank">Demo</a>
+                </div>
 
             </div>
 
@@ -343,14 +440,14 @@
 
 
         <!-- scrolling arrow -->
-        <div class="scroll-indicator" onclick="document.getElementById('contact-me').scrollIntoView({ behavior: 'smooth' })">
+        <div class="scroll-indicator" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">
             <span class="arrow"></span>
         </div>
 
     </section>
 
 
-    <section id="contact-me">
+    <section id="contact">
 
         <div class="contact-title">
             <p class="contact-title1">
@@ -397,9 +494,65 @@
 
 
     <footer>
+
+        <!-- background start -->
+
+        <div class="footer-svg">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
+		<defs>
+			<linearGradient id="bg">
+				<stop offset="0%" style="stop-color:#fe8b55"></stop>
+				<stop offset="50%" style="stop-color: #eee5cf"></stop>
+				<stop offset="100%" style="stop-color: #f981cd"></stop>
+			</linearGradient>
+			<path id="wave" fill="url(#bg)" d="M-363.852,502.589c0,0,236.988-41.997,505.475,0
+	s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z" />
+		</defs>
+		<g>
+			<use xlink:href='#wave' opacity=".3">
+				<animateTransform
+          attributeName="transform"
+          attributeType="XML"
+          type="translate"
+          dur="10s"
+          calcMode="spline"
+          values="270 230; -334 180; 270 230"
+          keyTimes="0; .5; 1"
+          keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
+          repeatCount="indefinite" />
+			</use>
+			<use xlink:href='#wave' opacity=".6">
+				<animateTransform
+          attributeName="transform"
+          attributeType="XML"
+          type="translate"
+          dur="8s"
+          calcMode="spline"
+          values="-270 230;243 220;-270 230"
+          keyTimes="0; .6; 1"
+          keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
+          repeatCount="indefinite" />
+			</use>
+			<use xlink:href='#wave' opacty=".9">
+				<animateTransform
+          attributeName="transform"
+          attributeType="XML"
+          type="translate"
+          dur="6s"
+          calcMode="spline"
+          values="0 230;-140 200;0 230"
+          keyTimes="0; .4; 1"
+          keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
+          repeatCount="indefinite" />
+			</use>
+		</g>
+	</svg>
+        </div>
+
+        <!-- background end -->
         <nav>
-            <div class="nav-links-container">
-                <ul class="nav-links">
+            <div class="footer-nav-links">
+                <ul class="footer-nav-link1">
                     <li><a href="#about">About</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#skills">Skills</a></li>
@@ -408,8 +561,10 @@
                 </ul>
             </div>
         </nav>
-    </footer>
 
+
+
+    </footer>
 
 
 

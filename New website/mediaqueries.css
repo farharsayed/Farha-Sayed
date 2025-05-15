@@ -28,7 +28,7 @@
     }
     50% {
         transform: scale(1.2);
-        color: #A51C30;
+        color: black;
         /* red shade */
     }
     100% {
@@ -65,15 +65,12 @@
     0% {
         transform: scale(1);
         color: inherit;
+        letter-spacing: 2px;
     }
     50% {
-        transform: scale(1.2);
+        transform: scale(1.3);
         color: #FF4F00;
-        /* blue shade (or whatever you want) */
-    }
-    100% {
-        transform: scale(1);
-        color: inherit;
+        letter-spacing: 4px;
     }
 }
 
@@ -102,7 +99,7 @@
 /* for all animated titles  on first loading the page */
 
 @keyframes scaleInAbout {
-    0% {
+    /* 0% {
         transform: scale(1);
         color: inherit;
     }
@@ -110,10 +107,25 @@
         transform: scale(1.2);
         color: #e02440;
         /* blue shade (or whatever you want) */
-    }
+    /* }
     100% {
         transform: scale(1);
         color: inherit;
+    }  */
+    0% {
+        transform: scale(1);
+        color: inherit;
+        letter-spacing: 2px;
+    }
+    50% {
+        transform: scale(1.3);
+        color: #e02440;
+        letter-spacing: 4px;
+    }
+    75% {
+        transform: scale(1.1);
+        color: #e02440;
+        letter-spacing: 2px;
     }
 }
 
@@ -326,5 +338,61 @@
     100% {
         transform: scale(1);
         color: inherit;
+    }
+}
+
+
+/* projects on diff devices - WHOLE THING NEEDS EDITING */
+
+
+/* Responsive - Tablets */
+
+@media (max-width: 1024px) {
+    .project-cont1,
+    .project-cont2,
+    .project-cont3 {
+        width: 200px;
+        height: 450px;
+    }
+    .project-img {
+        height: 55%;
+    }
+    .project1-title,
+    .project2-title,
+    .project3-title {
+        font-size: 1rem;
+    }
+    .project-buttons a {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+
+/* Responsive - Mobile */
+
+@media (max-width: 600px) {
+    .project-containers {
+        flex-direction: column;
+        align-items: center;
+    }
+    .project-cont1,
+    .project-cont2,
+    .project-cont3 {
+        width: 90%;
+        height: auto;
+        padding: 1rem;
+    }
+    .project-img {
+        height: auto;
+        max-height: 300px;
+    }
+    .project-buttons a {
+        width: 100%;
+        text-align: center;
+    }
+    .project-buttons {
+        flex-direction: column;
+        width: 100%;
     }
 }

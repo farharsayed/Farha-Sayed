@@ -17,6 +17,34 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+
+
+
+// for smaller devices, automatically runs every 3 seconds
+function triggerStaggeredAnimation() {
+    const elements = document.querySelectorAll(".animated-title, .nav-title, .intro-text2, .exp-title2");
+
+    elements.forEach((el) => {
+        el.classList.add("animate");
+
+        setTimeout(() => {
+            el.classList.remove("animate");
+
+            el.querySelectorAll("span").forEach((span) => {
+                span.style.removeProperty("transform");
+            });
+        }, 1000); // match animation duration
+    });
+}
+
+// Run every 3s but only if viewport is below 768px
+setInterval(() => {
+    if (window.innerWidth <= 768) {
+        triggerStaggeredAnimation();
+    }
+}, 3000);
+
+
 // Animate elements again when they enter viewport (like jumping to #about)
 const observer = new IntersectionObserver(
     (entries) => {
