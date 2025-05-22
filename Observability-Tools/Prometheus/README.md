@@ -1,4 +1,4 @@
-#Prometheus
+# Prometheus
 
 The files here can help you test a simple deployment of the [Prometheus](https://prometheus.io/) application.
 You can try it out yourself on a [minikube](https://minikube.sigs.k8s.io/docs/) cluster. 
