@@ -11,7 +11,7 @@ data:
         "job": "node_exporter"
         },
         "targets": [
-          # insert targets here
+          "node-exporter.default.svc.cluster.local:9100"
         ]
       }
     ]
