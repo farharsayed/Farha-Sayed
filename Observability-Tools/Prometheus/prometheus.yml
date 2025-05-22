@@ -4,7 +4,7 @@ metadata:
   labels:
     run: prometheus-deployment
   name: prometheus-deployment
-  namespace: farhatemp
+  namespace: 
 spec:
   replicas: 1
   selector:

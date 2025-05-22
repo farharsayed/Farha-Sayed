@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: farhatemp
+  namespace: 
   name: prometheus-service
 spec:
   selector: 
