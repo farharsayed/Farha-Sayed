@@ -6,18 +6,19 @@ data:
   grafana.ini: |-
     [server]
     http_addr =
-    http_port = 3000
+    http_port =  3000
     domain =
     root_url =
     enforce_domain = False
     protocol = http
 
-  datasources.yaml: |-
+
+datasources: 
+  datasources.yaml:
     apiVersion: 1
     datasources:
-      - name: Prometheus
-        type: prometheus
-        url: http://prometheus-service.default.svc.cluster.local:9090
+      - name: Loki
+        type: loki
+        url: <gateway url>
         access: proxy
         isDefault: true
-
