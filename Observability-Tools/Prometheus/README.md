@@ -1,6 +1,7 @@
-The files here can help you test a simple deployment of Prometheus on, say, a minikube cluster. 
+The files here can help you test a simple deployment of the Prometheus application on, say, a [minikube](https://minikube.sigs.k8s.io/docs/) cluster. 
+Note: You will need to have the [kubectl utility](https://kubernetes.io/docs/tasks/tools/#kubectl) installated on your device. 
 
-Simply run the following lines of code in your Powershell (or equivalent):
+Simply run the following lines of code in Powershell (or equivalent):
 
 
 1. Enter this directory
