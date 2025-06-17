@@ -24,10 +24,10 @@ This directory reflects a hands-on exploration of both low-level and high-level 
     Implementation of decision tree algorithms for classification problems. Includes dataset preprocessing, training, and model evaluation.
 
   - **ML Project**  
-    A broader exploration of machine learning tasks, potentially including regression, clustering, or neural networks. Demonstrates the use of ML libraries and performance tuning.
+    A broader exploration of machine learning tasks, including regression, clustering, and neural networks. Demonstrates the use of ML libraries and performance tuning.
 
   - **Robot Worker Project**  
-    A robotics-inspired simulation or automation project showcasing logic for task delegation, state machines, or behavior modeling.
+    A robot worker simulation showcasing logic for task delegation, state machines, and behavior modeling.
 
 - ### C Projects
 
@@ -42,8 +42,4 @@ This directory reflects a hands-on exploration of both low-level and high-level 
 
   - **Water Consumption Monitoring**  
     A basic application written in C to log and analyze household water usage. Users can input daily usage and receive feedback on trends and average     consumption.
-
-
----
-
 
