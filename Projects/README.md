@@ -1,6 +1,6 @@
 # Programming Projects Overview
 
-Welcome to the **Programming** section of my GitHub portfolio! This directory is organized into projects written in **C**, **Java** and **AI** containing Python code, representing a wide range of academic, personal, and exploratory work in computer science.
+Welcome to the **Programming** section of my GitHub portfolio! This directory is organized into projects written for **C programming**, **Java programming** and **AI** containing **Python code**, representing a wide range of academic, personal, and exploratory work in computer science.
 
 ## Structure
 
