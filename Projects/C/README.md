@@ -1,17 +1,14 @@
-# My Projects in C
+# C Programming Projects
 Welcome to my C Programming Portfolio! 
+Focused on systems-level programming and core computer science concepts.
 
 ## List of Projects  
 The following projects are included in this repo:
-
-### C Projects
-Focused on systems-level programming and core computer science concepts.
 
 ### Compiler for JACK Programming Language  
   A multi-stage compiler for the JACK language from the Nand2Tetris course. This includes:
   - **Lexer Files**: Tokenization of source code.
   - **Parser Files**: Syntactic analysis and AST construction.
-  - **ParserSelfGrader & STSelfGrader**: Test suites and graded exercises for verifying compiler behavior with a range of test cases (e.g., Pong, Square, ComplexArrays).
   - **Symbol Table**: Semantic analysis components and symbol tracking.
 
 ### Library System  
