@@ -5,7 +5,7 @@ This directory reflects a hands-on exploration of both low-level and high-level 
 
 ## Content Layout
 
-### Java Projects
+- ### Java Projects
 Java-based projects emphasize object-oriented design and interactive applications.
 
 - **Poker Game**  
@@ -19,7 +19,7 @@ Java-based projects emphasize object-oriented design and interactive application
 
 
 
-### AI Projects/Python Code
+- ### AI Projects/Python Code
 Focused on machine learning, automation, and intelligent systems. Located under `AI/Projects`.
 
 - **Decision Trees Project**  
@@ -31,7 +31,7 @@ Focused on machine learning, automation, and intelligent systems. Located under 
 - **Robot Worker Project**  
   A robotics-inspired simulation or automation project showcasing logic for task delegation, state machines, or behavior modeling.
 
-### C Projects
+- ### C Projects
 
 - **Compiler for JACK Programming Language**  
 This project contains a compiler implementation for the JACK programming language, as introduced in the Nand2Tetris course. It includes lexical analysis, parsing, and code generation to VM code.
