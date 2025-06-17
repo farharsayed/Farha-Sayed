@@ -35,6 +35,22 @@ Java-based projects emphasize object-oriented design and interactive application
 - **Wordle Game**  
   Java recreation of the popular word-guessing game with terminal-based feedback.
 
+
+
+## AI Projects
+Focused on machine learning, automation, and intelligent systems. Located under `AI/Projects`.
+
+- **Decision Trees Project**  
+  Implementation of decision tree algorithms for classification problems. Includes dataset preprocessing, training, and model evaluation.
+
+- **ML Project**  
+  A broader exploration of machine learning tasks, potentially including regression, clustering, or neural networks. Demonstrates the use of ML libraries and performance tuning.
+
+- **Robot Worker Project**  
+  A robotics-inspired simulation or automation project showcasing logic for task delegation, state machines, or behavior modeling.
+
+
+
 ---
 
 This directory reflects a hands-on exploration of both low-level and high-level programming topics, from parsing and compiling to game development and data analysis.
