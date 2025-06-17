@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D3MQY2ZF4B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-D3MQY2ZF4B');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+</head>
+
+<body>
+
+
+    <!-- <header id="header"> -->
+    <header id="header">
+        <nav id="desktop-nav">
+            <div class="logo">Farha Sayed</div>
+            <div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- </header> -->
+
+
+
+
+    <!-- hamburger menu -->
+    <nav id="hamburger-nav">
+        <div class="logo">Farha Sayed</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <!-- below are the lines of the hamburger menu -->
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+                <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            </div>
+        </div>
+    </nav>
+    <!-- hamburger menu -->
+
+    <section id="profile">
+        <!-- PFP -->
+        <div class="section__pic-container1">
+
+            <img src="./assets/about-pic3.png" alt="Profile Picture" class="about-pic" />
+        </div>
+        <div class="section__text">
+            <p class="section__text__p1">
+                Hello, I'm
+            </p>
+            <h1 class="title">Farha Sayed</h1>
+            <!-- <p class="section__text__p2">Recent Graduate</p> -->
+            <!-- <div class="about-details-container"> -->
+            <div class="section__text__p2">
+                <!-- <p>I have recently graduated with a BSc in Computer Science and Mathematics from the University of Leeds. </p> -->
+                <p>I'm interested in cloud computing, software development, and cybersecurity.</p>
+                <!-- </div> -->
+            </div>
+            <div class="btn-container">
+                <button class="btn btn-color-2" onclick="window.open('./assets/Farha-CV.pdf')">
+            Download CV
+            </button>
+                <button class="btn btn-color-1" onclick="location.href='./#contact'">
+            Contact Me!
+            </button>
+            </div>
+
+            <div id="socials-container">
+                <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon" onclick="location.href='https://www.linkedin.com/in/farha-sayed/'">
+                <img src="./assets/github.png" alt="My Github profile" class="icon" onclick="location.href='https://github.com/farharsayed'">
+            </div>
+        </div>
+
+        <!-- <img src="./assets/arrow.png" 
+    alt="Arrow icon 1" 
+    class="firstarrow" 
+    onclick="location.href='./#about'">
+     -->
+    </section>
+
+
+
+    <section id="about">
+        <p class="section__text__p1">Get To Know More</p>
+        <h1 class="title">About Me</h1>
+        <div class="section-container">
+            <div class="section__pic-container">
+
+
+                <img src="./assets/profile-pic-3.png" alt="Farha Sayed Profile Picture" class="about-pic2" />
+
+            </div>
+
+            <div class="about-details-container">
+                <div class="about-containers">
+                    <div class="details-container">
+                        <img src="./assets/experience.png" alt="experience icon" class="icon" />
+                        <h3>Recent Experience</h3>
+                        <p>BGC Group <br>Technology (Infrastructure) Intern, UNIX</p>
+                    </div>
+                    <div class="details-container">
+                        <img src="./assets/education.png" alt="education icon" class="icon" />
+                        <h3>Education</h3>
+                        <p>University of Leeds<br>BSc Computer Science and Maths (Hons.)</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <!-- <img src="./assets/arrow.png" 
+    alt="Arrow icon" 
+    class="icon arrow" 
+    onclick="location.href='./#experience'"> -->
+
+    </section>
+
+    <section id="experience">
+
+
+        <p class="section__text__p1">Discover My</p>
+        <h1 class="title-work-section">Work Experience</h1>
+
+
+
+        <!-- work experience container -->
+        <div class="work-exp-cont">
+            <div class="work-exp-left">
+                <ul class="work-exp-list">
+                    <li class="work-exp-item active" data-company="company1">Gulf Business Machines</li>
+                    <li class="work-exp-item" data-company="company2">BGC Group | Cantor Fitzgerald</li>
+                    <li class="work-exp-item" data-company="company3">Quantum Ventura</li>
+                    <li class="work-exp-item" data-company="company4">Protiviti Global Business Consulting</li>
+                </ul>
+            </div>
+            <div class="work-exp-right">
+                <div id="company1" class="work-exp-details active">
+                    <h3 class="work-exp-title">Gulf Business Machines</h3>
+                    <p class="work-exp-location">Abu Dhabi, UAE | Present</p>
+                    <p class="work-exp-desc">I am currently working here as a Junior Engineer, focusing on Security and Networks.</p>
+                </div>
+                <div id="company2" class="work-exp-details">
+                    <h3 class="work-exp-title">BGC Group | Cantor Fitzgerald</h3>
+                    <p class="work-exp-location">London, UK | JULY - SEPT 2024</p>
+                    <p class="work-exp-desc">As a Technology (Infrastructure) Intern in the UNIX team, I contributed to the development, deployment, and enhancement of critical systems supporting observability and infrastructure management.</p>
+                    <p class="title-of-work-list">Some of my main achievements here were:</p>
+                    <ul class="work-list">
+                        <li>Designed the migration of the observability stack from a monolithic architecture to a cloud-agnostic microservices-based solution deployed on Red Hat OpenShift.</li>
+                        <li>Implemented and deployed key infrastructure and log management tools, including Prometheus, Promtail, Grafana, Loki, Mimir, and OpenTelemetry.</li>
+                        <li>Customized Docker images to comply with enterprise security policies and platform-specific configurations.</li>
+                        <li>Conducted knowledge-sharing sessions introducing Kubernetes, Helm charts, and OpenShift, educating 15–20 team members through practical demos.</li>
+                        <li>Collaborated with the team to maintain and optimize CentOS and Rocky Linux servers to ensure system stability and performance.</li>
+                        <li>Researched and evaluated the Java JMX Exporter to monitor and expose application metrics for observability improvements.</li>
+                        <li>Utilized Nexus and Vault for effective artifact storage and secure secret management.</li>
+                        <li>Gained hands-on experience with PostgreSQL architecture, GitLab CI/CD pipelines, and automation workflows using Ansible AWX.</li>
+                    </ul>
+                </div>
+                <div id="company3" class="work-exp-details">
+                    <h3 class="work-exp-title">Quantum Ventura</h3>
+                    <p class="work-exp-location">Dubai, UAE | JUNE - AUG 2022</p>
+                    <p class="work-exp-desc">At Quantum Ventura, I collaborated with a team of five to launch an NDR/EDR product designed to monitor, detect, and visualize security threats.</p>
+                    <p class="title-of-work-list">Some of my main achievements here were:</p>
+                    <ul class="work-list">
+                        <li>Developed and implemented a strategy for the launch of a cutting-edge Network Detection and Response (NDR) and Endpoint Detection and Response (EDR) product, enhancing threat monitoring and visualization capabilities.</li>
+                        <li>Evaluated and tested key technologies, including Apache Flink, Kafka, Zeek, and Elasticsearch, to determine the most effective solutions for product functionality and scalability.</li>
+                        <li>Conducted in-depth market analysis to identify target segments and position the product strategically within a competitive cybersecurity landscape.</li>
+                        <li>Conceptualized 10–15 innovative dashboard features tailored to diverse user roles, such as IT administrators and senior leadership, optimizing usability and decision-making processes.</li>
+                    </ul>
+                </div>
+                <div id="company4" class="work-exp-details">
+                    <h3 class="work-exp-title">Protiviti Global Business Consulting</h3>
+                    <p class="work-exp-location">Dubai, UAE | JULY - OCT 2020</p>
+                    <p class="work-exp-desc">Here, I built a strong foundation in cybersecurity and networking fundamentals through hands-on learning and research.</p>
+                    <p class="title-of-work-list">Some of my main achievements here were:</p>
+                    <ul class="work-list">
+                        <li>Acquired in-depth knowledge of cybersecurity principles and network architecture, focusing on the foundational elements of secure systems.</li>
+                        <li>Explored the functionality of network layers, gaining a clear understanding of data transmission processes between machines and their role in communication protocols.</li>
+                        <li>Conducted research on diverse cyber threats, including DDoS attacks, injection vulnerabilities, password breaches, XSS attacks, backdoors, and ransomware, enhancing awareness of threat vectors and mitigation strategies.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section id="skills">
+        <p class="section__text__p1">Explore My</p>
+        <h1 class="title">Skills</h1>
+        <div class="experience-details-container">
+            <div class="about-containers">
+                <div class="details-container">
+                    <h2 class="experience-sub-title">DevOps</h2>
+                    <div class="article-container">
+
+                        <!-- open article -->
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
+                            <div class="experience-text">
+                                <h3>AWS</h3>
+                                <p>Certified</p>
+                            </div>
+                        </article>
+                        <!-- close article -->
+
+                        <!-- open article -->
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
+                            <div class="experience-text">
+                                <h3>Linux</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+                        <!-- close article -->
+
+                        <!-- open article -->
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
+                            <div class="experience-text">
+                                <h3>Kubernetes</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+                        <!-- close article -->
+
+                        <!-- open article -->
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
+                            <div class="experience-text">
+                                <h3>Docker</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+                        <!-- close article -->
+
+
+
+
+
+                        <!-- open article -->
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
+                            <div class="experience-text">
+                                <h3>Red Hat OpenShift</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <!-- close article -->
+
+
+                        <!-- open article -->
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
+                            <div class="experience-text">
+                                <h3>CI/CD</h3>
+                                <p>Beginner</p>
+                            </div>
+                        </article>
+                        <!-- close article -->
+
+                    </div>
+                </div>
+
+
+
+                <!-- SKILLS -->
+                <div class="details-container">
+                    <h2 class="experience-sub-title">Software Development</h2>
+                    <div class="article-container">
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
+                            <div class="experience-text">
+                                <h3>Java</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
+                            <div class="experience-text">
+                                <h3>Python</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
+                            <div class="experience-text">
+                                <h3>C</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
+                            <div class="experience-text">
+                                <h3>Git</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
+                            <div class="experience-text">
+                                <h3>SQL</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
+                            <div class="experience-text">
+                                <h3>Web Dev</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- <img 
+    src="./assets/arrow.png" 
+    alt="Arrow icon" 
+    class="icon arrow" 
+    onclick="location.href='./#projects'"
+    /> -->
+    </section>
+
+
+    <!-- PROJECTS -->
+    </section>
+    <section id="projects">
+        <p class="section__text__p1">Browse My Recent</p>
+        <h1 class="title">Projects</h1>
+        <div class="experience-details-container">
+            <div class="about-containers">
+                <div class="details-container color-container">
+                    <div class="article-container-proj">
+                        <img src="./assets/project-1.png" alt="Project 1" class="project-img" />
+                    </div>
+                    <h2 class="experience-sub-title project-title">Proactive Autoscaling in Kubernetes</h2>
+                    <p class="experience-low-text">Research Project</p>
+                    <div class="btn-container">
+                        <button class="btn btn-color-3 project-btn" onclick="window.location.href='https://github.com/farharsayed/Farha-Sayed/tree/main/Kubernetes-Research-Project'">
+            Github
+          </button>
+                        <button class="btn btn-color-3 project-btn" onclick="window.location.href='./assets/Dis-Summary.pdf'">
+            Project Summary
+          </button>
+                    </div>
+                </div>
+
+
+                <div class="details-container color-container">
+                    <div class="article-container-proj">
+                        <img src="./assets/project-2.png" alt="Project 2" class="project-img" />
+                    </div>
+                    <h2 class="experience-sub-title project-title">Carpe Vitae Capital</h2>
+                    <p class="experience-low-text">Financial Assets Webpage</p>
+                    <div class="btn-container">
+                        <button class="btn btn-color-3 project-btn" onclick="location.href='https://github.com/farharsayed/Farha-Sayed/tree/main/Carpe-Vitae-Capital'">
+            Github
+          </button>
+                        <button class="btn btn-color-3 project-btn" onclick="location.href='https://carpevitaecapital.com/'">
+            Website
+          </button>
+                    </div>
+                </div>
+
+
+                <div class="details-container color-container">
+                    <div class="article-container-proj">
+                        <img src="./assets/project-4.png" alt="Project 4" class="project-img" />
+                    </div>
+                    <h2 class="experience-sub-title project-title">AI & ML</h2>
+                    <p class="experience-low-text">Leveraging AI for Real-World Impact</p>
+                    <div class="btn-container">
+                        <button class="btn btn-color-3 project-btn" onclick="location.href='https://github.com/farharsayed/Farha-Sayed/tree/main/AI'">
+            More Info
+          </button>
+                        <button class="btn btn-color-3 project-btn" onclick="window.location.href='./assets/New-Directions-in-AI.jpeg'">
+            2021 Conference
+          </button>
+                    </div>
+                </div>
+
+                <!-- 
+      <div class="details-container color-container">
+        <div class="article-container-proj">
+          <img
+            src="./assets/project-4.png"
+            alt="Project 4"
+            class="project-img"
+          />
+        </div>
+
+      </div>
+       -->
+            </div>
+        </div>
+        <!-- <img
+    src="./assets/arrow.png"
+    alt="Arrow icon"
+    class="icon arrow"
+    onclick="location.href='./#contact'"
+  /> -->
+    </section>
+    <section id="contact">
+        <p class="section__text__p1">Get in Touch</p>
+        <h1 class="title">Contact Me</h1>
+        <div class="contact-info-upper-container">
+            <!-- email -->
+            <div class="contact-info-container">
+
+                <img src="./assets/email.png" alt="Email icon" class="email-icon" onclick="location.href='mailto:farhasayed29@gmail.com'" />
+                <p class="email-text"></p><a href="mailto:farhasayed29@gmail.com">Email Me</a></p>
+            </div>
+
+            <!-- linkedin -->
+            <div class="contact-info-container">
+
+                <img src="./assets/linkedin.png" alt="LinkedIn icon" class="linkedin-icon" onclick="location.href='https://www.linkedin.com/in/farha-sayed/'" />
+                <p class="linkedin-text"></p><a href="https://www.linkedin.com/in/farha-sayed/">Connect on Linkedin</a></p>
+            </div>
+
+        </div>
+    </section>
+    <footer>
+        <nav>
+            <div class="nav-links-container">
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- <p>Copyright &#169; 2023 John Doe. All Rights Reserved.</p> -->
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

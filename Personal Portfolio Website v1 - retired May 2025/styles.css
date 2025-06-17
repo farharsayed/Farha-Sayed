@@ -1,0 +1,870 @@
+/* GENERAL */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+
+
+/* the star is for whole page */
+* { 
+    margin: 0;
+    /* padding: 1rem; */
+    cursor: default;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+
+html {
+    scroll-behavior: smooth;
+    /* when you select a section, it doesnt automatically go there but scrolls down */
+}
+
+
+p {
+    color: rgb(85,85,85);
+}
+
+
+
+/* HEADER */
+
+/* Header Styling */
+#header {
+  /* position: fixed; */
+  width: 100%;
+  background-color: white;
+  /* opacity: 50%; */
+  color: black;
+  text-align: center;
+  /* margin-bottom: 100rem; */
+  /* padding: -50px 0; */
+  /* height: 100px; */
+  transition: background-color 0.3s ease, opacity 0.3s ease, height 0.3s ease;
+  z-index: 999;
+  opacity: 1;
+}
+
+
+
+
+/* TRANSITION */
+
+
+/* for all and for another class btn--button */
+a, .btn {
+    transition: all 300ms ease;
+}
+
+
+
+
+
+
+/* DESKTOP NAVIGATION */
+
+nav, .nav-links {
+    display: flex;
+    /* flexes the nav */
+}
+
+nav {
+    justify-content: space-around;
+    align-items: center;
+    height: 10vh;
+    /* position: fixed; */
+    /* vh = view height, 17% of whole screen, decided for any screen you open it on */
+}
+
+
+.nav-links{
+    gap: 2rem;
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+
+a {
+  color: black;
+  /* rgb(238, 238, 214); */
+    text-decoration: none;
+    text-decoration-color: white;
+}
+
+a:hover {
+    color:rgba(116, 115, 145, 0.979);
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    /* offset so the underline is a bit spaced away from the word */
+    text-decoration-color: rgb(181,181,181);
+}
+
+
+.logo {
+    font-size: 2rem;
+}
+
+.logo:hover {
+    cursor: default;
+    /* so cursor doesnt change to typing one when you hover over logo */
+}
+
+
+
+
+.about-pic {
+  border-radius: 0rem;
+  /* /* border-radius: 10%; */
+  /* margin-left: 20%; 0 */
+  margin: 0 auto;
+  /* margin-left: 5rem; */
+  /* display: flex; */
+  /* border-radius: 50px; */
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  /* width: 400px; */
+  /* margin: auto 0; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* HAMBURGER MENU */
+
+#hamburger-nav{
+    display:none;
+}
+
+.hamburger-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+}
+
+
+/* lines of the hamburger */
+.hamburger-icon span {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    transition: all 0.3 ease-in-out;
+}
+
+
+
+/* links in the hamburger menu */
+.menu-links {
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    background-color: white;
+    width: fit-content;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4 ease-in-out;
+
+}
+
+
+
+/* each link within menu links */
+.menu-links a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: black;
+    text-decoration: none;
+    transition: all 0.3 ease-in-out;
+    
+}
+
+.menu-links li {
+    list-style: none;
+/* removing bullet points */
+}
+
+.menu-links.open{
+/* when we add the JS class */
+    max-height: 300px;
+}
+
+
+/* first element of the list */
+.hamburger-icon.open span:first-child {
+    transform: rotate(45deg) translate(10px, 5px);
+    /* rotating it and moving it a little in x and y directions so its not skewed */
+}
+/* first element of the list */
+.hamburger-icon.open span:nth-child(2) {
+    opacity: 0;
+}
+/* first element of the list */
+.hamburger-icon.open span:last-child {
+    transform: rotate(-45deg) translate(10px, -5px);
+  }
+
+  .hamburger-icon span:first-child {
+    transform: none;
+  }
+  .hamburger-icon span:first-child {
+    opacity: 1;
+  }
+  .hamburger-icon span:first-child {
+    transform: none;
+  }
+
+
+
+
+  /* SECTIONS - linkedin and github buttons */
+
+  section {
+    
+    padding-top: 4vh;
+    height: 96vh;
+    /* two above make a 100 */
+    margin: 0 0rem;
+    /* margin 0 top and bottom and 10 on sides */
+    box-sizing: border-box;
+    min-height: fit-content;
+  
+  }
+
+  .section-container {
+    display: flex;
+  }
+
+
+
+  /* PROFILE SECTION */
+
+  #profile {
+    display: flex;
+    /* justify-content: center; */
+    gap: 5rem;
+    height: 80vh;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+  .section__pic-container1 {
+    display: flex;
+    
+    justify-content: flex-end;
+    height: 400px;
+    width: 400px;
+    margin: auto 0;
+    display: flex;
+    justify-content: flex-end;
+    
+  }
+  
+
+
+  .section__text {
+    
+    align-self: center;
+    text-align: left;
+    margin-left: 5rem;
+  }
+
+  .section__text__p1 {
+    
+     font-weight: 600;
+  }
+
+  .section__text__p1 {
+    text-align: center;
+  }
+  .section__text__p2 {
+    
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .title {
+    font-size: 3rem;
+    text-align: center;
+    
+  }
+
+  #socials-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+
+
+  /* ICONS */
+
+  .icon {
+    cursor: pointer;
+    height: 2rem;
+    
+  }
+
+  /* .firstarrow {
+    position: fixed;
+    /* absolutw to first relative parent it comes across? */
+    /* right: 0rem; */
+    /* bottom: -90%;
+    cursor: pointer;
+    height: 2rem;
+    padding-left: 11%;
+  }  */
+
+
+  /* BUTTONS */
+
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .btn {
+    font-weight: 600;
+    transition: all 300ms ease;
+    padding: 1rem;
+    width: 8rem;
+    border-radius: 2rem;
+  }
+
+
+  .btn-color-1, 
+  .btn-color-2 {
+    border: rgb(53,53,53) 0.1rem solid;
+  }
+  .btn-color-1:hover, 
+  .btn-color-2:hover {
+    cursor: pointer;
+  }
+  .btn-color-1, 
+  .btn-color-2:hover {
+    background: rgb(53,53,53);
+    color: white;
+  }
+  .btn-color-1:hover {
+    background: rgb(0,0,0);
+  }
+  .btn-color-2 {
+    background: none;
+  }
+   
+  .btn-color-2:hover {
+    background: rgb(255,255,255) 0.1rem solid;
+  }
+
+  .btn-container {
+    gap: 1rem;
+  }
+
+/* ABOUT SECTION */
+
+#about {
+  position: relative;
+  padding-top: 5rem;
+  /* margin-right: 5%;
+  margin-left: 5%; */
+  margin: 0 auto;
+  width: 90%;
+}
+
+
+
+.about-pic2 {
+  width: 350px; /* Set the desired width */
+  height: 350px; /* Set the height equal to the width */
+  /* border-radius: 50%; 
+  object-fit: cover; 
+   margin: 0 auto; 
+  display: block;  */
+
+}
+
+
+
+
+.about-containers {
+  gap: 1rem;
+  margin-bottom: 5rem;
+  margin-top: 1rem;
+}
+
+.about-details-container {
+  justify-content: center;
+  flex-direction: column;
+}
+
+.about-containers, 
+.about-details-container {
+  display: flex;
+}
+
+
+
+
+.arrow {
+  position: absolute;
+  /* absolutw to first relative parent it comes across? */
+  right: 0rem;
+  bottom: 2.5rem;
+}
+
+.details-container {
+  padding: 1rem;
+  flex: 1;
+  background: white;
+  border-radius: 2rem;
+  /* 10%; */
+  /* 2rem; */
+  border: rgb(53,53,53) 0.1rem solid;
+  border-color: rgb(163,163,163);
+  text-align: center;
+  margin: 2rem;
+}
+
+.article:hover {
+  background-color: rgba(116, 115, 145, 0.979);
+ /* color: white;  */
+ /* takes care of background and title font colors of container */
+}
+
+
+
+.section-container {
+  gap: 2rem;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+
+
+/*  EXPERIENCE SECTION */
+
+.title-work-section {
+  font-size: 3rem;
+  text-align: center;
+padding-bottom: 3rem;
+  
+}
+
+
+.work-exp-cont {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  max-width: 1200px; /* Limit the width */
+  margin: 0 auto; /* Center the container */
+}
+
+
+
+/* Left Section */
+.work-exp-left {
+  flex: 1;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.work-exp-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.work-exp-item {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.work-exp-item:hover {
+  background-color: #f0f0f0;
+  color: rgba(116, 115, 145, 0.979);
+   /* #013e01; */
+}
+
+.work-exp-item.active {
+  background-color: rgba(116, 115, 145, 0.979);
+  color: #fff;
+}
+
+/* Right Section */
+.work-exp-right {
+  flex: 2; /* Slightly wider than the left section */
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.work-exp-details {
+  display: none;
+}
+
+.work-exp-details.active {
+  display: block;
+}
+
+.work-exp-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+
+}
+
+.work-exp-location {
+  font-size: 1rem;
+  padding-bottom: 1rem;
+}
+
+.title-of-work-list {
+  padding-top: 1rem;
+}
+
+.work-list li {
+  color: #333; /* Default font color */
+  text-decoration: none; /* No underline by default */
+  transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition */
+}
+
+.work-list li:hover {
+  color: rgba(116, 115, 145, 0.979); /* Change font color on hover */
+  /* text-decoration: underline;  */
+  text-shadow: 2px 2px 5px rgba(172, 170, 230, 0.468); /* Soft shadow */
+  cursor: pointer; /* Change cursor to indicate interactivity */
+}
+
+
+
+
+.work-exp-desc {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* EXPERIENCE (NOW SKILLS) SECTION */
+#skills {
+  position: relative;
+  margin-right: 5%;
+  margin-left: 5%;
+  padding-top: 2rem;
+}
+
+.experience-sub-title {
+  color: rgb(85, 85, 85);
+  font-weight: 600;
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+/* Main container for the skills section */
+.experience-details-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center; /* Centers content vertically */
+ 
+}
+
+/* Container for articles (skills) */
+.article-container {
+  
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap */
+  justify-content: center; /* Aligns items to the center */
+  gap: 2rem; /* Adds spacing between items */
+  width: 100%;
+  max-width: 1000px; /* Ensure the container doesn't stretch too wide */
+}
+
+
+.article-container-proj {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap */
+  justify-content: center; /* Aligns items to the center */
+  gap: 2rem; 
+  /* Adds spacing between items */
+  width: 100%;
+  max-width: 1000px; 
+  /* Ensure the container doesn't stretch too wide */
+  align-items: center;
+}
+
+/* Each individual article (skill) box */
+article {
+  width: 12rem; /* Adjusted to be more reasonable */
+  padding: 1rem;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+article:hover {
+  transform: translateY(-5px); /* Slight hover effect for interaction */
+  background-color: rgba(116, 115, 145, 0.979);
+  color: white;
+  border: 0.5px solid black;
+}
+article:hover p {
+  color: white;
+}
+
+/* Styling for the icon (checkmark) */
+article img.icon {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 1rem;
+}
+
+/* Text container within each article */
+.experience-text {
+  text-align: center;
+}
+
+.experience-text h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.experience-text p {
+  font-size: 1rem;
+  color: rgb(85, 85, 85);
+}
+
+
+
+
+
+
+
+
+
+
+/* PROJECTS SECTION */
+
+#projects {
+    position: relative;
+    margin-right: 5%;
+    margin-left: 5%;
+    /* margin-right: 5rem;
+    margin-left: 5rem; */
+    /*  */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .color-container {
+    border-color: rgb(163, 163, 163);
+    background: rgb(250, 250, 250);
+    /*  */
+    padding: 2rem;
+    margin: 1rem 0; /* Space between each project */
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px; /* Ensures the container doesn't stretch too wide */
+    text-align: center; /* Centers content inside the container */
+    
+  }
+  
+  .project-img {
+    /* border-radius: 2rem; */
+    /* width: 90%;
+    height: 90%; */
+    /*  */
+      
+    width: 100%; /* Ensure images stretch to fit the container width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+    max-width: 300px; /* Ensure images don't become too large */
+    margin-bottom: 1rem; /* Add space between image and title */
+    display: block;
+  }
+  
+  .project-title {
+    margin: 1rem;
+    color: black;
+    font-size: 1.5rem;
+  }
+  
+  .project-btn {
+    color: black;
+    border-color: black;
+    /*  */
+    padding: 1rem 1rem;
+    margin: 0.5rem; /* Space between buttons */
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-color-3:hover {
+    background: rgba(116, 115, 145, 0.979);
+    color: white;
+    border: 1px solid black;
+    
+  }
+
+    
+
+
+
+  
+  /* CONTACT */
+  
+  #contact {
+    color: black;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 70vh;
+    
+  }
+  
+  .contact-info-upper-container {
+    color: black;
+    display: flex;
+    justify-content: center;
+    border-radius: 2rem;
+    border: rgb(53, 53, 53) 0.1rem solid;
+    border-color: rgb(163, 163, 163);
+    background: (250, 250, 250);
+    margin: 2rem auto;
+    padding: 0.5rem;
+  }
+  
+  .contact-info-container {
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem;
+  }
+  
+  .contact-info-container p {
+    font-size: larger;
+  }
+  
+  .contact-icon {
+    color: black;
+  }
+  
+  .email-icon{
+    height: 2.5rem;
+  }
+  .linkedin-icon {
+    height: 2rem;
+  }
+
+   
+  .email-icon,:hover,
+  .linkedin-icon:hover{
+    cursor: pointer;
+    /* gap: 1rem; */
+  }
+
+  .email-text {
+    color: black;
+    align-self: center;
+    text-align: center;
+ 
+     font-weight: 600;
+    text-align: center;
+
+  }
+  .linkedin-text {
+    color: black;
+    align-self: center;
+    text-align: center;
+ 
+     font-weight: 600;
+    text-align: center;
+
+  }
+ 
+
+  
+  
+  /* FOOTER SECTION */
+  
+  footer {
+    height: 26vh;
+    margin: 0 1rem;
+  }
+  
+  footer p {
+    text-align: center;
+  }
