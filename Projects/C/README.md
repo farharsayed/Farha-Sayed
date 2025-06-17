@@ -15,7 +15,7 @@ The following projects are included in this repo:
   A simple console application for managing book inventories and member data, demonstrating structured programming and file operations.
 
 - ### Tic Tac Toe 3x3 to 10x10  
-  Dynamic version of Tic Tac Toe that supports varying board sizes and win conditions.
+  Dynamic version of Tic Tac Toe that supports board sizes varying from 3x3 to 10x10 and adjustable win conditions.
 
 - ### Water Consumption Monitoring  
   A utility for recording and analyzing household water usage over time, built with basic data tracking and I/O.
