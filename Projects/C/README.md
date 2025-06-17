@@ -1,18 +1,24 @@
-# My Projects
-Welcome to my Programming Portfolio! 
+# My Projects in C
+Welcome to my C Programming Portfolio! 
 
 ## List of Projects  
 The following projects are included in this repo:
 
+### C Projects
+Focused on systems-level programming and core computer science concepts.
+
 ### Compiler for JACK Programming Language  
-This project contains a compiler implementation for the JACK programming language, as introduced in the Nand2Tetris course. It includes lexical analysis, parsing, and code generation to VM code.
+  A multi-stage compiler for the JACK language from the Nand2Tetris course. This includes:
+  - **Lexer Files**: Tokenization of source code.
+  - **Parser Files**: Syntactic analysis and AST construction.
+  - **ParserSelfGrader & STSelfGrader**: Test suites and graded exercises for verifying compiler behavior with a range of test cases (e.g., Pong, Square, ComplexArrays).
+  - **Symbol Table**: Semantic analysis components and symbol tracking.
 
 ### Library System  
-A simple C-based system to manage book check-ins, check-outs, and library member information. Demonstrates use of structures, file handling, and menu-driven programming.
+  A simple console application for managing book inventories and member data, demonstrating structured programming and file operations.
 
 ### Tic Tac Toe 3x3 to 10x10  
-This is a scalable version of the classic Tic Tac Toe game. The program allows the user to choose the size of the board, ranging from 3x3 up to 10x10. Implements win condition logic for dynamic grid sizes.
+  Dynamic version of Tic Tac Toe that supports varying board sizes and win conditions.
 
 ### Water Consumption Monitoring  
-A basic application written in C to log and analyze household water usage. Users can input daily usage and receive feedback on trends and average consumption.
-
+  A utility for recording and analyzing household water usage over time, built with basic data tracking and I/O.
