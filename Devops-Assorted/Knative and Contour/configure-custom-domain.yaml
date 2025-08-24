@@ -1,0 +1,35 @@
+#step 1: create k8s tls secret using public/private key pair
+
+# >kubectl create secret tls NAME --cert=path/to/cert/file --key=path/to/key/file [--dry-run=server|client|none]
+
+
+---
+
+
+#step 2: create ClusterDomainClaim
+
+apiVersion: networking.internal.knative.dev/v1alpha1
+kind: ClusterDomainClaim
+metadata:
+  name: <domain-name>
+spec:
+  namespace: <namespace>
+
+
+---
+
+
+#step 3: create DomainMapping
+
+apiVersion: serving.knative.dev/v1beta1
+kind: DomainMapping
+metadata:
+  name: <domain-name>
+  namespace: <namespace>
+spec:
+  ref:
+    name: <service-name>
+    kind: Service
+    apiVersion: serving.knative.dev/v1
+  tls:
+    secretName: <cert-secret>

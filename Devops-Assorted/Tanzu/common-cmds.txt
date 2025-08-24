@@ -1,0 +1,12 @@
+Login:
+
+> kubectl vsphere login --server supervisor.tanzu.lab \
+         -u administrator@vsphere.local \
+        --tanzu-kubernetes-cluster-namespace tkg
+
+
+
+Check on Tanzu Kubernetes Clusters:
+
+> kubectl get tkc
+

@@ -1,0 +1,53 @@
+#Create ExternalIPPool
+
+
+apiVersion: crd.antrea.io/v1alpha2
+kind: ExternalIPPool
+metadata:
+  name: external-ip-pool
+spec:
+  ipRanges:
+  - start: 10.221.193.61
+    end: 10.221.193.62
+  - cidr: 10.221.193.48/28
+  nodeSelector: {}
+ 
+
+
+---
+
+
+#Create egress resource using the above for the CRD
+
+apiVersion: crd.antrea.io/v1alpha2
+kind: Egress
+metadata:
+  name: egress-prod-web
+spec:
+  appliedTo:
+    namespaceSelector:
+      matchLabels:
+        kubernetes.io/metadata.name: prod
+    podSelector:
+      matchLabels:
+        app: web
+  externalIPPool: external-ip-pool
+ 
+$ cat egress-staging-web.yaml
+apiVersion: crd.antrea.io/v1alpha2
+kind: Egress
+metadata:
+  name: egress-staging-web
+spec:
+  appliedTo:
+    namespaceSelector:
+      matchLabels:
+        kubernetes.io/metadata.name: staging
+    podSelector:
+      matchLabels:
+        app: web
+  externalIPPool: external-ip-pool
+
+
+#check it with 
+#>kubectl get egress

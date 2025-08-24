@@ -1,0 +1,20 @@
+#Antrea Config
+
+apiVersion: cni.tanzu.vmware.com/v1alpha1
+kind: AntreaConfig
+metadata:
+  name: cluster-3-antrea-package
+  namespace: tkg
+spec:
+  antrea:
+    config:
+      featureGates:
+        AntreaProxy: true
+        EndpointSlice: false
+        AntreaPolicy: true
+        FlowExporter: true
+        Egress: true
+        NodePortLocal: true
+        AntreaTraceflow: true
+        NetworkPolicyStats: true
+
