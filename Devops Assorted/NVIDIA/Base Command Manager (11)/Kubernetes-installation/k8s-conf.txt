@@ -1,0 +1,30 @@
+#Before
+
+modules:
+  kubernetes:
+    airgap:
+      helm:
+        ca: ''
+        repo: ''
+      registry: ''
+
+
+
+
+
+
+
+---
+
+
+
+
+#After
+
+modules:
+  kubernetes:
+    airgap:
+      helm:
+        ca: '/cm/local/apps/containerd/var/etc/certs.d/master.cm.cluster:5000/ca.crt'
+        repo: 'oci://master.cm.cluster:5000/helm-charts'
+      registry: 'master.cm.cluster:5000'
