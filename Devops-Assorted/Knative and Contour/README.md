@@ -1,6 +1,6 @@
 # Knative and Contour
 
-##Domain Mapping:
+## Domain Mapping:
 Knative Services (ksvc's) are given a default domain name when they are created, but we can customize them with the steps below.
 
 - Step 1: Create a Kubernetes TLS Secret 
