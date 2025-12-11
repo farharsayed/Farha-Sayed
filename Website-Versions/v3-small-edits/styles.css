@@ -1,0 +1,2043 @@
+/* the star is for whole page */
+
+* {
+    /* margin: 0; */
+    /* padding: 1rem; */
+    cursor: default;
+    /* background-color: white; */
+    ;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    /* min-height: 100vh; */
+}
+
+html {
+    scroll-behavior: smooth;
+    /* when you select a section, it doesnt automatically go there but scrolls down */
+}
+
+
+/* HEADER */
+
+
+/* Header Styling */
+
+#header {
+    /* position: fixed; */
+    width: 100%;
+    background-color: none;
+    /* opacity: 50%; */
+    color: black;
+    text-align: center;
+    /* margin-bottom: 100rem; */
+    /* padding: -50px 0; */
+    /* height: 100px; */
+    transition: background-color 0.3s ease, opacity 0.3s ease, height 0.3s ease;
+    z-index: 999;
+    opacity: 1;
+    padding-bottom: 2rem;
+}
+
+.header-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 800px;
+    /* Adjust based on how tall you want the wave */
+    overflow: hidden;
+    z-index: -2;
+    pointer-events: none;
+}
+
+.header-svg svg {
+    width: 100%;
+    height: 100%;
+    transform: scaleY(-1) translateY(11%);
+    /* Fine-tune this value */
+    /* <--- This inverts the waves upside down */
+    object-fit: cover;
+}
+
+
+/* DESKTOP NAVIGATION */
+
+nav,
+.nav-links {
+    display: flex;
+    /* flexes the nav */
+}
+
+nav {
+    justify-content: space-around;
+    align-items: center;
+    height: 10vh;
+    /* position: fixed; */
+    /* vh = view height, 17% of whole screen, decided for any screen you open it on */
+    margin-bottom: 2%;
+}
+
+.nav-links {
+    gap: 2rem;
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+a {
+    color: #28003A;
+    /* rgb(238, 238, 214); */
+    text-decoration: none;
+    text-decoration-color: #28003A;
+}
+
+a:hover {
+    color: #A51C30;
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    /* offset so the underline is a bit spaced away from the word */
+    text-decoration-color: #A51C30;
+}
+
+
+/* nav-title Farha R Sayed */
+
+.nav-title {
+    font-size: 2rem;
+    gap: 1px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+    user-select: none;
+    /* 👇 Prevent growing/pushing other elements */
+    line-height: 1;
+    height: 2.4rem;
+    overflow: hidden;
+}
+
+.nav-title span {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+    will-change: transform;
+}
+
+.nav-title:hover span {
+    transform: scale(1.1);
+    color: black;
+    /* pink */
+}
+
+
+/* nav-title animation when first loading page */
+
+.nav-title.animate span {
+    animation: scaleInNav 0.5s ease forwards;
+}
+
+.nav-title.animate span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.nav-title.animate span:nth-child(2) {
+    animation-delay: 0.05s;
+}
+
+.nav-title.animate span:nth-child(3) {
+    animation-delay: 0.1s;
+}
+
+.nav-title.animate span:nth-child(4) {
+    animation-delay: 0.15s;
+}
+
+.nav-title.animate span:nth-child(5) {
+    animation-delay: 0.2s;
+}
+
+.nav-title.animate span:nth-child(6) {
+    animation-delay: 0.25s;
+}
+
+.nav-title.animate span:nth-child(7) {
+    animation-delay: 0.3s;
+}
+
+.nav-title.animate span:nth-child(8) {
+    animation-delay: 0.35s;
+}
+
+.nav-title.animate span:nth-child(9) {
+    animation-delay: 0.4s;
+}
+
+.nav-title.animate span:nth-child(10) {
+    animation-delay: 0.45s;
+}
+
+.nav-title.animate span:nth-child(11) {
+    animation-delay: 0.5s;
+}
+
+.nav-title.animate span:nth-child(12) {
+    animation-delay: 0.55s;
+}
+
+.nav-title.animate span:nth-child(13) {
+    animation-delay: 0.6s;
+}
+
+
+/* end of nav-title animation when first loading page */
+
+
+/* staggered animation for cool effect */
+
+.nav-title span:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.nav-title span:nth-child(2) {
+    transition-delay: 0.03s;
+}
+
+.nav-title span:nth-child(3) {
+    transition-delay: 0.06s;
+}
+
+.nav-title span:nth-child(4) {
+    transition-delay: 0.09s;
+}
+
+.nav-title span:nth-child(5) {
+    transition-delay: 0.12s;
+}
+
+.nav-title span:nth-child(6) {
+    transition-delay: 0.15s;
+}
+
+.nav-title span:nth-child(7) {
+    transition-delay: 0.18s;
+}
+
+.nav-title span:nth-child(8) {
+    transition-delay: 0.21s;
+}
+
+.nav-title span:nth-child(9) {
+    transition-delay: 0.24s;
+}
+
+.nav-title span:nth-child(10) {
+    transition-delay: 0.27s;
+}
+
+.nav-title span:nth-child(11) {
+    transition-delay: 0.3s;
+}
+
+.nav-title span:nth-child(12) {
+    transition-delay: 0.33s;
+}
+
+.nav-title span:nth-child(13) {
+    transition-delay: 0.36s;
+}
+
+
+/* end of  nav-title Farha R Sayed */
+
+
+/* HAMBURGER MENU */
+
+
+/* Hamburger Icon */
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 2px;
+    background-color: #000000;
+    transition: all 0.3s ease;
+}
+
+
+/* Hamburger Animation when active */
+
+.hamburger.toggle div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.toggle div:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.toggle div:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+/* home section start */
+
+#home {
+    display: flex;
+    justify-content: center;
+    /* Centers horizontally */
+    align-items: center;
+    /* Centers vertically */
+    /* gap: -5rem; */
+    height: 85vh;
+    padding-left: 4rem;
+    padding-right: 5rem;
+}
+
+.pfp {
+    /* profile pic */
+    width: 100%;
+    max-width: 350px;
+    /* limit size on large screens */
+    height: auto;
+    /* maintain aspect ratio */
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.home-leftside {
+    flex: 0 0 40%;
+}
+
+.home-rightside {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 60%;
+    /* align-items: center; */
+}
+
+.home-leftside,
+.home-rightside {
+    /* flex: 1; */
+    /* each takes up 50% */
+    transform: translateY(-20%);
+    /* transforming so it is vertically towards the center of the screen; can be a pc thing */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    font-weight: 200;
+}
+
+.intro-text1,
+.intro-text2 {
+    font-size: 3rem;
+}
+
+.intro-text2 {
+    gap: 1px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    margin: 0;
+}
+
+.intro-text2 span {
+    display: inline-block;
+    transition: transform 0.6s ease, color 0.3s ease;
+    will-change: transform;
+}
+
+.intro-text2:hover span {
+    transform: scale(1.3);
+    color: #FF4F00;
+    transform: scale(1.1);
+}
+
+.intro-text2.animate span {
+    /* intro-text2 animation when first loading page */
+    /* animation: scaleInIntro 1s ease-in-out forwards;
+     */
+    animation: scaleInIntro 0.5s ease forwards;
+}
+
+.intro-text2.animate span:nth-child(n) {
+    /* intro-text2 staggered animation*/
+    animation-delay: calc(0.03s * (var(--index)));
+}
+
+.intro-text2 span:nth-child(n) {
+    /* intro-text2 staggered animation*/
+    transition-delay: calc(0.03s * (var(--index)));
+}
+
+.intro-text3 {
+    font-size: 1.4rem;
+    margin: 3%;
+    /*margin for space from buttons below*/
+    margin-top: -3%;
+}
+
+
+/* home-buttons */
+
+.home-btns {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.home-btn1,
+.home-btn2 {
+    font-weight: 600;
+    transition: all 300ms ease;
+    padding: 1rem;
+    width: 8rem;
+    border-radius: 2rem;
+    font-size: 1rem;
+}
+
+.home-btn1:hover,
+.home-btn2:hover {
+    cursor: pointer;
+}
+
+.home-btn1:hover,
+.home-btn2:hover {
+    color: #FF4F00;
+    border-color: #FF4F00;
+    /* orange */
+    background-color: hsl(18, 100%, 97%);
+}
+
+
+/* github and linkedin icons on homepages */
+
+#socials-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+.icon {
+    cursor: pointer;
+    height: 2.5rem;
+}
+
+
+/* small arrow */
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    cursor: pointer;
+}
+
+.arrow {
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-left: 3px solid #28003A;
+    border-bottom: 3px solid #28003A;
+    transform: rotate(-45deg);
+    animation: bounceDown 2s infinite;
+    opacity: 0.8;
+}
+
+
+/* optional hover effect */
+
+.arrow:hover {
+    opacity: 1;
+    border-color: #e02440;
+}
+
+
+/* end of small arrow  */
+
+
+/* end of profile section */
+
+
+/* //////////////////////////////////////////////////////// */
+
+
+/* about section */
+
+#about {
+    height: 85vh;
+    padding: 4rem 2rem;
+    position: relative;
+    padding-top: 4rem;
+}
+
+.about-parts {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* or center */
+    flex-wrap: wrap;
+    /* for mobile responsiveness */
+    padding-top: 5rem;
+}
+
+.about-title,
+.exp-title {
+    justify-content: center;
+    margin-bottom: 2rem;
+    margin-top: -2%;
+}
+
+.animated-title {
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.about-title1,
+.exp-title1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.animated-title span {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+    will-change: transform;
+}
+
+.animated-title:hover span {
+    transform: scale(1.1);
+    color: #e02440;
+}
+
+
+/* intro-text2 animation when first loading page */
+
+.animated-title.animate span {
+    animation: scaleInAbout 0.6s ease forwards;
+    /* animation: scaleInTitle 1s ease-in-out; */
+    /* animation-fill-mode: forwards; */
+}
+
+.animated-title.animate span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.animated-title.animate span:nth-child(2) {
+    animation-delay: 0.05s;
+}
+
+.animated-title.animate span:nth-child(3) {
+    animation-delay: 0.1s;
+}
+
+.animated-title.animate span:nth-child(4) {
+    animation-delay: 0.15s;
+}
+
+.animated-title.animate span:nth-child(5) {
+    animation-delay: 0.2s;
+}
+
+.animated-title.animate span:nth-child(6) {
+    animation-delay: 0.25s;
+}
+
+.animated-title.animate span:nth-child(7) {
+    animation-delay: 0.3s;
+}
+
+.animated-title.animate span:nth-child(8) {
+    animation-delay: 0.35s;
+}
+
+.animated-title.animate span:nth-child(9) {
+    animation-delay: 0.4s;
+}
+
+.animated-title.animate span:nth-child(10) {
+    animation-delay: 0.45s;
+}
+
+
+/* end of animated-title animation when first loading page */
+
+
+/* staggered animation for cool effect */
+
+.animated-title span:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.animated-title span:nth-child(2) {
+    transition-delay: 0.03s;
+}
+
+.animated-title span:nth-child(3) {
+    transition-delay: 0.06s;
+}
+
+.animated-title span:nth-child(4) {
+    transition-delay: 0.09s;
+}
+
+.animated-title span:nth-child(5) {
+    transition-delay: 0.12s;
+}
+
+.animated-title span:nth-child(6) {
+    transition-delay: 0.15s;
+}
+
+.animated-title span:nth-child(7) {
+    transition-delay: 0.18s;
+}
+
+.animated-title span:nth-child(8) {
+    transition-delay: 0.21s;
+}
+
+.animated-title span:nth-child(9) {
+    transition-delay: 0.24s;
+}
+
+.animated-title span:nth-child(10) {
+    transition-delay: 0.27s;
+}
+
+
+/* end of  about-title  */
+
+
+/* about parts */
+
+.about-parts {
+    margin-bottom: 4rem;
+}
+
+.about-left,
+.about-right {
+    flex: 1;
+    min-width: 300px;
+}
+
+
+/* end of about parts */
+
+
+/* about text left side */
+
+.about-left {
+    /* text-align: left; */
+    margin: auto 10%;
+    /* text-align: center; */
+}
+
+.about-text1,
+.about-text2,
+.about-text3 {
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.25rem;
+}
+
+.leeds-button,
+.gbm-button {
+    display: inline-block;
+    /* padding: 6px 12px; */
+    /* Leeds blue */
+    color: #d22626;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    display: inline;
+    /* white-space: normal; */
+}
+
+.leeds-button:hover,
+.gbm-button:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* end of left side */
+
+
+/* about right side - single pic */
+
+
+/* .about-right {
+  text-align: right;
+} */
+
+.about-pic1 {
+    height: 350px;
+    width: 350px;
+    border-radius: 5px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.about-pic {
+    margin: 0 auto;
+    object-fit: cover;
+    display: flex;
+}
+
+
+/* end of about */
+
+
+/* experience section */
+
+#experience {
+    padding-top: 4rem;
+    height: 90vh;
+    /* padding: 2rem; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* min-height: 80vh; */
+    justify-content: space-between;
+    position: relative;
+}
+
+.exp-title2 {
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.exp-title2:hover span {
+    transform: scale(1.1);
+    color: #FF4F00;
+}
+
+.exp-title2.animate span {
+    animation: scaleInExperience 0.6s ease forwards;
+    /* animation: scaleInTitle 1s ease-in-out; */
+    /* animation-fill-mode: forwards; */
+}
+
+.exp-title2 span {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+    will-change: transform;
+}
+
+
+/* exp-title2 animation when first loading page */
+
+.exp-title2.animate span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.exp-title2.animate span:nth-child(2) {
+    animation-delay: 0.05s;
+}
+
+.exp-title2.animate span:nth-child(3) {
+    animation-delay: 0.1s;
+}
+
+.exp-title2.animate span:nth-child(4) {
+    animation-delay: 0.15s;
+}
+
+.exp-title2.animate span:nth-child(5) {
+    animation-delay: 0.2s;
+}
+
+.exp-title2.animate span:nth-child(6) {
+    animation-delay: 0.25s;
+}
+
+.exp-title2.animate span:nth-child(7) {
+    animation-delay: 0.3s;
+}
+
+.exp-title2.animate span:nth-child(8) {
+    animation-delay: 0.35s;
+}
+
+.exp-title2.animate span:nth-child(9) {
+    animation-delay: 0.4s;
+}
+
+.exp-title2.animate span:nth-child(10) {
+    animation-delay: 0.45s;
+}
+
+.exp-title2.animate span:nth-child(11) {
+    animation-delay: 0.5s;
+}
+
+.exp-title2.animate span:nth-child(12) {
+    animation-delay: 0.55s;
+}
+
+.exp-title2.animate span:nth-child(13) {
+    animation-delay: 0.6s;
+}
+
+.exp-title2.animate span:nth-child(14) {
+    animation-delay: 0.65s;
+}
+
+.exp-title2.animate span:nth-child(15) {
+    animation-delay: 0.70s;
+}
+
+
+/* end of exp-title2 animate block */
+
+
+/* staggered transition delays for hover effect */
+
+.exp-title2 span:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.exp-title2 span:nth-child(2) {
+    transition-delay: 0.03s;
+}
+
+.exp-title2 span:nth-child(3) {
+    transition-delay: 0.06s;
+}
+
+.exp-title2 span:nth-child(4) {
+    transition-delay: 0.09s;
+}
+
+.exp-title2 span:nth-child(5) {
+    transition-delay: 0.12s;
+}
+
+.exp-title2 span:nth-child(6) {
+    transition-delay: 0.15s;
+}
+
+.exp-title2 span:nth-child(7) {
+    transition-delay: 0.18s;
+}
+
+.exp-title2 span:nth-child(8) {
+    transition-delay: 0.21s;
+}
+
+.exp-title2 span:nth-child(9) {
+    transition-delay: 0.24s;
+}
+
+.exp-title2 span:nth-child(10) {
+    transition-delay: 0.27s;
+}
+
+.exp-title2 span:nth-child(11) {
+    transition-delay: 0.3s;
+}
+
+.exp-title2 span:nth-child(12) {
+    transition-delay: 0.33s;
+}
+
+.exp-title2 span:nth-child(13) {
+    transition-delay: 0.36s;
+}
+
+.exp-title2 span:nth-child(14) {
+    transition-delay: 0.39s;
+}
+
+.exp-title2 span:nth-child(15) {
+    transition-delay: 0.42s;
+}
+
+
+/* end of exp-title2 transition delay block */
+
+
+/* exp content */
+
+#exp-image {
+    width: 300px;
+    /* control size */
+    /* max-width: 100%; */
+    height: 300px;
+    /* keep it equal for perfect circle */
+    /* border-radius: 50%; */
+    border-radius: 5px;
+    /* makes it circular */
+    object-fit: cover;
+    /* keeps image from stretching */
+    margin: 5%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+/* year menu */
+
+.year-selector {
+    display: flex;
+    gap: 4rem;
+    margin: 2rem;
+    margin-bottom: 6rem;
+    /* padding: 2rem; */
+    justify-content: center;
+    /* margin: 4rem; */
+}
+
+.year {
+    background-color: #ffffff;
+    color: #000000;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 300ms ease;
+    padding: 0.5rem;
+    width: 9rem;
+    /* width: 3rem; */
+    text-align: center;
+    /* border-radius: 10rem; */
+    border-radius: 2rem;
+    /* border: 2px solid #000000; */
+    background-color: #fff7f3;
+    border: 2px solid #000000;
+}
+
+.year:hover {
+    /* color: #FF4F00; */
+    /* border-color: #FF4F00; */
+    background-color: #ffc9ae;
+    /* year menu end */
+    /* exp texts */
+    /* .experience-content {
+  width: 1200px;
+  margin: 0 auto;
+
+} */
+}
+
+#experience-content {
+    background-color: #fff;
+    padding: 0.5rem;
+    border-radius: 12px;
+    display: flex;
+    /* flex-direction: row; */
+    /* align-items: center; */
+    height: 50vh;
+    /* overflow-y: auto; */
+    width: 80vw;
+    /* height: 40vh; */
+    gap: 2rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+/* when there's no image */
+
+#experience-content.no-image {
+    justify-content: center;
+}
+
+#experience-content.no-image .exp-right {
+    flex: none;
+    width: 80vw;
+    height: 50vh;
+    text-align: center;
+}
+
+#experience-content.no-image .exp-left {
+    display: none;
+}
+
+#experience-content.no-image .experience-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+#experience-content.no-image .experience-description ul {
+    list-style-position: inside;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* end of when there's no image */
+
+.exp-left {
+    flex: 1;
+    /* min-width: 200px; */
+}
+
+.exp-right {
+    flex: 1.75;
+    /* min-width: 250px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* 
+.experience-description {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.experience-description ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+
+.experience-description li {
+    margin-bottom: 0.4rem;
+}
+
+.exp-desc1 {
+    white-space: pre-line;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    list-style-type: disc;
+}
+
+.exp-desc1 ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+
+.exp-desc1 li {
+    margin-bottom: 0.4rem;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1rem;
+}
+
+#exp-description {
+    justify-content: center;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    white-space: pre-line;
+    margin-bottom: 1rem;
+    list-style-type: disc;
+}
+
+#exp-description li {
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1rem;
+} */
+
+.experience-description {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    justify-content: center;
+}
+
+.experience-description ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+
+.experience-description li {
+    margin-bottom: 0.4rem;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1rem;
+}
+
+.exp-title-jobs {
+    color: #FF4F00;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.exp-dates {
+    font-size: 1.1rem;
+    font-weight: 600;
+    /* margin-top: 0.5rem; */
+    /* margin-bottom: 0.5rem; */
+}
+
+
+/* end of experience */
+
+#skills {
+    padding-top: 2rem;
+    height: 95vh;
+    /* padding: 2rem; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* min-height: 80vh; */
+    position: relative;
+}
+
+
+/* start of skills */
+
+.skills-title {
+    justify-content: center;
+    margin-bottom: 2rem;
+    margin-top: -2%;
+}
+
+.skills-title1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.mindmap-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px 0 0 0;
+    position: relative;
+    overflow: visible;
+}
+
+.skills-title2 {
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.skills-title2:hover span {
+    transform: scale(1.2);
+    color: #ff0026;
+}
+
+.skills-title2.animate span {
+    animation: scaleInSkills 0.6s ease forwards;
+}
+
+.skills-title2 span {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+    will-change: transform;
+}
+
+
+/* skills-title2 animation when first loading page */
+
+.skills-title2.animate span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.skills-title2.animate span:nth-child(2) {
+    animation-delay: 0.05s;
+}
+
+.skills-title2.animate span:nth-child(3) {
+    animation-delay: 0.1s;
+}
+
+.skills-title2.animate span:nth-child(4) {
+    animation-delay: 0.15s;
+}
+
+.skills-title2.animate span:nth-child(5) {
+    animation-delay: 0.2s;
+}
+
+.skills-title2.animate span:nth-child(6) {
+    animation-delay: 0.25s;
+}
+
+
+/* end of skills-title2 animate block */
+
+
+/* staggered transition delays for hover effect */
+
+.skills-title2 span:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.skills-title2 span:nth-child(2) {
+    transition-delay: 0.03s;
+}
+
+.skills-title2 span:nth-child(3) {
+    transition-delay: 0.06s;
+}
+
+.skills-title2 span:nth-child(4) {
+    transition-delay: 0.09s;
+}
+
+.skills-title2 span:nth-child(5) {
+    transition-delay: 0.12s;
+}
+
+.skills-title2 span:nth-child(6) {
+    transition-delay: 0.15s;
+}
+
+
+/* end of skills-title2 transition delay block */
+
+
+/* skills content */
+
+
+/* skills content */
+
+
+/* Stagger rows 2 and 4: select every 10th element offset by 5 */
+
+.mindmap-container>.skill-card:nth-child(10n+6),
+.mindmap-container>.skill-card:nth-child(10n+7),
+.mindmap-container>.skill-card:nth-child(10n+8),
+.mindmap-container>.skill-card:nth-child(10n+9),
+.mindmap-container>.skill-card:nth-child(10n+10) {
+    transform: translateX(40%);
+}
+
+.mindmap-container>.skill-card:nth-child(10n+6).move-left,
+.mindmap-container>.skill-card:nth-child(10n+7).move-left,
+.mindmap-container>.skill-card:nth-child(10n+8).move-left,
+.mindmap-container>.skill-card:nth-child(10n+9).move-left,
+.mindmap-container>.skill-card:nth-child(10n+10).move-left {
+    transform: translateX(-60%);
+}
+
+
+/* 
+.mindmap-container>.skill-card:nth-child(6):hover,
+.mindmap-container>.skill-card:nth-child(7):hover,
+.mindmap-container>.skill-card:nth-child(8):hover,
+.mindmap-container>.skill-card:nth-child(9):hover,
+.mindmap-container>.skill-card:nth-child(10):hover {
+    transform: scale(1.2);
+    /* z-index: 10; 
+} */
+
+.skill-card img,
+.skill-card .text-skill {
+    width: 100%;
+    height: 80px;
+    opacity: 1;
+}
+
+.skill-card {
+    min-height: 100px;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    opacity: 1;
+}
+
+.skill-card:hover {
+    transform: scale(1.2);
+    z-index: 10;
+}
+
+
+/* managing when a skill is selected */
+
+
+/* Shift logos to the left and fade them */
+
+.skill-card.move-left {
+    transform: translateX(-140px);
+    opacity: 0.3;
+}
+
+
+/* Keep the clicked logo full opacity */
+
+.skill-card.active {
+    transform: translateX(240px);
+    transform: scale(1.1);
+    opacity: 1 !important;
+}
+
+
+/* Detail box styles (hidden by default) */
+
+#skillTitle {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+.skill-details {
+    position: fixed;
+    right: 5%;
+    top: 50%;
+    width: 300px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    padding: 10px 40px 20px 20px;
+    /* extra top padding for the button */
+    /* position: relative; */
+    /* so the absolute #closeBtn is placed relative to this */
+}
+
+
+/* Shown state */
+
+.skill-details.show {
+    display: block;
+}
+
+#closeBtn {
+    background-color: #f3f3f3;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#closeBtn:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.1);
+}
+
+
+/* end of skills */
+
+
+/* start of projects */
+
+#projects {
+    height: 90vh;
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* min-height: 80vh; */
+    position: relative;
+}
+
+.project-title {
+    justify-content: center;
+    margin-bottom: 2rem;
+    margin-top: -2%;
+}
+
+.project-title1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.project-title2 {
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.project-title2:hover span {
+    transform: scale(1.1);
+    color: #31a0f6;
+    /* blue  */
+    /* #ff0026; */
+    /* red */
+}
+
+.project-title2.animate span {
+    animation: scaleInProjects 0.6s ease forwards;
+    /* animation: scaleInTitle 1s ease-in-out; */
+    /* animation-fill-mode: forwards; */
+}
+
+.project-title2 span {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+    will-change: transform;
+}
+
+
+/* project-title2 animation when first loading page */
+
+.project-title2.animate span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.project-title2.animate span:nth-child(2) {
+    animation-delay: 0.05s;
+}
+
+.project-title2.animate span:nth-child(3) {
+    animation-delay: 0.1s;
+}
+
+.project-title2.animate span:nth-child(4) {
+    animation-delay: 0.15s;
+}
+
+.project-title2.animate span:nth-child(5) {
+    animation-delay: 0.2s;
+}
+
+.project-title2.animate span:nth-child(6) {
+    animation-delay: 0.25s;
+}
+
+.project-title2.animate span:nth-child(7) {
+    animation-delay: 0.30s;
+}
+
+.project-title2.animate span:nth-child(8) {
+    animation-delay: 0.35s;
+}
+
+.project-title2.animate span:nth-child(9) {
+    animation-delay: 0.40s;
+}
+
+.project-title2.animate span:nth-child(10) {
+    animation-delay: 0.45s;
+}
+
+.project-title2.animate span:nth-child(11) {
+    animation-delay: 0.50s;
+}
+
+.project-title2.animate span:nth-child(12) {
+    animation-delay: 0.55s;
+}
+
+.project-title2.animate span:nth-child(13) {
+    animation-delay: 0.60s;
+}
+
+.project-title2.animate span:nth-child(14) {
+    animation-delay: 0.65s;
+}
+
+.project-title2.animate span:nth-child(15) {
+    animation-delay: 0.70s;
+}
+
+.project-title2.animate span:nth-child(16) {
+    animation-delay: 0.75s;
+}
+
+.project-title2.animate span:nth-child(17) {
+    animation-delay: 0.80s;
+}
+
+.project-title2.animate span:nth-child(18) {
+    animation-delay: 0.85s;
+}
+
+
+/* end of project-title2 animate block */
+
+
+/* staggered transition delays for hover effect */
+
+.project-title2 span:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.project-title2 span:nth-child(2) {
+    transition-delay: 0.03s;
+}
+
+.project-title2 span:nth-child(3) {
+    transition-delay: 0.06s;
+}
+
+.project-title2 span:nth-child(4) {
+    transition-delay: 0.09s;
+}
+
+.project-title2 span:nth-child(5) {
+    transition-delay: 0.12s;
+}
+
+.project-title2 span:nth-child(6) {
+    transition-delay: 0.15s;
+}
+
+.project-title2 span:nth-child(7) {
+    transition-delay: 0.18s;
+}
+
+.project-title2 span:nth-child(8) {
+    transition-delay: 0.21s;
+}
+
+.project-title2 span:nth-child(9) {
+    transition-delay: 0.24s;
+}
+
+.project-title2 span:nth-child(10) {
+    transition-delay: 0.27s;
+}
+
+.project-title2 span:nth-child(11) {
+    transition-delay: 0.30s;
+}
+
+.project-title2 span:nth-child(12) {
+    transition-delay: 0.33s;
+}
+
+.project-title2 span:nth-child(13) {
+    transition-delay: 0.36s;
+}
+
+.project-title2 span:nth-child(14) {
+    transition-delay: 0.39s;
+}
+
+.project-title2 span:nth-child(15) {
+    transition-delay: 0.42s;
+}
+
+.project-title2 span:nth-child(16) {
+    transition-delay: 0.45s;
+}
+
+.project-title2 span:nth-child(17) {
+    transition-delay: 0.48s;
+}
+
+.project-title2 span:nth-child(18) {
+    transition-delay: 0.51s;
+}
+
+
+/* end of project-title2 transition delay block */
+
+
+/* /////////////////////projects containers */
+
+
+/* Parent container holding all projects */
+
+.project-containers {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5rem;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+
+/* Common styling for each project container (iPhone-like shape) */
+
+.project-cont1,
+.project-cont2,
+.project-cont3 {
+    width: 300px;
+    height: 400px;
+    /* background: linear-gradient(to bottom, #f0f0f0, #dcdcdc); */
+    border-color: #000000;
+    border-radius: 1rem;
+    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    padding: 3rem;
+    box-sizing: border-box;
+    position: relative;
+    transition: transform 0.3s ease;
+    /* border: 1px solid #000000; */
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Hover effect */
+
+
+/* 
+.project-cont1:hover,
+.project-cont2:hover,
+.project-cont3:hover {
+    transform: translateY(-10px);
+} */
+
+
+/* Project image styling */
+
+.project-img {
+    width: 120%;
+    height: 40%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+
+/* Title styling */
+
+.project1-title,
+.project2-title,
+.project3-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0.8rem 0 0.3rem 0;
+    text-align: center;
+}
+
+
+/* Subtitle styling */
+
+.project1-subtitle,
+.project2-subtitle,
+.project3-subtitle {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 0.8rem;
+    text-align: center;
+}
+
+
+/* Buttons container */
+
+.project-cont1::after,
+.project-cont2::after,
+.project-cont3::after {
+    content: '';
+    display: block;
+    margin-top: auto;
+}
+
+
+/* Buttons under each project */
+
+.project-cont1 .project-buttons,
+.project-cont2 .project-buttons,
+.project-cont3 .project-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+
+/* Button styling */
+
+.project-buttons a {
+    padding: 0.5rem 1rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 0.7rem;
+    font-size: 0.85rem;
+    transition: background-color 0.3s;
+    background-color: #ffffff;
+    color: #000000;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 300ms ease;
+    padding: 0.5rem;
+    width: 5rem;
+    /* width: 3rem; */
+    text-align: center;
+    /* border-radius: 10rem; */
+    border-radius: 2rem;
+    /* border: 2px solid #000000; */
+    background-color: #f4f9ff;
+    border: 2px solid #000000;
+}
+
+.project-buttons a:hover {
+    background-color: #cbe3fc;
+    border-color: #001e3e;
+    color: #001e3e;
+}
+
+
+/* ////////////////////////end of projects containers */
+
+
+/* end of projects */
+
+
+/* start of contact-me */
+
+#contact {
+    padding-top: 4rem;
+    height: 60vh;
+    /* padding: 2rem; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* min-height: 80vh; */
+    position: relative;
+}
+
+.contact-title {
+    justify-content: center;
+    margin-bottom: 2rem;
+    margin-top: -2%;
+}
+
+.contact-title1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact-title2 {
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.contact-title2:hover span {
+    transform: scale(1.1);
+    color: #d7008f;
+    /* lighter pink */
+    /* #ff0026; */
+    /* red */
+}
+
+.contact-title2.animate span {
+    animation: scaleInContact 0.6s ease forwards;
+    /* animation: scaleInTitle 1s ease-in-out; */
+    /* animation-fill-mode: forwards; */
+}
+
+.contact-title2 span {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+    will-change: transform;
+}
+
+
+/* contact-title2 animation when first loading page */
+
+.contact-title2.animate span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.contact-title2.animate span:nth-child(2) {
+    animation-delay: 0.05s;
+}
+
+.contact-title2.animate span:nth-child(3) {
+    animation-delay: 0.1s;
+}
+
+.contact-title2.animate span:nth-child(4) {
+    animation-delay: 0.15s;
+}
+
+.contact-title2.animate span:nth-child(5) {
+    animation-delay: 0.2s;
+}
+
+.contact-title2.animate span:nth-child(6) {
+    animation-delay: 0.25s;
+}
+
+.contact-title2.animate span:nth-child(7) {
+    animation-delay: 0.30s;
+}
+
+.contact-title2.animate span:nth-child(8) {
+    animation-delay: 0.35s;
+}
+
+.contact-title2.animate span:nth-child(9) {
+    animation-delay: 0.40s;
+}
+
+.contact-title2.animate span:nth-child(10) {
+    animation-delay: 0.45s;
+}
+
+.contact-title2.animate span:nth-child(10) {
+    animation-delay: 0.50s;
+}
+
+.contact-title2.animate span:nth-child(11) {
+    animation-delay: 0.55s;
+}
+
+.contact-title2.animate span:nth-child(12) {
+    animation-delay: 0.60s;
+}
+
+.contact-title2.animate span:nth-child(13) {
+    animation-delay: 0.65s;
+}
+
+.contact-title2.animate span:nth-child(14) {
+    animation-delay: 0.70s;
+}
+
+.contact-title2.animate span:nth-child(15) {
+    animation-delay: 0.75s;
+}
+
+
+/* end of contact-title2 animate block */
+
+
+/* staggered transition delays for hover effect */
+
+.contact-title2 span:nth-child(1) {
+    transition-delay: 0s;
+}
+
+.contact-title2 span:nth-child(2) {
+    transition-delay: 0.03s;
+}
+
+.contact-title2 span:nth-child(3) {
+    transition-delay: 0.06s;
+}
+
+.contact-title2 span:nth-child(4) {
+    transition-delay: 0.09s;
+}
+
+.contact-title2 span:nth-child(5) {
+    transition-delay: 0.12s;
+}
+
+.contact-title2 span:nth-child(6) {
+    transition-delay: 0.15s;
+}
+
+.contact-title2 span:nth-child(7) {
+    transition-delay: 0.18s;
+}
+
+.contact-title2 span:nth-child(8) {
+    transition-delay: 0.21s;
+}
+
+.contact-title2 span:nth-child(9) {
+    transition-delay: 0.24s;
+}
+
+.contact-title2 span:nth-child(10) {
+    transition-delay: 0.27s;
+}
+
+.contact-title2 span:nth-child(11) {
+    transition-delay: 0.30s;
+}
+
+.contact-title2 span:nth-child(12) {
+    transition-delay: 0.33s;
+}
+
+.contact-title2 span:nth-child(13) {
+    transition-delay: 0.36s;
+}
+
+.contact-title2 span:nth-child(14) {
+    transition-delay: 0.39s;
+}
+
+.contact-title2 span:nth-child(15) {
+    transition-delay: 0.42s;
+}
+
+
+/* end of contact-title2 transition delay block */
+
+.contact-buttons,
+.contact-button1,
+.contact-button2 {
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem;
+}
+
+.contact-buttons p {
+    padding-top: 8rem;
+    font-size: larger;
+}
+
+.contact-icon {
+    color: black;
+}
+
+.email-icon {
+    height: 2.5rem;
+}
+
+.linkedin-icon {
+    height: 2rem;
+}
+
+.email-icon,
+:hover,
+.linkedin-icon:hover {
+    cursor: pointer;
+    /* gap: 1rem; */
+}
+
+.email-text {
+    color: black;
+    align-self: center;
+    text-align: center;
+    font-weight: 600;
+    text-align: center;
+}
+
+.linkedin-text {
+    color: black;
+    align-self: center;
+    text-align: center;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+/* end of contact-me */
+
+
+/* FOOTER SECTION */
+
+footer {
+    height: 20vh;
+    position: relative;
+    /* overflow: hidden; */
+    background-color: none;
+    /* margin: 0 1rem; */
+}
+
+footer p {
+    text-align: center;
+}
+
+.footer-nav-links {
+    z-index: 1;
+    background-color: none;
+    padding-top: 15rem;
+}
+
+
+/* background animation start */
+
+.footer-svg {
+    /* position: relative; */
+    position: absolute;
+    /* padding-top: 0rem; */
+    /* margin-top: 2rem; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150%;
+    z-index: -10;
+    /* Adjust this value as needed */
+    /* overflow: hidden; */
+    /* pointer-events: none; */
+    /* Important: Allows clicks to pass through */
+}
+
+.footer-nav-link1 {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+.footer-nav-link1 li {
+    color: white;
+}
+
+.footer-svg svg {
+    /* display: block; */
+    /* object-fit: cover; */
+    transform: translateY(10px);
+}
+
+.footer-nav-link1 a {
+    color: black;
+    /* rgb(238, 238, 214); */
+    text-decoration: none;
+    text-decoration-color: #28003A;
+}
+
+.footer-nav-link1 a:hover {
+    color: rgb(106, 106, 106);
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    /* offset so the underline is a bit spaced away from the word */
+    /* text-decoration-color: white; */
+}
+
+
+/* background animation end */
