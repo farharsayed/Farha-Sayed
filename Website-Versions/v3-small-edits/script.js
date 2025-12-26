@@ -96,16 +96,24 @@ animElements.forEach((el) => {
 
 const experienceData = {
     2025: {
-        title: "Cybersecurity and Infrastructure Engineer - Gulf Business Machines",
+        title: "DevOps and Infrastructure Engineer - Gulf Business Machines",
         dates: "Nov 2024 - Present",
         description: [
-            "Implementing and managing Kubernetes infrastructure for air-gapped enterprise environments",
-            "Worked with clusters on Nutanix Kubernetes Platform (NKP) with Prism Central and Prism Element",
-            "Optimized VMware Tanzu Kubernetes Grid Service on vSphere across light and dark settings",
-            "Installed and configured NVIDIA BCM to support Run:ai for efficient GPU utilization by AI/ML workloads",
-            "Implemented Harbor Registry for artifact management and Veeam Kasten for Kubernetes-native DR",
-            "Secured up to 15,000 endpoints and servers using ManageEngine Endpoint Central and Ansible playbooks",
-            "Collaborated with vendors to integrate advanced ZTNA, EPP and PAM solutions"
+            "Designed, implemented, and maintained on-prem Kubernetes infrastructure, optimizing cluster performance, resource utilization, and workload distribution for scalability and cost efficiency",
+            "Installed and managed multiple instances of NVIDIA BCM & Run:ai for GPU orchestration",
+            "Integrated n8n to automate cross-system workflows for data pipelines across AI infrastructure components",
+            "Migrated and managed Docker images from public registries to internal offline Harbor Registry",
+            "Built and maintained GitLab CI/CD pipelines ensuring smooth and automated deployments across clusters",
+            "Worked with clusters on VMware Tanzu Kubernetes Grid Service on vSphere and Nutanix Kubernetes Platform(NKP) utilizing NFS, QNAP and MinIO backend storage",
+            "Implemented Veeam Kasten for Kubernetes-native disaster recovery via snapshots and backups",
+            "Coordinated with customers and project managers throughout project lifecycles, adhering to best practices in planning, automation, risk mitigation, and documentation"
+            // "Implementing and managing Kubernetes infrastructure for air-gapped enterprise environments",
+            // "Worked with clusters on Nutanix Kubernetes Platform (NKP) with Prism Central and Prism Element",
+            // "Optimized VMware Tanzu Kubernetes Grid Service on vSphere across light and dark settings",
+            // "Installed and configured NVIDIA BCM to support Run:ai for efficient GPU utilization by AI/ML workloads",
+            // "Implemented Harbor Registry for artifact management and Veeam Kasten for Kubernetes-native DR",
+            // "Secured up to 15,000 endpoints and servers using ManageEngine Endpoint Central and Ansible playbooks",
+            // "Collaborated with vendors to integrate advanced ZTNA, EPP and PAM solutions"
         ],
         image: "./assets/exp-pic1.jpg",
     },

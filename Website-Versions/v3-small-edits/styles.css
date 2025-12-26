@@ -408,6 +408,8 @@ a:hover {
     width: 8rem;
     border-radius: 2rem;
     font-size: 1rem;
+    background-color: white;
+    border-color: black;
 }
 
 .home-btn1:hover,
@@ -495,7 +497,7 @@ a:hover {
     /* or center */
     flex-wrap: wrap;
     /* for mobile responsiveness */
-    padding-top: 5rem;
+    /* padding-top: 5rem; */
 }
 
 .about-title,
@@ -503,6 +505,8 @@ a:hover {
     justify-content: center;
     margin-bottom: 2rem;
     margin-top: -2%;
+    font-weight: 200;
+
 }
 
 .animated-title {
@@ -637,6 +641,7 @@ a:hover {
 /* about parts */
 
 .about-parts {
+
     margin-bottom: 4rem;
 }
 
@@ -655,14 +660,16 @@ a:hover {
 .about-left {
     /* text-align: left; */
     margin: auto 10%;
+
     /* text-align: center; */
 }
 
 .about-text1,
 .about-text2,
 .about-text3 {
-    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    /* font-family: Calibri, 'Trebuchet MS', sans-serif; */
     font-size: 1.25rem;
+    font-weight: 200;
 }
 
 .leeds-button,
@@ -670,10 +677,10 @@ a:hover {
     display: inline-block;
     /* padding: 6px 12px; */
     /* Leeds blue */
-    color: #d22626;
+    color: #097ac6;
     border-radius: 4px;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 300;
     transition: background 0.3s ease;
     display: inline;
     /* white-space: normal; */
@@ -683,6 +690,7 @@ a:hover {
 .gbm-button:hover {
     text-decoration: none;
     cursor: pointer;
+    color: #084f7d;
 }
 
 
@@ -890,10 +898,10 @@ a:hover {
 /* exp content */
 
 #exp-image {
-    width: 300px;
+    width: 200px;
     /* control size */
     /* max-width: 100%; */
-    height: 300px;
+    height: 200px;
     /* keep it equal for perfect circle */
     /* border-radius: 50%; */
     border-radius: 5px;
@@ -954,7 +962,8 @@ a:hover {
     display: flex;
     /* flex-direction: row; */
     /* align-items: center; */
-    height: 50vh;
+    min-height: 50vh;
+    height: auto;
     /* overflow-y: auto; */
     width: 80vw;
     /* height: 40vh; */
@@ -1000,11 +1009,13 @@ a:hover {
 /* end of when there's no image */
 
 .exp-left {
-    flex: 1;
-    /* min-width: 200px; */
+    flex: 0.75;
+    min-width: 200px;
+    /* width: 30%; */
 }
 
 .exp-right {
+    /* width: 70%; */
     flex: 1.75;
     /* min-width: 250px; */
     display: flex;
@@ -1012,12 +1023,16 @@ a:hover {
     justify-content: center;
 }
 
-
-/* 
 .experience-description {
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
+    /* margin-bottom: 1rem; */
     font-size: 0.95rem;
     line-height: 1.6;
+    justify-content: center;
+
+     /* max-height: 250px;  */
+    overflow-y: auto;
+    padding-right: 10px;
 }
 
 .experience-description ul {
@@ -1027,58 +1042,7 @@ a:hover {
 
 .experience-description li {
     margin-bottom: 0.4rem;
-}
-
-.exp-desc1 {
-    white-space: pre-line;
-    margin-top: 1rem;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    list-style-type: disc;
-}
-
-.exp-desc1 ul {
-    list-style-type: disc;
-    padding-left: 1.5rem;
-}
-
-.exp-desc1 li {
-    margin-bottom: 0.4rem;
-    font-family: Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1rem;
-}
-
-#exp-description {
-    justify-content: center;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    white-space: pre-line;
-    margin-bottom: 1rem;
-    list-style-type: disc;
-}
-
-#exp-description li {
-    font-family: Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1rem;
-} */
-
-.experience-description {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    justify-content: center;
-}
-
-.experience-description ul {
-    list-style-type: disc;
-    padding-left: 1.5rem;
-}
-
-.experience-description li {
-    margin-bottom: 0.4rem;
-    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    /* font-family: Calibri, 'Trebuchet MS', sans-serif; */
     font-size: 1rem;
 }
 

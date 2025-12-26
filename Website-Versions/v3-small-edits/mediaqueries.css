@@ -14,7 +14,8 @@
         height: 80vh;
     }
     .nav-title {
-        font-size: 1.5rem;
+        font-size: 2rem;
+        font-weight: 200;
     }
     .nav-title:hover span {
         transform: scale(1.2);
@@ -52,9 +53,7 @@
         flex-direction: column;
     }
     /* for all animated titles */
-    .animated-title {
-        font-size: 1.5rem;
-    }
+
     .animated-title:hover span {
         transform: scale(1.2);
     }
@@ -148,12 +147,148 @@
         /* padding-bottom: 30px; */
         max-width: 30vw;
     }
+
+
+
+    /* about me */
     .about-parts {
-        padding-top: 20px;
+    /* padding-top: 20px; */
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
     }
-    /* .animated-title {
-        margin: 0 auto;
-    } */
+
+    .about-pic1 {
+    height: 250px;
+    width: 250px;
+    border-radius: 5px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+.about-right {
+   padding: 2rem; 
+   display: flex; 
+   justify-content: center; 
+   /* padding-top: 5rem; */
+}
+
+
+/* experience */
+  #experience-content {
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;        /* CRITICAL */
+    padding: 1.25rem;
+     /* min-height: 60vh; */
+  }
+
+  .exp-left {
+    display: none;
+  }
+
+  .exp-right {
+    width: 100%;
+     /* min-height: 70vh; */
+    justify-content: flex-start; /* stop vertical centering */
+  }
+
+  .experience-description {
+    overflow: visible;
+    max-height: none;
+    /* height: auto; */
+    padding-right: 0;
+  }
+  .year {
+    font-size: 1rem;
+  }
+
+  .exp-title {
+    padding: 0;
+    margin: 0 auto;
+  }
+
+/* end of experience */
+
+
+/* projects */
+
+
+/* Stack projects vertically */
+  .project-containers {
+    flex-direction: column;
+    gap: 1rem;
+
+  }
+
+  /* Make each project a wide row card */
+  .project-cont1,
+  .project-cont2,
+  .project-cont3 {
+    /* width: 100%; */
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+    gap: 3rem;
+    max-height: 20vh;
+     width: 100%;
+    min-width: 90vw;
+  }
+ 
+  .project-right {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Image becomes left thumbnail */
+  .project-img {
+    width: 20%;
+    height: 80%;
+    /* max-height: 160px; */
+    object-fit: cover;
+    border-radius: 0.75rem;
+  }
+
+  /* Text stays readable */
+  .project1-title,
+  .project2-title,
+  .project3-title {
+    font-size: 2rem;
+    text-align: left;
+    margin: 0;
+  }
+
+  .project1-subtitle,
+  .project2-subtitle,
+  .project3-subtitle {
+    font-size: 0.9rem;
+    text-align: left;
+    margin: 0.25rem 0 0.75rem 0;
+  }
+
+  /* Buttons align left */
+  .project-buttons {
+    justify-content: flex-start;
+    padding-top: 0.5rem;
+  }
+
+  /* end of project section */
+
+  /* contact section */
+  .contact-title2, .project-title2,     .animated-title {
+        display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+    font-size: 3rem;
+    margin-bottom: 0rem;
+    font-weight: 200;
+  }
+
+
+  .contact-button1, .contact-button2{
+    font-size: 2rem;
+      font-weight: 200;
+  }
 }
 
 
@@ -247,7 +382,7 @@
     .project-title2,
     .skills-title2,
     .contact-title2 {
-        font-size: 2rem;
+        font-size: 3rem;
         padding: 0;
     }
     .about-parts {
